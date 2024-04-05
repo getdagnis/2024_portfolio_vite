@@ -36,16 +36,16 @@ function Portfolio() {
   useEffect(() => {
     const items = thumbsData.map((thumb, index) => {
       const row = Math.floor(index / 4) + 1; // Calculate row number
-      const col = (index % 4) + 1; // Calculate column number
+      const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
 
       return {
         ...thumb,
         key: thumb.key,
-        className: `thumb-item col-${col} row-${row}`, // Combined class names
+        className: `grid-item col-${col} row-${row}`, // Combined class names
       };
     });
     setGridItems(items);
-  }, [thumbsData]);
+  }, [thumbsData, screenWidth]);
 
   const handleFiltersClick = () => {
     setSeeFilters(!seeFilters);
@@ -57,8 +57,8 @@ function Portfolio() {
 
   return (
     <div className="portfolio">
-      <div className="portfolio-filters">
-        <div className={!seeFilters && 'filters-hidden'} onClick={handleFiltersClick}></div>
+      <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
+        <div className="filters-button" onClick={handleFiltersClick}></div>
         <ul className="filters-list">
           <li className={activeFilter === 'all' && 'active'} onClick={() => handleFilter('all')}>
             all
@@ -81,9 +81,16 @@ function Portfolio() {
           <li className="close-filters" onClick={handleFiltersClick}></li>
         </ul>
       </div>
-      <div className="thumb-grid" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
-        {gridItems.map((item) => (
-          <div key={item.key} className={item.className} style={{ backgroundImage: `url(./thumbs/${item.key}.svg)` }}>
+      <div className="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
+        {gridItems.map((item, index) => (
+          <div
+            key={item.key}
+            className={item.className && item.className}
+            style={{
+              backgroundImage: `url(./thumbs/${item.key}.svg)`,
+              animationDelay: `${0.5 + index / 25}s`, // Apply animation delay formula
+            }}
+          >
             <div className="thumb-info">
               <h3>{item.name}</h3>
               <p>{item.title}</p>

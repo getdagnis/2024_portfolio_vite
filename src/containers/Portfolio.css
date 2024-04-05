@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-.filters-hidden {
+.filters-button {
   position: relative;
   background: url('../assets/filter.svg') no-repeat;
   height: 10px;
@@ -19,9 +19,11 @@
   text-transform: uppercase;
   margin: 0.5rem 0.3rem;
   cursor: pointer;
+  transform: translate(0, 0);
+  transition: transform 0.5s ease;
 }
 
-.filters-hidden::after {
+.filters-button::after {
   content: 'FILTER';
   position: absolute;
   left: 22px;
@@ -30,13 +32,13 @@
   transition: 0.3s opacity ease 0.3s;
 }
 
-.filters-hidden:hover::after {
+.filters-button:hover::after {
   opacity: 1;
 }
 
 .filters-list > li {
   display: inline;
-  margin-right: 1rem;
+  margin: 0 1rem 0 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -44,6 +46,8 @@
   color: black;
   opacity: 0.5;
   cursor: pointer;
+  transform: translate(0, 0);
+  transition: transform 0.5s ease;
 }
 
 @keyframes appear {
@@ -66,13 +70,23 @@
   background: url('../assets/cross.svg') no-repeat;
 }
 
-.thumb-grid {
+.filters-shown > .filters-button {
+  transform: translateY(-26px);
+  transition: transform 0.5s ease;
+}
+
+.filters-shown > .filters-list {
+  transform: translateY(-26px);
+  transition: transform 0.5s ease;
+}
+
+.grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
 }
 
-.thumb-item {
+.grid-item {
   position: relative;
   display: block;
   height: 140px;
@@ -84,6 +98,8 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: var(--radius);
+  animation: itemBounce 0.7s;
+  animation-fill-mode: backwards;
 
   @media (max-width: 600px) {
     height: 100px;
@@ -123,6 +139,22 @@
   text-transform: uppercase;
 }
 
-.thumb-item:hover > .thumb-info {
+.grid-item:hover > .thumb-info {
   transform: translate(0, 0);
+}
+
+@keyframes itemBounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(70px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.itemBounce {
+  animation: itemBounce 0.7s;
 }
