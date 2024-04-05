@@ -12,11 +12,15 @@
 
 .logo {
   width: 400px;
-  min-height: 33px;
-  max-width: 75vw;
+  min-height: 30px;
+  max-width: 73vw;
   margin-bottom: 0.1rem;
   background: url('../assets/logo_full.svg') center left no-repeat;
-  cursor: crosshair;
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    background: url('../assets/logo_mob.svg') center left no-repeat;
+  }
 }
 
 nav > ul {
@@ -37,13 +41,14 @@ nav > ul > li.active {
 
 nav > ul > li:hover {
   text-decoration: underline;
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 .become-slogan {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  min-height: 20px;
   background: black;
   color: white;
   font-weight: 300;
@@ -51,33 +56,36 @@ nav > ul > li:hover {
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius);
+
+  @media (max-width: 320px) {
+    display: none;
+  }
 }
 
-.become-left,
-.become-right {
-  width: fit-content;
+.become-middle {
+  display: block;
+  flex: auto;
+  background: url('../assets/slogan_full.svg') no-repeat;
+  background-position: right center;
+  background-size: 950px 16px;
+  margin: 0 0.75rem;
+  animation: slideFromLeft 2s ease;
 }
 
-.become-center {
-  display: flex;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-  justify-content: space-between;
-}
-
-.slogan-stripe {
-  background: url('../assets/slogan_stripe.svg');
-}
-
-.slogan-arrow {
-  background: url('../assets/slogan_arrow.svg') center right no-repeat;
-
-  width: 24px;
+.become-left {
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
 .become-right {
   display: flex;
   justify-content: end;
+}
+
+.become-left,
+.become-right {
+  width: fit-content;
 }
 
 strong {
@@ -86,12 +94,17 @@ strong {
   font-weight: 500;
 }
 
+@keyframes slideFromLeft {
+  0% {
+    background-position-x: -2000px;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
 @media (max-width: 800px) {
   nav {
-    display: none;
-  }
-
-  .become-left {
     display: none;
   }
 

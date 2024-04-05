@@ -1,4 +1,65 @@
 .portfolio {
-  background: salmon;
   flex: 1;
+  padding: 0.75rem 0;
+}
+
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+.thumb-item {
+  position: relative;
+  display: block;
+  height: 140px;
+  text-align: center;
+  transition: background-color 1s ease;
+  background: white no-repeat center center;
+  background-size: 65%;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius);
+
+  @media (max-width: 600px) {
+    height: 100px;
+    background-size: 55%;
+  }
+
+  @media (max-width: 480px) {
+    height: 80px;
+    background-size: 50%;
+  }
+
+  @media (max-width: 320px) {
+    height: 70px;
+    background-size: 40%;
+  }
+}
+
+.thumb-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem;
+  background: #000000e1;
+  height: 100%;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 200;
+  transform: translateY(-150px);
+  transition: transform 0.3s ease;
+}
+
+.thumb-info h3 {
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.thumb-item:hover > .thumb-info {
+  transform: translate(0, 0);
 }

@@ -21,10 +21,7 @@ function Header() {
         <span className="become-left">
           ideas<strong>become</strong>brands
         </span>
-        <span className="become-center">
-          <span className="slogan-stripe"></span>
-          <span className="slogan-arrow"></span>
-        </span>
+        <span className="become-middle"></span>
         <span className="become-right">
           brands<strong className="b">become</strong>icons
         </span>
