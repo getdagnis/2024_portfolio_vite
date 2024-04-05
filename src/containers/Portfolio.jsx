@@ -7,8 +7,8 @@ import './Portfolio.css';
 function Portfolio() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
-  console.log('🚀🚀 screenWidth', screenWidth);
-  console.log('🚀🚀 isDesktop', isDesktop);
+  const [seeFilters, setSeeFilters] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('all');
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,8 +47,40 @@ function Portfolio() {
     setGridItems(items);
   }, [thumbsData]);
 
+  const handleFiltersClick = () => {
+    setSeeFilters(!seeFilters);
+  };
+
+  const handleFilter = (keyword) => {
+    setActiveFilter(keyword);
+  };
+
   return (
     <div className="portfolio">
+      <div className="portfolio-filters">
+        <div className={!seeFilters && 'filters-hidden'} onClick={handleFiltersClick}></div>
+        <ul className="filters-list">
+          <li className={activeFilter === 'all' && 'active'} onClick={() => handleFilter('all')}>
+            all
+          </li>
+          <li className={activeFilter === 'own' && 'active'} onClick={() => handleFilter('own')}>
+            own projects
+          </li>
+          <li className={activeFilter === 'ide' && 'active'} onClick={() => handleFilter('ide')}>
+            created identities
+          </li>
+          <li className={activeFilter === 'cli' && 'active'} onClick={() => handleFilter('cli')}>
+            clients
+          </li>
+          <li className={activeFilter === 'pub' && 'active'} onClick={() => handleFilter('pub')}>
+            publishing
+          </li>
+          <li className={activeFilter === 'oth' && 'active'} onClick={() => handleFilter('oth')}>
+            other
+          </li>
+          <li className="close-filters" onClick={handleFiltersClick}></li>
+        </ul>
+      </div>
       <div className="thumb-grid" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {gridItems.map((item) => (
           <div key={item.key} className={item.className} style={{ backgroundImage: `url(./thumbs/${item.key}.svg)` }}>

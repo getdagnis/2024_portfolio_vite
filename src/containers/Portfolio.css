@@ -1,6 +1,69 @@
 .portfolio {
   flex: 1;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
+}
+
+.portfolio-filters {
+  /* display: flex; */
+  margin-bottom: 0.5rem;
+  height: 24px;
+  overflow: hidden;
+}
+
+.filters-hidden {
+  position: relative;
+  background: url('../assets/filter.svg') no-repeat;
+  height: 10px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0.5rem 0.3rem;
+  cursor: pointer;
+}
+
+.filters-hidden::after {
+  content: 'FILTER';
+  position: absolute;
+  left: 22px;
+  top: -2px;
+  opacity: 0;
+  transition: 0.3s opacity ease 0.3s;
+}
+
+.filters-hidden:hover::after {
+  opacity: 1;
+}
+
+.filters-list > li {
+  display: inline;
+  margin-right: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+  color: black;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.filters-list > .active {
+  opacity: 1;
+}
+
+.filters-list > .close-filters {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  background: url('../assets/cross.svg') no-repeat;
 }
 
 .thumb-grid {

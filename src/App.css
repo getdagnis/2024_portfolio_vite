@@ -19,7 +19,7 @@ body {
 body {
   width: 100%;
   margin: auto;
-  font-family: 'Poppins';
+  font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
   background: var(--background);
   border: var(--siteBorder) solid black;
 }
