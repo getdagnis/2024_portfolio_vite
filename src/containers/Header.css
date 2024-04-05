@@ -1,0 +1,101 @@
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.2px;
+  color: black;
+}
+
+.logo {
+  width: 400px;
+  min-height: 33px;
+  max-width: 75vw;
+  margin-bottom: 0.1rem;
+  background: url('../assets/logo_full.svg') center left no-repeat;
+  cursor: crosshair;
+}
+
+nav > ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+}
+
+nav > ul > li {
+  width: auto;
+  margin-left: 1.5rem;
+  color: black;
+}
+
+nav > ul > li.active {
+  text-decoration: underline;
+}
+
+nav > ul > li:hover {
+  text-decoration: underline;
+  cursor: crosshair;
+}
+
+.become-slogan {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: black;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.become-left,
+.become-right {
+  width: fit-content;
+}
+
+.become-center {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  justify-content: space-between;
+}
+
+.slogan-stripe {
+  background: url('../assets/slogan_stripe.svg');
+}
+
+.slogan-arrow {
+  background: url('../assets/slogan_arrow.svg') center right no-repeat;
+
+  width: 24px;
+}
+
+.become-right {
+  display: flex;
+  justify-content: end;
+}
+
+strong {
+  width: auto;
+  margin: 0 0.4rem;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: none;
+  }
+
+  .become-left {
+    display: none;
+  }
+
+  .header-top {
+    padding: 1rem 0;
+  }
+}
