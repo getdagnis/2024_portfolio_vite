@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
@@ -6,15 +6,26 @@ function Header() {
     <div className="header-container">
       <div className="header-top">
         <div className="header-left">
-          <div className="logo"></div>
+          <Link to="/">
+            <div className="logo"></div>
+          </Link>
+
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
         <nav>
           <ul>
-            <li className="active">design</li>
-            <li>dev</li>
-            <li>blog</li>
-            <li>about</li>
+            <li className="active">
+              <Link to="/design">design</Link>
+            </li>
+            <li>
+              <Link to="/cv">cv</Link>
+            </li>
+            <li>
+              <Link to="/blog">blog</Link>
+            </li>
+            <li>
+              <Link to="/about">about</Link>
+            </li>
           </ul>
         </nav>
       </div>

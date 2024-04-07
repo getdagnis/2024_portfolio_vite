@@ -1,19 +1,20 @@
-import Header from './containers/Header';
-import Footer from './containers/Footer';
-import Portfolio from './containers/Portfolio';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PortfolioPage from './pages/PortfolioPage';
 
 import './App.css';
 
-function App() {
+function App({ children }) {
+  const hidePortfolio = ['/cv', '/blog'];
+
   return (
-    <>
-      <div id="curtain"></div>
-      <div className="site-container">
-        <Header />
-        <Portfolio />
-        <Footer />
-      </div>
-    </>
+    <div className="site-container">
+      <Header />
+      {children}
+      {!hidePortfolio.some((path) => window.location.pathname.startsWith(path)) && <PortfolioPage />}{' '}
+      {/* exclude portfolio page for the paths in the array*/}
+      <Footer />
+    </div>
   );
 }
 

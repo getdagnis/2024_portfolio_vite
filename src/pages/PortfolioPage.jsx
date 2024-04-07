@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { isDesktop } from 'react-device-detect';
 
 import thumbsData from '../assets/thumbs.json';
-import './Portfolio.css';
+import './PortfolioPage.css';
 
 function Portfolio() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -41,7 +41,9 @@ function Portfolio() {
       return {
         ...thumb,
         key: thumb.key,
-        className: `grid-item col-${col} row-${row}`, // Combined class names
+        className: `grid-item col-${col} row-${row}`, // Combined class names,
+        col: col,
+        row: row,
       };
     });
     setGridItems(items);
@@ -60,35 +62,35 @@ function Portfolio() {
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
         <div className="filters-button" onClick={handleFiltersClick}></div>
         <ul className="filters-list">
-          <li className={activeFilter === 'all' && 'active'} onClick={() => handleFilter('all')}>
+          <li className="close-filters" onClick={handleFiltersClick}></li>
+          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFilter('all')}>
             all
           </li>
-          <li className={activeFilter === 'own' && 'active'} onClick={() => handleFilter('own')}>
+          <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFilter('own')}>
             own projects
           </li>
-          <li className={activeFilter === 'ide' && 'active'} onClick={() => handleFilter('ide')}>
+          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFilter('ide')}>
             created identities
           </li>
-          <li className={activeFilter === 'cli' && 'active'} onClick={() => handleFilter('cli')}>
+          <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFilter('cli')}>
             clients
           </li>
-          <li className={activeFilter === 'pub' && 'active'} onClick={() => handleFilter('pub')}>
+          <li className={activeFilter === 'pub' ? 'active' : ''} onClick={() => handleFilter('pub')}>
             publishing
           </li>
-          <li className={activeFilter === 'oth' && 'active'} onClick={() => handleFilter('oth')}>
+          <li className={activeFilter === 'oth' ? 'active' : ''} onClick={() => handleFilter('oth')}>
             other
           </li>
-          <li className="close-filters" onClick={handleFiltersClick}></li>
         </ul>
       </div>
       <div className="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {gridItems.map((item, index) => (
           <div
             key={item.key}
-            className={item.className && item.className}
+            className={item.className ? item.className : ' '}
             style={{
               backgroundImage: `url(./thumbs/${item.key}.svg)`,
-              animationDelay: `${0.5 + index / 25}s`, // Apply animation delay formula
+              animationDelay: `${0.5 + index / 25 + item.col * 0.1}s`, // Apply animation delay formula
             }}
           >
             <div className="thumb-info">

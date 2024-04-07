@@ -65,8 +65,8 @@
 
 .filters-list > .close-filters {
   display: inline-block;
-  height: 0.5rem;
-  width: 0.5rem;
+  height: 0.6rem;
+  width: 0.6rem;
   background: url('../assets/cross.svg') no-repeat;
 }
 
@@ -148,13 +148,9 @@
     transform: translateY(0);
   }
   20% {
-    transform: translateY(70px);
+    transform: translateY(50px);
   }
   100% {
     transform: translateY(0px);
   }
-}
-
-.itemBounce {
-  animation: itemBounce 0.7s;
 }
