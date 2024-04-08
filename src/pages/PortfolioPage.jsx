@@ -3,12 +3,14 @@ import { isDesktop } from 'react-device-detect';
 
 import thumbsData from '../assets/thumbs.json';
 import './PortfolioPage.css';
+import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [loadAnim, setLoadAnim] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +36,11 @@ function Portfolio() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
+    console.log('🚀🚀 loadAnim 1', loadAnim);
+    window.location.pathname !== '/design' && setLoadAnim(true); // disable portfolio item bounce animation on non-home routes
+    console.log('🚀🚀 window.location.pathname !== "/design"', window.location.pathname !== '/design');
+    console.log('🚀🚀 loadAnim 2', loadAnim);
+
     const items = thumbsData.map((thumb, index) => {
       const row = Math.floor(index / 4) + 1; // Calculate row number
       const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
@@ -41,13 +48,13 @@ function Portfolio() {
       return {
         ...thumb,
         key: thumb.key,
-        className: `grid-item col-${col} row-${row}`, // Combined class names,
+        className: `grid-item col-${col} row-${row} ${loadAnim && 'bounceAnim'}`, // Combined class names,
         col: col,
         row: row,
       };
     });
     setGridItems(items);
-  }, [thumbsData, screenWidth]);
+  }, [thumbsData, screenWidth, loadAnim]);
 
   const handleFiltersClick = () => {
     setSeeFilters(!seeFilters);
@@ -85,12 +92,13 @@ function Portfolio() {
       </div>
       <div className="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {gridItems.map((item, index) => (
-          <div
+          <Link
+            to={`/project/${item.key}`}
             key={item.key}
             className={item.className ? item.className : ' '}
             style={{
               backgroundImage: `url(./thumbs/${item.key}.svg)`,
-              animationDelay: `${0.5 + index / 25 + item.col * 0.1}s`, // Apply animation delay formula
+              animationDelay: `${0.3 + index / 25 + item.col * 0.15}s`, // Apply animation delay formula
             }}
           >
             <div className="thumb-info">
@@ -98,7 +106,7 @@ function Portfolio() {
               <p>{item.title}</p>
               <p>{item.work}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

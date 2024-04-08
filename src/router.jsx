@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import AboutPage from './pages/AboutPage';
+import DevPage from './pages/DevPage';
 import PortfolioPage from './pages/PortfolioPage';
+import ProjectPage from './pages/ProjectPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
@@ -9,8 +11,10 @@ const router = createBrowserRouter([
     path: '/',
     children: [
       { path: '/', element: <App children={<PortfolioPage />} /> },
-      { path: '/design', element: <App children={<PortfolioPage />} /> },
       { path: '/about', element: <App children={<AboutPage />} /> },
+      { path: '/design', element: <App children={<PortfolioPage />} /> },
+      { path: '/dev', element: <App children={<DevPage />} /> },
+      { path: '/project', element: <App children={<ProjectPage />} /> },
       { path: '*', element: <App children={<NotFoundPage />} /> },
     ],
   },

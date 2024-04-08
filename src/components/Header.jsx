@@ -6,7 +6,7 @@ function Header() {
     <div className="header-container">
       <div className="header-top">
         <div className="header-left">
-          <Link to="/">
+          <Link to="/design">
             <div className="logo"></div>
           </Link>
 
@@ -18,7 +18,7 @@ function Header() {
               <Link to="/design">design</Link>
             </li>
             <li>
-              <Link to="/cv">cv</Link>
+              <Link to="/dev">dev</Link>
             </li>
             <li>
               <Link to="/blog">blog</Link>

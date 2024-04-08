@@ -98,7 +98,6 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: var(--radius);
-  animation: itemBounce 0.7s;
   animation-fill-mode: backwards;
 
   @media (max-width: 600px) {
@@ -115,6 +114,10 @@
     height: 70px;
     background-size: 40%;
   }
+}
+
+.bounceAnim {
+  animation: itemBounce 0.7s;
 }
 
 .thumb-info {
