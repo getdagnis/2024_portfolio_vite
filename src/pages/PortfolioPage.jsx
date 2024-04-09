@@ -59,7 +59,7 @@ function Portfolio() {
   };
 
   return (
-    <div className="portfolio">
+    <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
         <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
@@ -84,7 +84,7 @@ function Portfolio() {
           </li>
         </ul>
       </div>
-      <div className="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
+      <div id="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {gridItems.map((item, index) => (
           <Link
             to={`/project/${item.key}`}
@@ -94,6 +94,8 @@ function Portfolio() {
               backgroundImage: `url(./thumbs/${item.key}.svg)`,
               animationDelay: `${0.3 + index / 25 + item.col * 0.15}s`, // Apply animation delay formula
             }}
+            data-grid-col={item.col}
+            data-grid-row={item.row}
           >
             <div className="thumb-info thumb-info-hide-top">
               <h3>{item.name}</h3>

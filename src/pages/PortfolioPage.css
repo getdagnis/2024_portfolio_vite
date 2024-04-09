@@ -1,4 +1,4 @@
-.portfolio {
+#portfolio {
   flex: 1;
   padding: 0.5rem 0;
 }
@@ -80,7 +80,7 @@
   transition: transform 0.5s ease;
 }
 
-.grid-container {
+#grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
@@ -135,8 +135,24 @@
   transition: transform 0.3s ease;
 }
 
+.display-none {
+  display: none;
+}
+
 .thumb-info-hide-top {
   transform: translateY(-150px);
+}
+
+.thumb-info-hide-bottom {
+  transform: translateY(150px);
+}
+
+.thumb-info-hide-left {
+  transform: translateX(-250px);
+}
+
+.thumb-info-hide-right {
+  transform: translateX(250px);
 }
 
 .thumb-info h3 {
