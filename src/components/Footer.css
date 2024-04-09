@@ -35,6 +35,11 @@
   min-height: 30px;
   margin-top: 1rem;
   background: url(../assets/message.svg) no-repeat left top;
+
+  @media (max-width: 800px) {
+    width: 135px;
+    min-height: 36px;
+  }
 }
 
 #footer-container .footer-right {
@@ -43,12 +48,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media (max-width: 800px) {
+    text-align: left;
+    margin-top: 2rem;
+  }
 }
 
 #footer-container h3 {
   font-weight: 300;
   font-size: 0.85rem;
   margin-bottom: 0.5rem;
+  text-transform: none;
 }
 
 #footer-container h6 {
@@ -62,5 +73,5 @@
 }
 
 #footer-container strong {
-  margin-left: 0.25rem;
+  margin: 0 0 0 0.25rem;
 }

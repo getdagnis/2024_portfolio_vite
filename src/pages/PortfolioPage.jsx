@@ -10,7 +10,6 @@ function Portfolio() {
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
-  const [loadAnim, setLoadAnim] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,11 +35,6 @@ function Portfolio() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    console.log('🚀🚀 loadAnim 1', loadAnim);
-    window.location.pathname !== '/design' && setLoadAnim(true); // disable portfolio item bounce animation on non-home routes
-    console.log('🚀🚀 window.location.pathname !== "/design"', window.location.pathname !== '/design');
-    console.log('🚀🚀 loadAnim 2', loadAnim);
-
     const items = thumbsData.map((thumb, index) => {
       const row = Math.floor(index / 4) + 1; // Calculate row number
       const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
@@ -48,44 +42,44 @@ function Portfolio() {
       return {
         ...thumb,
         key: thumb.key,
-        className: `grid-item col-${col} row-${row} ${loadAnim && 'bounceAnim'}`, // Combined class names,
+        className: `grid-item col-${col} row-${row} bounceAnim}`, // Combined class names,
         col: col,
         row: row,
       };
     });
     setGridItems(items);
-  }, [thumbsData, screenWidth, loadAnim]);
+  }, [thumbsData, screenWidth]);
 
-  const handleFiltersClick = () => {
+  const handleFiltersToggle = () => {
     setSeeFilters(!seeFilters);
   };
 
-  const handleFilter = (keyword) => {
+  const handleFiltering = (keyword) => {
     setActiveFilter(keyword);
   };
 
   return (
     <div className="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
-        <div className="filters-button" onClick={handleFiltersClick}></div>
+        <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
-          <li className="close-filters" onClick={handleFiltersClick}></li>
-          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFilter('all')}>
+          <li className="close-filters" onClick={handleFiltersToggle}></li>
+          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFiltering('all')}>
             all
           </li>
-          <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFilter('own')}>
+          <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
             own projects
           </li>
-          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFilter('ide')}>
+          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFiltering('ide')}>
             created identities
           </li>
-          <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFilter('cli')}>
+          <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFiltering('cli')}>
             clients
           </li>
-          <li className={activeFilter === 'pub' ? 'active' : ''} onClick={() => handleFilter('pub')}>
+          <li className={activeFilter === 'pub' ? 'active' : ''} onClick={() => handleFiltering('pub')}>
             publishing
           </li>
-          <li className={activeFilter === 'oth' ? 'active' : ''} onClick={() => handleFilter('oth')}>
+          <li className={activeFilter === 'oth' ? 'active' : ''} onClick={() => handleFiltering('oth')}>
             other
           </li>
         </ul>
@@ -101,7 +95,7 @@ function Portfolio() {
               animationDelay: `${0.3 + index / 25 + item.col * 0.15}s`, // Apply animation delay formula
             }}
           >
-            <div className="thumb-info">
+            <div className="thumb-info thumb-info-hide-top">
               <h3>{item.name}</h3>
               <p>{item.title}</p>
               <p>{item.work}</p>

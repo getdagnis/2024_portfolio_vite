@@ -132,8 +132,11 @@
   color: white;
   font-size: 0.7rem;
   font-weight: 200;
-  transform: translateY(-150px);
   transition: transform 0.3s ease;
+}
+
+.thumb-info-hide-top {
+  transform: translateY(-150px);
 }
 
 .thumb-info h3 {

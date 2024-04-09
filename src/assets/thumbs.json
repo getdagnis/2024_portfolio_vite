@@ -1,26 +1,5 @@
 [
   {
-    "key": "satori",
-    "name": "¼ Satori",
-    "title": "Web Portal Startup",
-    "work": "Founder, Editor, Designer",
-    "year": "2003-2011",
-    "description": "I started www.satori.lv web portal for literature and philosophy while still in high school, collaborating with various friends. It was the first media on the Latvian internet dedicated to creative &amp; critical thought and quickly gained more attention than we initially expected. Starting around 2005 I stepped down as the editor but remained to be the main graphic designer for the project until 2012 when it was taken over by new management.",
-    "images": [
-      "1-satori_paper_fourth.jpg",
-      "2-birojnica_foto_outofboxarhictecture.jpg",
-      "3-satori_vzk_bw.jpg",
-      "4-satori_branding.jpg",
-      "5-satori_branding_three.jpg",
-      "6-satori_web_1.jpg",
-      "7-satori_banner_d.jpg",
-      "8-DSC_0372b.jpg",
-      "9-book_igltons_01.jpg"
-    ],
-    "allimages": [],
-    "show": "true"
-  },
-  {
     "key": "mars",
     "name": "Mission to Mars 2049",
     "title": "Board Game startup",
@@ -50,6 +29,28 @@
     ],
     "show": "true"
   },
+  {
+    "key": "satori",
+    "name": "¼ Satori",
+    "title": "Web Portal Startup",
+    "work": "Founder, Editor, Designer",
+    "year": "2003-2011",
+    "description": "I started www.satori.lv web portal for literature and philosophy while still in high school, collaborating with various friends. It was the first media on the Latvian internet dedicated to creative &amp; critical thought and quickly gained more attention than we initially expected. Starting around 2005 I stepped down as the editor but remained to be the main graphic designer for the project until 2012 when it was taken over by new management.",
+    "images": [
+      "1-satori_paper_fourth.jpg",
+      "2-birojnica_foto_outofboxarhictecture.jpg",
+      "3-satori_vzk_bw.jpg",
+      "4-satori_branding.jpg",
+      "5-satori_branding_three.jpg",
+      "6-satori_web_1.jpg",
+      "7-satori_banner_d.jpg",
+      "8-DSC_0372b.jpg",
+      "9-book_igltons_01.jpg"
+    ],
+    "allimages": [],
+    "show": "true"
+  },
+
   {
     "key": "dinamo",
     "name": "Dinamo Rīga",
