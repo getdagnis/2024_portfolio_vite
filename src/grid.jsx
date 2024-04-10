@@ -4,6 +4,7 @@ const launchGridAnimations = () => {
   let hoverRow = 0;
   let previousHoveredInfo = '';
 
+  // handle case when hover walker leaves the grid-container
   const gridContainer = document.getElementById('grid-container');
   gridContainer.addEventListener('mouseleave', () => {
     gridItems.forEach((gridItem) => {
@@ -22,10 +23,13 @@ const launchGridAnimations = () => {
       if (row === 1) {
         itemInfo.classList = 'thumb-info thumb-info-hide-top';
       }
+      if (itemInfo !== previousHoveredInfo) {
+        itemInfo.classList = 'thumb-info display-none transition-none';
+      }
     });
   });
 
-  // listen for hovered item and record its position
+  // check for currently hovered item and infect items around it
   for (const item of gridItems) {
     item.addEventListener('mouseenter', (e) => {
       const hovered = e.target;
@@ -44,7 +48,7 @@ const launchGridAnimations = () => {
 
         // hide .thumb-info child for all items except hovered and previous hovered
         if (itemInfo !== hoveredItemInfo && itemInfo !== previousHoveredInfo) {
-          itemInfo.classList = 'thumb-info display-none';
+          itemInfo.classList = 'thumb-info display-none transition-none';
         } else if (itemInfo === previousHoveredInfo) {
           itemInfo.classList = 'thumb-info slow-transition';
         } else {
@@ -52,11 +56,11 @@ const launchGridAnimations = () => {
         }
 
         // move .thumb-info for surrounding items to where it needs to slide-in from
-        if (itemRow + 1 === hoverRow && itemCol === hoverCol) {
+        if (itemRow + 1 === hoverRow && Math.abs(itemCol - hoverCol <= 1)) {
           itemInfo.classList.add('thumb-info-hide-bottom');
           itemInfo.classList.remove('display-none');
         }
-        if (itemRow - 1 === hoverRow && itemCol === hoverCol) {
+        if (itemRow - 1 === hoverRow && Math.abs(hoverCol - itemCol <= 1)) {
           itemInfo.classList.add('thumb-info-hide-top');
           itemInfo.classList.remove('display-none');
         }

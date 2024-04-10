@@ -132,10 +132,14 @@
   color: white;
   font-size: 0.7rem;
   font-weight: 200;
-  transition: transform 0.6s ease, opacity 0.01s ease;
+  transition: transform 0.3s ease, opacity 0.01s ease;
 }
 
 .display-none {
+  display: none;
+}
+
+.transition-none {
   transition: none;
 }
 
@@ -156,7 +160,7 @@
 }
 
 .slow-transition {
-  transition: transform 0.6s ease;
+  transition: transform 1.5s ease;
 }
 
 .opacity-0 {
