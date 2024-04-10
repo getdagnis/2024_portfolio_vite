@@ -2,6 +2,28 @@ const launchGridAnimations = () => {
   const gridItems = document.querySelectorAll('.grid-item');
   let hoverCol = 0;
   let hoverRow = 0;
+  let previousHoveredInfo = '';
+
+  const gridContainer = document.getElementById('grid-container');
+  gridContainer.addEventListener('mouseleave', () => {
+    gridItems.forEach((gridItem) => {
+      const itemInfo = gridItem.querySelector('.thumb-info');
+      const col = parseInt(gridItem.dataset.gridCol);
+      const row = parseInt(gridItem.dataset.gridRow);
+
+      itemInfo.classList = 'thumb-info display-none';
+
+      if (col === 4) {
+        itemInfo.classList = 'thumb-info thumb-info-hide-right';
+      }
+      if (col === 1) {
+        itemInfo.classList = 'thumb-info thumb-info-hide-left';
+      }
+      if (row === 1) {
+        itemInfo.classList = 'thumb-info thumb-info-hide-top';
+      }
+    });
+  });
 
   // listen for hovered item and record its position
   for (const item of gridItems) {
@@ -9,30 +31,46 @@ const launchGridAnimations = () => {
       const hovered = e.target;
       hoverCol = parseInt(hovered.dataset.gridCol);
       hoverRow = parseInt(hovered.dataset.gridRow);
-      const hoveredInfo = hovered.querySelector('.thumb-info');
+      const hoveredItemInfo = e.target.querySelector('.thumb-info');
 
       gridItems.forEach((gridItem) => {
         const itemRow = parseInt(gridItem.dataset.gridRow);
         const itemCol = parseInt(gridItem.dataset.gridCol);
         const itemInfo = gridItem.querySelector('.thumb-info');
-        itemInfo.classList = 'thumb-info';
 
         if (!gridItem || !itemInfo) {
           return;
         }
-        if (itemRow < hoverRow && Math.abs(itemCol - hoverCol) <= 1) {
-          itemInfo.classList.add('thumb-info-hide-bottom');
+
+        // hide .thumb-info child for all items except hovered and previous hovered
+        if (itemInfo !== hoveredItemInfo && itemInfo !== previousHoveredInfo) {
+          itemInfo.classList = 'thumb-info display-none';
+        } else if (itemInfo === previousHoveredInfo) {
+          itemInfo.classList = 'thumb-info slow-transition';
+        } else {
+          itemInfo.classList = 'thumb-info';
         }
-        if (itemRow > hoverRow && Math.abs(itemCol - hoverCol) <= 1) {
+
+        // move .thumb-info for surrounding items to where it needs to slide-in from
+        if (itemRow + 1 === hoverRow && itemCol === hoverCol) {
+          itemInfo.classList.add('thumb-info-hide-bottom');
+          itemInfo.classList.remove('display-none');
+        }
+        if (itemRow - 1 === hoverRow && itemCol === hoverCol) {
           itemInfo.classList.add('thumb-info-hide-top');
+          itemInfo.classList.remove('display-none');
         }
         if (itemRow === hoverRow && itemCol - hoverCol === 1) {
           itemInfo.classList.add('thumb-info-hide-left');
+          itemInfo.classList.remove('display-none');
         }
         if (itemRow === hoverRow && itemCol - hoverCol === -1) {
           itemInfo.classList.add('thumb-info-hide-right');
+          itemInfo.classList.remove('display-none');
         }
       });
+
+      previousHoveredInfo = hovered.querySelector('.thumb-info');
     });
   }
 };

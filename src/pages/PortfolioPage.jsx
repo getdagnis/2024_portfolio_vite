@@ -58,6 +58,19 @@ function Portfolio() {
     setActiveFilter(keyword);
   };
 
+  const getThumbInfoInitialClass = (col, row) => {
+    if (row === 1) {
+      return 'thumb-info thumb-info-hide-top';
+    }
+    if (col === 4) {
+      return 'thumb-info thumb-info-hide-right';
+    }
+    if (col === 1) {
+      return 'thumb-info thumb-info-hide-left';
+    }
+    return 'thumb-info thumb-info-hide-top';
+  };
+
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
@@ -97,7 +110,7 @@ function Portfolio() {
             data-grid-col={item.col}
             data-grid-row={item.row}
           >
-            <div className="thumb-info thumb-info-hide-top">
+            <div className={getThumbInfoInitialClass(item.col, item.row)}>
               <h3>{item.name}</h3>
               <p>{item.title}</p>
               <p>{item.work}</p>
