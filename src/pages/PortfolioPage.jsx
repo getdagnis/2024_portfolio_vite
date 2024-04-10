@@ -27,8 +27,8 @@ function Portfolio() {
   // to know each item's exact position in the grid for animation and hover effects
   const calculateColumns = (width) => {
     if (width > 1024) return 4;
-    if (width <= 1024 && width > 720) return 3;
-    if (width <= 720 && width > 360) return 2;
+    if (width <= 1024 && width >= 720) return 3;
+    if (width <= 720 && width >= 360) return 2;
     return 1;
   };
 

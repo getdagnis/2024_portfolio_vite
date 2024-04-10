@@ -18,10 +18,10 @@ function Header() {
               <Link to="/design">design</Link>
             </li>
             <li>
-              <Link to="/dev">dev</Link>
+              <Link to="/vote">vote</Link>
             </li>
             <li>
-              <Link to="/blog">blog</Link>
+              <Link to="/dev">dev</Link>
             </li>
             <li>
               <Link to="/about">about</Link>

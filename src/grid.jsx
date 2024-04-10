@@ -60,6 +60,10 @@ const launchGridAnimations = () => {
           itemInfo.classList.add('thumb-info-hide-bottom');
           itemInfo.classList.remove('display-none');
         }
+        if (itemRow + 1 === hoverRow && itemCol + hoverCol === 1) {
+          itemInfo.classList.add('thumb-info-hide-bottom');
+          itemInfo.classList.remove('display-none');
+        }
         if (itemRow - 1 === hoverRow && Math.abs(hoverCol - itemCol <= 1)) {
           itemInfo.classList.add('thumb-info-hide-top');
           itemInfo.classList.remove('display-none');
@@ -90,4 +94,6 @@ const checkForGridContainer = () => {
   setTimeout(checkForGridContainer, 100);
 };
 
-checkForGridContainer();
+if (window.innerWidth > 1024) {
+  checkForGridContainer();
+}
