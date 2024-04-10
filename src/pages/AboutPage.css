@@ -4,7 +4,8 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 70vw;
+  width: 90vw;
+  max-width: 480px;
   padding: 2rem;
   color: black;
   background-color: rgba(256, 256, 256, 0.9);

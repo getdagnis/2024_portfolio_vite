@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import './Header.css';
+import AboutPage from '../pages/AboutPage';
 
 function Header() {
+  const [showAbout, setShowAbout] = useState(false);
+
+  const handleAboutClose = () => {
+    setShowAbout(false);
+  };
+
   return (
     <div className="header-container">
       <div className="header-top">
@@ -24,7 +33,7 @@ function Header() {
               <Link to="/dev">dev</Link>
             </li>
             <li>
-              <Link to="/about">about</Link>
+              <div onClick={() => setShowAbout(true)}>about</div>
             </li>
           </ul>
         </nav>
@@ -38,6 +47,7 @@ function Header() {
           brands<strong className="b">become</strong>icons
         </span>
       </div>
+      {showAbout && <AboutPage showAbout={showAbout} onClose={handleAboutClose} />}
     </div>
   );
 }

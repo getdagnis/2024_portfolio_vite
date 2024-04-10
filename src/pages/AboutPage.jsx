@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
 
-function AboutPage() {
+function AboutPage({ onClose }) {
   return (
     <div className="about-container">
-      <Link to="/">
-        <div className="close"></div>
-      </Link>
+      <div className="close" onClick={onClose}></div>
       <h3>Dagnis Skurbe</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis tincidunt ullamcorper. Ut non
