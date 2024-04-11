@@ -1,6 +1,5 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
-import PortfolioPage from './pages/PortfolioPage';
 
 import './App.css';
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { isDesktop } from 'react-device-detect';
 
 import GridWalker from '../components/GridWalker';
-import thumbsData from '../assets/thumbs.json';
+import projects from '../projects.json';
 import './PortfolioPage.css';
 
 function Portfolio() {
@@ -36,7 +36,7 @@ function Portfolio() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    const items = thumbsData.map((thumb, index) => {
+    const items = projects.map((thumb, index) => {
       const row = Math.floor(index / 4) + 1; // Calculate row number
       const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
 
@@ -49,7 +49,7 @@ function Portfolio() {
       };
     });
     setGridItems(items);
-  }, [thumbsData, screenWidth]);
+  }, [projects, screenWidth]);
 
   const handleFiltersToggle = () => {
     setSeeFilters(!seeFilters);

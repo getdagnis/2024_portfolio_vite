@@ -35,19 +35,13 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/" activeClassName="active">
-                design
-              </NavLink>
+              <NavLink to="/">design</NavLink>
             </li>
             <li>
-              <NavLink to="/vote" activeClassName="active">
-                vote
-              </NavLink>
+              <NavLink to="/vote">vote</NavLink>
             </li>
             <li>
-              <NavLink to="/dev" activeClassName="active">
-                dev
-              </NavLink>
+              <NavLink to="/dev">dev</NavLink>
             </li>
             <li>
               <div onClick={() => setShowAbout(true)}>about</div>
