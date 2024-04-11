@@ -14,6 +14,7 @@
   position: relative;
   background: url('../assets/filter.svg') no-repeat;
   height: 10px;
+  width: 1rem;
   font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -47,7 +48,7 @@
   opacity: 0.5;
   cursor: pointer;
   transform: translate(0, 0);
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
 @keyframes appear {
@@ -59,15 +60,22 @@
   }
 }
 
-.filters-list > .active {
+.filters-list > .active,
+.filters-list > li:hover {
   opacity: 1;
 }
 
 .filters-list > .close-filters {
   display: inline-block;
-  height: 0.6rem;
-  width: 0.6rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  margin-bottom: -1px;
   background: url('../assets/cross.svg') no-repeat;
+}
+
+.filters-list > .close-filters:hover {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 .filters-shown > .filters-button {
@@ -89,14 +97,13 @@
 .grid-item {
   position: relative;
   display: block;
+  overflow: hidden;
   height: 140px;
   text-align: center;
-  transition: background-color 1s ease;
   background: white no-repeat center center;
   background-size: 65%;
   box-sizing: border-box;
   cursor: pointer;
-  overflow: hidden;
   border-radius: var(--radius);
   animation-fill-mode: backwards;
 
@@ -127,7 +134,7 @@
   align-items: flex-start;
   text-align: left;
   padding: 1rem;
-  background: #000000e1;
+  background: #000000dd;
   height: 100%;
   color: white;
   font-size: 0.7rem;
@@ -159,8 +166,8 @@
   transform: translateX(350px);
 }
 
-.slow-transition {
-  transition: transform 0.6s ease;
+.fast-transition {
+  transition: transform 0.1s ease;
 }
 
 .opacity-0 {

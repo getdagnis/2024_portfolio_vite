@@ -5,7 +5,7 @@ function AboutPage({ onClose }) {
   return (
     <div className="about-container">
       <div className="close" onClick={onClose}></div>
-      <h3>Dagnis Skurbe</h3>
+      <div className="logo"></div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis tincidunt ullamcorper. Ut non
         vehicula ex. Quisque tempus consequat nunc, eu porttitor tortor pharetra eget. Lorem ipsum dolor sit amet,

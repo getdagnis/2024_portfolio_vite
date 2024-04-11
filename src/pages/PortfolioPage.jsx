@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { isDesktop } from 'react-device-detect';
 
+import GridWalker from '../components/GridWalker';
 import thumbsData from '../assets/thumbs.json';
 import './PortfolioPage.css';
-import { Link } from 'react-router-dom';
 
 function Portfolio() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -77,8 +78,8 @@ function Portfolio() {
         <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
-          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFiltering('all')}>
-            all
+          <li className={activeFilter === 'popular' ? 'active' : ''} onClick={() => handleFiltering('popular')}>
+            popular
           </li>
           <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
             own projects

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './Header.css';
 import AboutPage from '../pages/AboutPage';
@@ -11,26 +11,43 @@ function Header() {
     setShowAbout(false);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        handleAboutClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    // Clean-up function to remove listener on unmount
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleAboutClose]);
+
   return (
     <div className="header-container">
       <div className="header-top">
         <div className="header-left">
-          <Link to="/design">
+          <NavLink to="/">
             <div className="logo"></div>
-          </Link>
+          </NavLink>
 
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
         <nav>
           <ul>
-            <li className="active">
-              <Link to="/design">design</Link>
+            <li>
+              <NavLink to="/" activeClassName="active">
+                design
+              </NavLink>
             </li>
             <li>
-              <Link to="/vote">vote</Link>
+              <NavLink to="/vote" activeClassName="active">
+                vote
+              </NavLink>
             </li>
             <li>
-              <Link to="/dev">dev</Link>
+              <NavLink to="/dev" activeClassName="active">
+                dev
+              </NavLink>
             </li>
             <li>
               <div onClick={() => setShowAbout(true)}>about</div>

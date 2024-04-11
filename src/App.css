@@ -3,6 +3,8 @@
 :root {
   --siteBorder: 10px;
   --background: #e6ff08;
+  --yellow: #e6ff08;
+  --yellowTransp: #e6ff08e5;
   --radius: 0.5rem;
 }
 

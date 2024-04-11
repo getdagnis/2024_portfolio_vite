@@ -36,8 +36,8 @@ nav > ul > li {
   color: black;
 }
 
-nav > ul > li.active {
-  text-decoration: underline;
+nav > ul > li > .active {
+  text-decoration: line-through;
 }
 
 nav > ul > li:hover {

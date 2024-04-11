@@ -1,4 +1,4 @@
-const launchGridAnimations = () => {
+const launchGridWalker = () => {
   const gridItems = document.querySelectorAll('.grid-item');
   let hoverCol = 0;
   let hoverRow = 0;
@@ -29,7 +29,7 @@ const launchGridAnimations = () => {
     });
   });
 
-  // check for currently hovered item and infect items around it
+  // define currently hovered item and have only items around it "infected"
   for (const item of gridItems) {
     item.addEventListener('mouseenter', (e) => {
       const hovered = e.target;
@@ -48,6 +48,7 @@ const launchGridAnimations = () => {
 
         // hide .thumb-info child for all items except hovered and previous hovered
         if (itemInfo !== hoveredItemInfo && itemInfo !== previousHoveredInfo) {
+          // let them finish transition first before hiding them
           itemInfo.classList = 'thumb-info display-none transition-none';
         } else if (itemInfo === previousHoveredInfo) {
           itemInfo.classList = 'thumb-info slow-transition';
@@ -87,7 +88,7 @@ const launchGridAnimations = () => {
 const checkForGridContainer = () => {
   const gridContainer = document.getElementById('grid-container');
   if (gridContainer) {
-    launchGridAnimations();
+    launchGridWalker();
     return;
   }
   // If not found yet, check again after a delay
@@ -96,4 +97,25 @@ const checkForGridContainer = () => {
 
 if (window.innerWidth > 1024) {
   checkForGridContainer();
+}
+
+// checks the URL path every 200ms and launches the script again when user returns to portfolio
+let initialPath = window.location.pathname === '/' || window.location.pathname === '/design' ? true : false;
+let waitingForInitialPath = false;
+
+function checkUrlPath() {
+  const currentPath = window.location.pathname;
+
+  if (initialPath && currentPath !== '/' && currentPath !== '/design') {
+    waitingForInitialPath = true;
+  } else if ((waitingForInitialPath && currentPath === '/') || currentPath === '/design') {
+    waitingForInitialPath = false;
+    checkForGridContainer();
+  }
+
+  setTimeout(checkUrlPath, 200);
+}
+
+if (window.innerWidth > 1024) {
+  checkUrlPath();
 }
