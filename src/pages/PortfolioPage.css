@@ -134,7 +134,7 @@
   align-items: flex-start;
   text-align: left;
   padding: 1rem;
-  background: #000000dd;
+  background: var(--walker);
   height: 100%;
   color: white;
   font-size: 0.7rem;

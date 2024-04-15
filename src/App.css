@@ -2,11 +2,13 @@
 
 :root {
   --siteBorder: 10px;
-  --background: #e6ff08;
+  --background: #e8e8e8;
   --yellow: #e6ff08;
   --yellowTransp: #e6ff08e5;
   --darkYellow: #c6de06;
+  --red: #f10e21;
   --radius: 0.5rem;
+  --walker: #f10e21f0; /* black #000000dd; */
 }
 
 *,
