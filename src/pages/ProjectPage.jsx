@@ -9,7 +9,7 @@ function ProjectPage() {
   console.log('🚀🚀 projects', projects);
 
   document.body.style.transition = 'background-color 1s ease';
-  document.body.style.backgroundColor = '#777';
+  document.body.style.backgroundColor = '#bbb';
 
   return (
     <div id="project-container">
