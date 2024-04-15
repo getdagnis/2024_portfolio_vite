@@ -10,8 +10,8 @@
   --accent: #ec002ff8; /* crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
   --radius: 0.5rem;
   --radiusSmall: 0.25rem;
-  --walker: #ff0033ef; /* dark olive 3c3c1af8; crimson dc143cf8; e30039f8; red ec002ff8; electric 00e1c0ef; black #000000dd; */
-  --walkerText: #37000b; /* dark electric 00382f */
+  --walker: #00e1c0ef; /* dark olive 3c3c1af8; crimson dc143cf8; red e30039f8; ec002ff8; ff0033ef; electric 00e1c0ef; black #000000dd; */
+  --walkerText: #00382f; /* dark electric 00382f, dark red 37000b */
 }
 
 *,
