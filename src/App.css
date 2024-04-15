@@ -2,15 +2,16 @@
 
 :root {
   --siteBorder: 10px;
-  --background: #eeeeee; /* grey eeeeee; greenish #d9dfcd; yellow e6ff08 */
-  --gridItem: #ffffffbb; /* almost white #ffffffbb; */
+  --background: #fff; /* grey eeeeee; greenish #d9dfcd; greenish 2 bec4b8; yellow e6ff08 */
+  --gridItem: #eeeeee; /* almost white #ffffffbb; */
   --yellow: #e6ff08;
   --yellowTransp: #e6ff08e5;
   --darkYellow: #c6de06;
   --accent: #ec002ff8; /* crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
   --radius: 0.5rem;
   --radiusSmall: 0.25rem;
-  --walker: #d9002bf8; /* dark olive 3c3c1af8; crimson dc143cf8; red ec002ff8; black #000000dd; */
+  --walker: #ff0033ef; /* dark olive 3c3c1af8; crimson dc143cf8; e30039f8; red ec002ff8; electric 00e1c0ef; black #000000dd; */
+  --walkerText: #37000b; /* dark electric 00382f */
 }
 
 *,

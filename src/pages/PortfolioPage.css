@@ -135,10 +135,10 @@
   padding: 1rem;
   background: var(--walker);
   height: 100%;
-  color: white;
+  color: var(--walkerText);
   font-size: 0.7rem;
-  font-weight: 200;
-  transition: transform 0.5s ease, opacity 0.01s ease;
+  font-weight: 400;
+  transition: transform 0.6s ease, opacity 0.01s ease;
 }
 
 .display-none {
@@ -165,8 +165,8 @@
   transform: translateX(350px);
 }
 
-.fast-transition {
-  transition: transform 0.1s ease;
+.slow-transition {
+  transition: transform 0.6s ease;
 }
 
 .opacity-0 {
