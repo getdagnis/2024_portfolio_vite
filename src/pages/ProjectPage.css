@@ -1,13 +1,10 @@
 #project-container {
   padding: 1rem 0.2rem;
-}
-
-#project-grid {
-  display: flex;
+  min-height: calc(100vh - 120px - 150px);
 }
 
 #project-nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 200px;
   padding: 1rem 0 1rem 1rem;
@@ -46,7 +43,7 @@
 }
 
 #project-details {
-  padding: 1rem 1rem 0 0;
+  padding: 1rem 0 0 0;
 }
 
 .proj-head {
@@ -70,7 +67,8 @@
 }
 
 #project-details .title-divider {
-  padding: 0 0.5rem;
+  padding: 0;
+  margin: 0 0.35rem;
 }
 
 #project-details .main-img {
@@ -81,5 +79,6 @@
 }
 
 #project-details .description {
+  display: block;
   margin-top: 1rem;
 }

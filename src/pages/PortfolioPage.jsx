@@ -12,6 +12,9 @@ function Portfolio() {
   const [seeFilters, setSeeFilters] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
 
+  document.body.style.transition = 'background-color 1s ease';
+  document.body.style.backgroundColor = '#e6ff08';
+
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
