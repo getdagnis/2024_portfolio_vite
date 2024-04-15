@@ -2,13 +2,15 @@
 
 :root {
   --siteBorder: 10px;
-  --background: #e8e8e8;
+  --background: #eeeeee; /* grey eeeeee; greenish #d9dfcd; yellow e6ff08 */
+  --gridItem: #ffffffbb; /* almost white #ffffffbb; */
   --yellow: #e6ff08;
   --yellowTransp: #e6ff08e5;
   --darkYellow: #c6de06;
-  --red: #f10e21;
+  --accent: #ec002ff8; /* crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
   --radius: 0.5rem;
-  --walker: #f10e21f0; /* black #000000dd; */
+  --radiusSmall: 0.25rem;
+  --walker: #dc143cf8; /* dark olive 3c3c1af8; crimson dc143cf8; red ec002ff8; black #000000dd; */
 }
 
 *,
@@ -34,12 +36,14 @@ body {
   border: var(--siteBorder) solid black;
 }
 
-.site-container {
+#site-container {
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   flex-direction: column;
+  justify-content: space-between; /* Align content at top and bottom */
   width: 90vw;
-  max-width: 1120px;
+  max-width: 1200px;
+  height: 100%;
   min-height: calc(100vh - var(--siteBorder) * 2);
 
   @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {

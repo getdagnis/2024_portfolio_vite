@@ -103,8 +103,13 @@ if (window.innerWidth > 1024) {
 let initialPath = window.location.pathname === '/' || window.location.pathname === '/design' ? true : false;
 let waitingForInitialPath = false;
 
+let checkingCount = 0;
+
 function checkUrlPath() {
   const currentPath = window.location.pathname;
+  checkingCount++;
+
+  console.log('🚀🚀 checking', checkingCount);
 
   if (initialPath && currentPath !== '/' && currentPath !== '/design') {
     waitingForInitialPath = true;
@@ -113,7 +118,7 @@ function checkUrlPath() {
     checkForGridContainer();
   }
 
-  setTimeout(checkUrlPath, 200);
+  setTimeout(checkUrlPath, 300);
 }
 
 if (window.innerWidth > 1024) {

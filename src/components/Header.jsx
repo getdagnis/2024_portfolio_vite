@@ -12,15 +12,30 @@ function Header() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
+    if (!showAbout) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
         handleAboutClose();
       }
     };
+
+    const handleMouseDown = (e) => {
+      const aboutPage = document.getElementById('about-container');
+      if (aboutPage && !aboutPage.contains(e.target)) {
+        e.preventDefault();
+        handleAboutClose();
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    // Clean-up function to remove listener on unmount
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleAboutClose]);
+    window.addEventListener('mousedown', handleMouseDown);
+    // clean-up
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, [handleAboutClose, handleAboutClose]);
 
   return (
     <div className="header-container">
@@ -58,7 +73,7 @@ function Header() {
           brands<strong className="b">become</strong>icons
         </span>
       </div>
-      {showAbout && <AboutPage showAbout={showAbout} onClose={handleAboutClose} />}
+      <AboutPage showAbout={showAbout} onClose={handleAboutClose} />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 #portfolio {
-  flex: 1;
   padding: 0.5rem 0;
 }
 
@@ -100,7 +99,7 @@
   overflow: hidden;
   height: 140px;
   text-align: center;
-  background: white no-repeat center center;
+  background: var(--gridItem) no-repeat center center;
   background-size: 65%;
   box-sizing: border-box;
   cursor: pointer;

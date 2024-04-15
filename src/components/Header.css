@@ -34,16 +34,18 @@ nav > ul > li {
   width: auto;
   margin-left: 1.5rem;
   color: black;
+  transition: all 0.3s ease;
 }
 
 nav > ul > li > .active {
   text-decoration: line-through;
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--accent);
   text-decoration-thickness: 0.2rem;
 }
 
 nav > ul > li:hover {
-  text-decoration: underline;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.1rem;
   cursor: pointer;
 }
 

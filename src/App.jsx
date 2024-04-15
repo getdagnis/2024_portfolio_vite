@@ -5,7 +5,7 @@ import './App.css';
 
 function App({ children }) {
   return (
-    <div className="site-container">
+    <div id="site-container">
       <Header />
       {children}
       <Footer />
