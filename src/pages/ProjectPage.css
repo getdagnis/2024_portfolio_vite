@@ -1,6 +1,10 @@
 #project-container {
   padding: 1rem 0.2rem;
-  min-height: calc(100vh - 120px - 150px);
+  min-height: calc(100vh - 120px);
+}
+
+#project-grid {
+  display: flex;
 }
 
 #project-nav {
@@ -68,7 +72,6 @@
 
 #project-details .title-divider {
   padding: 0;
-  margin: 0 0.35rem;
 }
 
 #project-details .main-img {
@@ -79,6 +82,5 @@
 }
 
 #project-details .description {
-  display: block;
   margin-top: 1rem;
 }
