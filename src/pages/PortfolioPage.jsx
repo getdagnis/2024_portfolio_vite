@@ -10,7 +10,7 @@ function Portfolio() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('ide');
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,7 +43,7 @@ function Portfolio() {
       return {
         ...thumb,
         key: thumb.key,
-        className: `grid-item col-${col} row-${row} bounceAnim}`, // Combined class names,
+        className: `grid-item col-${col} row-${row} bounceAnim`, // Combined class names,
         col: col,
         row: row,
       };
@@ -78,14 +78,11 @@ function Portfolio() {
         <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
-          <li className={activeFilter === 'popular' ? 'active' : ''} onClick={() => handleFiltering('popular')}>
-            popular
+          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFiltering('ide')}>
+            created identities
           </li>
           <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
             own projects
-          </li>
-          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFiltering('ide')}>
-            created identities
           </li>
           <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFiltering('cli')}>
             clients
@@ -101,12 +98,12 @@ function Portfolio() {
       <div id="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {gridItems.map((item, index) => (
           <Link
-            to={`/project/${item.key}`}
+            to={`/design/project/${item.key}`}
             key={item.key}
             className={item.className ? item.className : ' '}
             style={{
               backgroundImage: `url(./thumbs/${item.key}.svg)`,
-              animationDelay: `${0.3 + index / 25 + item.col * 0.15}s`, // Apply animation delay formula
+              animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
             }}
             data-grid-col={item.col}
             data-grid-row={item.row}

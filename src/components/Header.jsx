@@ -37,6 +37,8 @@ function Header() {
     };
   }, [handleAboutClose, handleAboutClose]);
 
+  const designActive = window.location.pathname.includes('/design') || window.location.pathname === '/design';
+
   return (
     <div className="header-container">
       <div className="header-top">
@@ -47,10 +49,13 @@ function Header() {
 
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
+
         <nav>
           <ul>
             <li>
-              <NavLink to="/">design</NavLink>
+              <NavLink to="/" className={designActive ? 'active' : ''}>
+                design
+              </NavLink>
             </li>
             <li>
               <NavLink to="/vote">vote</NavLink>

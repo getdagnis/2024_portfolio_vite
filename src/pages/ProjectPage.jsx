@@ -7,10 +7,8 @@ function ProjectPage() {
   const params = useParams();
   const proj = projects.find((obj) => obj.key === params.key);
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 150, left: 0, behavior: 'smooth' });
   }, [params]);
-  console.log('🚀🚀 params', params);
-  console.log('🚀🚀 projects', projects);
 
   return (
     <div id="project-container">
@@ -28,17 +26,19 @@ function ProjectPage() {
           <p className="description">{proj.description}</p>
         </div>
         <div id="project-nav">
-          {projects.map((p, index) => (
-            <Link
-              to={`/project/${p.key}`}
-              key={p.key}
-              className={p.key === params.key ? 'proj-thumb active' : 'proj-thumb'}
-              style={{
-                backgroundImage: `url(../thumbs/${p.key}.svg)`,
-                animationDelay: `${0.3 + index / 25}s`, // apply bounce animation delay
-              }}
-            ></Link>
-          ))}
+          <div className="project-nav-open">
+            {projects.map((p, index) => (
+              <Link
+                to={`/design/project/${p.key}`}
+                key={p.key}
+                className={p.key === params.key ? 'proj-thumb active' : 'proj-thumb'}
+                style={{
+                  backgroundImage: `url(../../thumbs/${p.key}.svg)`,
+                  animationDelay: `${0.3 + index / 25}s`, // apply bounce animation delay
+                }}
+              ></Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 #project-container {
   padding: 1rem 0.2rem;
-
+  position: relative;
 }
 
 #project-grid {
@@ -9,6 +9,23 @@
 
 #project-nav {
   display: none;
+  width: 2rem;
+  background-color: #eee;
+  border-radius: var(--radiusSmall);
+  margin-left: 1rem;
+}
+
+#project-nav:hover > .project-nav-open {
+  display: flex;
+}
+
+.project-nav-open {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding-right: 1rem;
   flex-direction: column;
   width: 200px;
   padding: 1rem 0 1rem 1rem;
@@ -21,13 +38,13 @@
 #project-details {
   display: flex;
   flex-direction: column;
-  flex: 1
-  padding: 1rem 0 1rem 1rem;
+  flex: 1;
+  padding: 1rem 0;
 }
 
 .proj-head {
   width: 100%;
-  height: 6rem;
+  height: auto;
 }
 
 .proj-head h3 {
@@ -51,7 +68,7 @@
 
 #project-details .main-img {
   margin: 1rem 0;
-  height: 540px;
+  width: 100%;
   object-fit: cover;
   border-radius: var(--radiusSmall);
 }

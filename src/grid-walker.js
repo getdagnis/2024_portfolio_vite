@@ -107,9 +107,8 @@ let checkingCount = 0;
 
 function checkUrlPath() {
   const currentPath = window.location.pathname;
-  checkingCount++;
-
-  console.log('🚀🚀 checking', checkingCount);
+  // checkingCount++;
+  // console.log('🚀🚀 checking', checkingCount);
 
   if (initialPath && currentPath !== '/' && currentPath !== '/design') {
     waitingForInitialPath = true;
