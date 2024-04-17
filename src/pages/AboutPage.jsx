@@ -7,25 +7,25 @@ function AboutPage({ showAbout, onClose }) {
       <div className={showAbout ? 'about-background' : 'hidden'}></div>
       <div id="about-container" className={showAbout ? ' ' : 'about-hidden'}>
         <div className="close" onClick={onClose}></div>
+        <img className="dag-img" src="../dag_square.png" alt="Dagnis Skurbe" />
         <div className="logo"></div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis tincidunt ullamcorper. Ut non
-          vehicula ex. Quisque tempus consequat nunc, eu porttitor tortor pharetra eget. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Duis vel lacus odio. Ut vitae tempus nibh. Nunc quis mauris velit. Vivamus
-          dignissim lectus nec arcu fermentum, id rutrum eros ultricies. Sed aliquam enim in euismod tempus. Proin eget
-          velit a purus imperdiet bibendum vel at ex.
+        <p className="about-tagline">
+          Creating things using <span>code & design</span> since 2003.
         </p>
         <p>
-          Phasellus non elementum quam. Nulla dignissim pharetra eros, nec porta magna eleifend eu. Nullam id convallis
-          arcu. Pellentesque suscipit euismod ex. Nullam ut leo sapien. Pellentesque congue, justo in pellentesque
-          convallis, nunc nisi efficitur turpis, ac feugiat odio risus at magna. Nunc rutrum nunc sed dictum aliquet.
-          Etiam sed tempus nulla. Nullam eget diam eu sem cursus pellentesque. Maecenas sit amet urna at ligula
-          tincidunt congue.
+          For 20+ years Dagnis has worked professionally as a Software Developer, Graphic Designer and Creative Director
+          in Advertising, Tech and Entertainment industries in Riga, Latvia and London.
         </p>
         <p>
-          Morbi porta libero risus, at rutrum arcu vulputate vitae. Sed rhoncus sit amet mi sed porttitor. Sed gravida
-          rutrum risus ac faucibus. Cras vitae nulla id lorem viverra finibus. Ut pretium tristique posuere. Nulla
-          facilisi. Praesent interdum tristique tellus, eu egestas nibh. Phasellus suscipit eleifend tincidunt.{' '}
+          He is currently working as a full-stack developer using React/Node.js with a special focus on UX and Creative
+          Direction.
+        </p>
+        <p>
+          <span>Dagnis is available</span> for full-time or part-time work as a software engineer, graphic designer and
+          consultant for both startups and large enterprises.
+        </p>
+        <p>
+          Have a project in mind? Get in touch via <span>dagnis@dagn.is</span> or the links below.
         </p>
       </div>
     </>

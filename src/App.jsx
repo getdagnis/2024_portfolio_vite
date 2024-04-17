@@ -5,11 +5,14 @@ import './App.css';
 
 function App({ children }) {
   return (
-    <div id="site-container">
-      <Header />
-      {children}
-      <Footer />
-    </div>
+    <>
+      <div id="curtain"></div>
+      <div id="site-container">
+        <Header />
+        {children}
+        <Footer />
+      </div>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import projects from '../projects.json';
 import './ProjectPage.css';
@@ -6,12 +6,17 @@ import './ProjectPage.css';
 function ProjectPage() {
   const params = useParams();
   const proj = projects.find((obj) => obj.key === params.key);
+  const scrollRef = useRef(null); // Create a ref
+
   useEffect(() => {
-    window.scrollTo({ top: 150, left: 0, behavior: 'smooth' });
+    // check if the ref is attached to a rendered element
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ top: 150, left: 0, behavior: 'smooth' });
+    }
   }, [params]);
 
   return (
-    <div id="project-container">
+    <div id="project-container" ref={scrollRef}>
       <div id="project-grid">
         <div id="project-details">
           <div className="proj-head">

@@ -21,10 +21,25 @@
   transition: transform 0.3s ease-in;
 }
 
+#about-container .dag-img {
+  display: none;
+  width: 100px;
+  border-radius: 50%;
+}
+
 #about-container .logo {
-  width: 250px;
+  width: 320px;
   height: 50px;
-  background-image: url(../assets/logo_mob.svg);
+  background-image: url(../assets/logo_full.svg);
+  margin: 0;
+}
+
+#about-container span {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.2rem;
+  font-weight: 600;
 }
 
 #about-container .close {
@@ -49,6 +64,10 @@
 
 #about-container p {
   margin-bottom: 1rem;
+}
+
+.about-tagline {
+  font-style: italic;
 }
 
 .about-background {

@@ -35,6 +35,7 @@ nav > ul > li {
   margin-left: 1.5rem;
   color: black;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 nav > ul > li:hover {
@@ -45,8 +46,18 @@ nav > ul > li:hover {
 
 nav > ul > li > .active {
   text-decoration: line-through;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 0.2rem;
+  /* text-decoration-color: black; */
+  color: black;
+  text-decoration-thickness: 0.1rem;
+}
+
+nav > ul > li > .active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1rem;
+  background-color: var(--accent);
+  margin-top: -1.15rem;
 }
 
 nav > ul > li > .active:hover {
@@ -78,7 +89,17 @@ nav > ul > li > .active:hover {
   background-position: right center;
   background-size: 950px 16px;
   margin: 0 0.75rem;
+  transition: background-position-x 3s ease;
   animation: slideFromLeft 2s ease;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    background-position-x: -2000px;
+  }
+  100% {
+    background-position-x: right;
+  }
 }
 
 .become-left {
@@ -104,25 +125,15 @@ strong {
 }
 
 .hamburger {
-  padding: 15px 15px;
   display: none;
+  text-align: right;
+  padding: 3px 0;
+  height: 30px;
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
   overflow: visible;
-}
-.hamburger:hover {
-  opacity: 0.7;
-}
-.hamburger.is-active:hover {
-  opacity: 0.7;
 }
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
@@ -143,14 +154,12 @@ strong {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  width: 40px;
-  height: 4px;
+  width: 34px;
+  height: 3px;
   background-color: #000;
-  border-radius: 4px;
+  border-radius: 2px;
   position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
+  transition: transform 0.15s ease;
 }
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -163,7 +172,6 @@ strong {
 .hamburger-inner::after {
   bottom: -10px;
 }
-
 .hamburger .hamburger-inner {
   transition: background-color 0.125s 0.175s ease-in;
 }
@@ -194,15 +202,6 @@ strong {
   transform: translate3d(-80px, 80px, 0) rotate(-45deg);
   transition: right 0.125s ease-out, top 0.05s 0.125s linear,
     transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-@keyframes slideFromLeft {
-  0% {
-    background-position-x: -2000px;
-  }
-  100% {
-    background-position-x: right;
-  }
 }
 
 @media (max-width: 800px) {

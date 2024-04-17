@@ -6,10 +6,27 @@ import AboutPage from '../pages/AboutPage';
 
 function Header() {
   const [showAbout, setShowAbout] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [arrowState, setArrowState] = useState({
+    backgroundPositionX: 'right',
+    transition: 'background-position-x 5s ease',
+  });
+
+  const handleMouseDown = () => setArrowState({ backgroundPositionX: '-60vw' });
+  const handleMouseUp = () =>
+    setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
 
   const handleAboutClose = () => {
     setShowAbout(false);
   };
+
+  // useEffect(() => {
+  //   if (showAbout) {
+  //     document.body.style.overflow = 'hidden'; // disable body background scrolling
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // }, [showAbout]);
 
   useEffect(() => {
     if (!showAbout) return;
@@ -37,6 +54,10 @@ function Header() {
     };
   }, [handleAboutClose, handleAboutClose]);
 
+  function handleHamburgerClick() {
+    setShowMenu(!showMenu);
+  }
+
   const designActive = window.location.pathname.includes('/design') || window.location.pathname === '/design';
 
   return (
@@ -49,7 +70,14 @@ function Header() {
 
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
-
+        <div
+          className={`hamburger hamburger--collapse ${showMenu ? 'is-active' : ''}`}
+          onClick={() => handleHamburgerClick()}
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </div>
         <nav>
           <ul>
             <li>
@@ -57,11 +85,11 @@ function Header() {
                 design
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/vote">vote</NavLink>
-            </li>
+            </li> */}
             <li>
-              <NavLink to="/dev">dev</NavLink>
+              <NavLink to="/dev">skills</NavLink>
             </li>
             <li>
               <div onClick={() => setShowAbout(true)}>about</div>
@@ -73,7 +101,12 @@ function Header() {
         <span className="become-left">
           ideas<strong>become</strong>brands
         </span>
-        <span className="become-middle"></span>
+        <span
+          className="become-middle"
+          style={arrowState}
+          onMouseEnter={handleMouseDown}
+          onMouseLeave={handleMouseUp}
+        ></span>
         <span className="become-right">
           brands<strong className="b">become</strong>icons
         </span>

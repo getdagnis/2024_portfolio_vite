@@ -1,5 +1,7 @@
 #portfolio {
   padding: 0.5rem 0;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .portfolio-filters {
@@ -46,7 +48,7 @@
   opacity: 0.5;
   cursor: pointer;
   transform: translate(0, 0);
-  transition: transform 0.5s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.3s ease, text-decoration 1s ease;
 }
 
 @keyframes appear {
@@ -58,7 +60,13 @@
   }
 }
 
-.filters-list > .active,
+.filters-list > .active {
+  opacity: 1;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.1rem;
+  text-decoration-color: var(--accent);
+}
+
 .filters-list > li:hover {
   opacity: 1;
 }
@@ -137,11 +145,13 @@
   color: var(--walkerText);
   font-size: 0.7rem;
   font-weight: 400;
+  border: var(--itemBorder);
+  border-radius: var(--radius);
   transition: transform 0.5s ease, opacity 0.01s ease;
 }
 
 .slow-transition {
-  transition: transform 0.6s ease;
+  transition: transform 0.75s ease;
 }
 
 .display-none {
@@ -191,5 +201,14 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes itemRed {
+  0% {
+    background-color: var(--gridItem);
+  }
+  100% {
+    background-color: var(--walker);
   }
 }

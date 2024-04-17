@@ -13,7 +13,7 @@ function Footer() {
             <h3>Thanks for visiting! Get in touch!</h3>
             <ul>
               <li>
-                mail: <strong>me@dagn.is</strong>
+                mail: <strong>dagnis@dagn.is</strong>
               </li>
               <li>
                 x: <strong>@getdagnis</strong>

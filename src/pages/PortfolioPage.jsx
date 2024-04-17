@@ -36,18 +36,21 @@ function Portfolio() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    const items = projects.map((thumb, index) => {
-      const row = Math.floor(index / 4) + 1; // Calculate row number
-      const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
+    // filter items that are supposed to be shown and update necessary properties
+    const items = projects
+      .filter((thumb) => thumb.show === true)
+      .map((thumb, index) => {
+        const row = Math.floor(index / 4) + 1; // Calculate row number
+        const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
 
-      return {
-        ...thumb,
-        key: thumb.key,
-        className: `grid-item col-${col} row-${row} bounceAnim`, // Combined class names,
-        col: col,
-        row: row,
-      };
-    });
+        return {
+          ...thumb,
+          key: thumb.key,
+          className: `grid-item col-${col} row-${row} bounceAnim`, // Combined class names,
+          col: col,
+          row: row,
+        };
+      });
     setGridItems(items);
   }, [projects, screenWidth]);
 
@@ -96,25 +99,28 @@ function Portfolio() {
         </ul>
       </div>
       <div id="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
-        {gridItems.map((item, index) => (
-          <Link
-            to={`/design/project/${item.key}`}
-            key={item.key}
-            className={item.className ? item.className : ' '}
-            style={{
-              backgroundImage: `url(./thumbs/${item.key}.svg)`,
-              animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
-            }}
-            data-grid-col={item.col}
-            data-grid-row={item.row}
-          >
-            <div className={getThumbInfoInitialClass(item.col, item.row)}>
-              <h3>{item.name}</h3>
-              <p>{item.title}</p>
-              <p>{item.work}</p>
-            </div>
-          </Link>
-        ))}
+        {gridItems.map(
+          (item, index) =>
+            item.show === true && (
+              <Link
+                to={`/design/project/${item.key}`}
+                key={item.key}
+                className={item.className ? item.className : ' '}
+                style={{
+                  backgroundImage: `url(./thumbs/${item.key}.svg)`,
+                  animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
+                }}
+                data-grid-col={item.col}
+                data-grid-row={item.row}
+              >
+                <div className={getThumbInfoInitialClass(item.col, item.row)}>
+                  <h3>{item.name}</h3>
+                  <p>{item.title}</p>
+                  <p>{item.work}</p>
+                </div>
+              </Link>
+            )
+        )}
       </div>
     </div>
   );

@@ -26,7 +26,7 @@
       "image-6.jpg",
       "image-7.jpg"
     ],
-    "show": "true"
+    "show": true
   },
   {
     "key": "satori",
@@ -47,7 +47,7 @@
       "9-book_igltons_01.jpg"
     ],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
 
   {
@@ -82,7 +82,40 @@
       "image-8.jpg",
       "image-9.jpg"
     ],
-    "show": "true"
+    "show": true
+  },
+  {
+    "key": "liepaja",
+    "name": "Liepājas Basketbols",
+    "title": "Basketball Club",
+    "work": "Logo, Identity, Jerseyse",
+    "year": "2018",
+    "description": "Logo, identity and other graphic works for the basketboll club of Liepāja, the third largest city in Latvia.",
+    "images": ["image-0.jpg"],
+    "allimages": ["image-0.jpg"],
+    "show": true
+  },
+  {
+    "key": "cash",
+    "name": "CashKiosk",
+    "title": "Quick Loans",
+    "work": "Logo, Identity",
+    "year": "2021",
+    "description": "Logo, identity and other graphic works for the Ukraine based quick loan company.",
+    "images": [],
+    "allimages": [],
+    "show": true
+  },
+  {
+    "key": "pablo",
+    "name": "Pablo",
+    "title": "Quick Loans",
+    "work": "Logo, Identity, App",
+    "year": "2021",
+    "description": "Logo, identity and app for the Ukraine based quick loan company.",
+    "images": [],
+    "allimages": [],
+    "show": true
   },
   {
     "key": "basket",
@@ -93,9 +126,8 @@
     "description": "basket description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": false
   },
-
   {
     "key": "sponsor",
     "name": "SponsorKing",
@@ -105,7 +137,7 @@
     "description": "sponsor description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "made",
@@ -116,7 +148,7 @@
     "description": "made description",
     "images": ["_template.jpg", "image-0.jpg"],
     "allimages": ["_template.jpg", "image-0.jpg"],
-    "show": "true"
+    "show": true
   },
   {
     "key": "zivtina",
@@ -127,7 +159,7 @@
     "description": "zivtina description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "yearbook",
@@ -138,7 +170,7 @@
     "description": "Yearbook.com is a London, Shoreditch based startup which is also one of the leaders in the UK college yearbook market.",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "reformu",
@@ -149,7 +181,7 @@
     "description": "reformu description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "open",
@@ -160,7 +192,7 @@
     "description": "open description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "makslai",
@@ -171,7 +203,7 @@
     "description": "makslai description",
     "images": ["1-mvt_canvas_mockup.jpg", "2-foto_instagram_ilsteraivis_2.jpg"],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "5g",
@@ -182,7 +214,7 @@
     "description": "In 2018 I overlooked and assisted a small team of designers who built the identity and all related design materials over a 6 month period for one of the largest 5G technology related conferences in the world held in Rīga, Latvia — 5G Techritory.",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "binders",
@@ -193,7 +225,7 @@
     "description": "binders description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "summer",
@@ -204,7 +236,7 @@
     "description": "summer description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "positivus",
@@ -215,7 +247,7 @@
     "description": "positivus description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "haemo",
@@ -226,7 +258,7 @@
     "description": "haemo description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "api",
@@ -237,7 +269,7 @@
     "description": "api description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "bb-wake",
@@ -248,7 +280,7 @@
     "description": "bb-wake description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "royal",
@@ -259,7 +291,7 @@
     "description": "royal description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "sporta",
@@ -270,7 +302,7 @@
     "description": "sporta description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "centrs",
@@ -281,7 +313,7 @@
     "description": "SportaCentrs.com is the largest sports news website (plus TV channel) in Latvia. In 2009 I was asked to do the site's logo design. No identity design works were requested, however, additionally I had a chance to design a few website \"skins\" for their sports related clients - other websites that were hosted under their portal, used the same layout as their portal but needed a slightly customised design.",
     "images": ["image-1.jpg", "image-2.jpg", "image-3.jpg", "image-4.jpg", "image-5.jpg"],
     "allimages": ["image-1.jpg", "image-2.jpg", "image-3.jpg", "image-4.jpg", "image-5.jpg"],
-    "show": "true"
+    "show": true
   },
   {
     "key": "var",
@@ -292,7 +324,7 @@
     "description": "var description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "lapas",
@@ -303,7 +335,7 @@
     "description": "lapas description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "latvija",
@@ -314,7 +346,7 @@
     "description": "latvija description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "rsu",
@@ -325,7 +357,7 @@
     "description": "rsu description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "saistoss",
@@ -336,7 +368,7 @@
     "description": "saistoss description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "maritec",
@@ -347,7 +379,7 @@
     "description": "maritec description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "creative",
@@ -358,7 +390,7 @@
     "description": "creative description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "survival",
@@ -369,7 +401,7 @@
     "description": "survival description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "guw",
@@ -380,7 +412,7 @@
     "description": "guw description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "useless",
@@ -391,7 +423,7 @@
     "description": "useless description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "kiki",
@@ -402,7 +434,7 @@
     "description": "kiki description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "sponsorking",
@@ -413,7 +445,7 @@
     "description": "sponsorking description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "urban",
@@ -424,7 +456,7 @@
     "description": "urban description",
     "images": [],
     "allimages": [],
-    "show": "true"
+    "show": true
   },
   {
     "key": "zagars",
@@ -435,7 +467,7 @@
     "description": "zagars description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "gagarin",
@@ -446,7 +478,7 @@
     "description": "gagarin description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "cska",
@@ -457,7 +489,7 @@
     "description": "In 2009 I joined forces with the then Dinamo Rīga marketing director to pitch for a new identity creation of CSKA Moscow KHL hockey club. Even though some of the sketches got approved, the logo didn't get all the way through to the general management of the club.",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   },
   {
     "key": "atlant",
@@ -468,18 +500,7 @@
     "description": "atlant description",
     "images": [],
     "allimages": [],
-    "show": "true"
-  },
-  {
-    "key": "liepaja",
-    "name": "liepaja name",
-    "title": "liepaja - what it is",
-    "work": "liepaja - what was done",
-    "year": "liepaja year",
-    "description": "liepaja description",
-    "images": ["image-0.jpg"],
-    "allimages": ["image-0.jpg"],
-    "show": "false"
+    "show": true
   },
   {
     "key": "atlant2",
@@ -490,6 +511,6 @@
     "description": "atlant2 description",
     "images": [],
     "allimages": [],
-    "show": "false"
+    "show": false
   }
 ]
