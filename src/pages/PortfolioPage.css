@@ -124,7 +124,7 @@
   animation-fill-mode: backwards;
 
   @media (max-width: 600px) {
-    height: 100px;
+    height: 110px;
     background-size: 55%;
   }
 
@@ -134,11 +134,13 @@
   }
 
   @media (max-width: 320px) {
-    height: 80px;
-    background-size: 50%;
+    height: 100px;
+    width: 80vw;
+    margin: auto;
+    background-size: 55%;
   }
 
-  @media screen and (min-height: 860px) and (min-width: 1024px) {
+  @media (min-height: 830px) and (min-width: 1024px) {
     height: 155px;
     background-size: 65%;
   }

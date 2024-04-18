@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { isDesktop } from 'react-device-detect';
 
-import GridWalker from '../components/GridWalker';
 import projects from '../projects.json';
 import './PortfolioPage.css';
 
@@ -29,7 +28,7 @@ function Portfolio() {
   const calculateColumns = (width) => {
     if (width > 1024) return 4;
     if (width <= 1024 && width >= 720) return 3;
-    if (width <= 720 && width >= 360) return 2;
+    if (width <= 720 && width >= 320) return 2;
     return 1;
   };
 

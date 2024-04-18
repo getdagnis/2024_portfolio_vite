@@ -1,3 +1,5 @@
+let gridContainerFound = false; // Flag to track if #grid-container has been observed
+
 const launchGridWalker = () => {
   const gridItems = document.querySelectorAll('.grid-item');
   let hoverCol = 0;
@@ -84,43 +86,26 @@ const launchGridWalker = () => {
   }
 };
 
-// wait for #grid-container to exist in the dom
-const checkForGridContainer = () => {
-  const gridContainer = document.getElementById('grid-container');
-  if (gridContainer) {
-    launchGridWalker();
-    return;
-  }
-  // If not found yet, check again after a delay
-  setTimeout(checkForGridContainer, 100);
-};
-
-if (window.innerWidth > 1024) {
-  checkForGridContainer();
+function handleDOMChanges(mutationsList, observer) {
+  mutationsList.forEach((mutation) => {
+    // Check if #grid-container is added or removed
+    console.log('observing');
+    if (mutation.type === 'childList') {
+      const gridContainer = document.getElementById('grid-container');
+      if (gridContainer) {
+        // #grid-container is added
+        console.log('🚀🚀 found it', gridContainer);
+        launchGridWalker();
+      } else {
+        // .grid-container is removed, remove event listener or perform cleanup
+        document.removeEventListener('mouseenter', launchGridWalker);
+      }
+    }
+  });
 }
 
-// checks the URL path every 200ms and launches the script again when user returns to portfolio
-let initialPath = window.location.pathname === '/' || window.location.pathname === '/design' ? true : false;
-let waitingForInitialPath = false;
+// Create a MutationObserver instance
+const observer = new MutationObserver(handleDOMChanges);
 
-let checkingCount = 0;
-
-function checkUrlPath() {
-  const currentPath = window.location.pathname;
-  checkingCount++;
-  console.log('🚀🚀 checking', checkingCount);
-  console.log('🚀🚀 path', window.location.pathname);
-
-  if (initialPath && currentPath !== '/' && currentPath !== '/design') {
-    waitingForInitialPath = true;
-  } else if ((waitingForInitialPath && currentPath === '/') || (waitingForInitialPath && currentPath === '/design')) {
-    waitingForInitialPath = false;
-    checkForGridContainer();
-  }
-
-  setTimeout(checkUrlPath, 300);
-}
-
-if (window.innerWidth > 1024) {
-  checkUrlPath();
-}
+// Start observing changes in the DOM
+observer.observe(document.body, { subtree: true, childList: true });
