@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { isDesktop } from 'react-device-detect';
 
 import projects from '../projects.json';
 import './PortfolioPage.css';
@@ -106,7 +105,7 @@ function Portfolio() {
                 key={item.key}
                 className={item.className ? item.className : ' '}
                 style={{
-                  backgroundImage: `url(./thumbs/${item.key}.svg)`,
+                  backgroundImage: `url(../../thumbs/${item.key}.svg)`,
                   animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
                 }}
                 data-grid-col={item.col}

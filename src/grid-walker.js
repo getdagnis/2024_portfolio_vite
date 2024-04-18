@@ -89,12 +89,10 @@ const launchGridWalker = () => {
 function handleDOMChanges(mutationsList, observer) {
   mutationsList.forEach((mutation) => {
     // Check if #grid-container is added or removed
-    console.log('observing');
     if (mutation.type === 'childList') {
       const gridContainer = document.getElementById('grid-container');
       if (gridContainer) {
         // #grid-container is added
-        console.log('🚀🚀 found it', gridContainer);
         launchGridWalker();
       } else {
         // .grid-container is removed, remove event listener or perform cleanup

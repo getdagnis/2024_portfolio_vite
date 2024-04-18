@@ -113,3 +113,8 @@
   transform: translateX(0);
   cursor: default;
 }
+
+.project-divider {
+  width: 100%;
+  margin-top: 3rem;
+}

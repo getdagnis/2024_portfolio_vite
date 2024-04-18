@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './Header.css';
@@ -9,10 +9,14 @@ function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [arrowState, setArrowState] = useState({
     backgroundPositionX: 'right',
-    transition: 'background-position-x 10s ease',
+    transition: 'background-position-x 15s ease',
   });
+  const arrowElement = useRef(null);
+  const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
 
-  const handleMouseEnter = () => setArrowState({ backgroundPositionX: '-60vw' });
+  // slowly move the arrow to the left, as if pulling a spring
+  const handleMouseEnter = () => setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw` });
+  // release the arrow as a spring
   const handleMouseUp = () =>
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
 
@@ -106,6 +110,7 @@ function Header() {
           style={arrowState}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseUp}
+          ref={arrowElement}
         ></span>
         <span className="become-right">
           brands<strong className="b">become</strong>icons

@@ -1,4 +1,6 @@
 import { Link, ScrollRestoration, useParams } from 'react-router-dom';
+
+import ProjectsList from '../components/ProjectsList';
 import projects from '../projects.json';
 import './ProjectPage.css';
 
@@ -40,6 +42,8 @@ function ProjectPage() {
         </div>
       </div>
       <ScrollRestoration />
+      <div className="project-divider"></div>
+      <ProjectsList />
     </div>
   );
 }
