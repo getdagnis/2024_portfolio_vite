@@ -107,12 +107,13 @@ let checkingCount = 0;
 
 function checkUrlPath() {
   const currentPath = window.location.pathname;
-  // checkingCount++;
-  // console.log('🚀🚀 checking', checkingCount);
+  checkingCount++;
+  console.log('🚀🚀 checking', checkingCount);
+  console.log('🚀🚀 path', window.location.pathname);
 
   if (initialPath && currentPath !== '/' && currentPath !== '/design') {
     waitingForInitialPath = true;
-  } else if ((waitingForInitialPath && currentPath === '/') || currentPath === '/design') {
+  } else if ((waitingForInitialPath && currentPath === '/') || (waitingForInitialPath && currentPath === '/design')) {
     waitingForInitialPath = false;
     checkForGridContainer();
   }

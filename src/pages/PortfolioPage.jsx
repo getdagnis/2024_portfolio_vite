@@ -46,7 +46,7 @@ function Portfolio() {
         return {
           ...thumb,
           key: thumb.key,
-          className: `grid-item col-${col} row-${row} bounceAnim`, // Combined class names,
+          className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names,
           col: col,
           row: row,
         };

@@ -34,6 +34,22 @@
   margin: 0;
 }
 
+#about-container p.animated-line {
+  animation: fade-in 0.3s ease-in backwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #about-container span {
   text-decoration: underline;
   text-decoration-style: dotted;

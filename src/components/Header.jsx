@@ -9,10 +9,10 @@ function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [arrowState, setArrowState] = useState({
     backgroundPositionX: 'right',
-    transition: 'background-position-x 5s ease',
+    transition: 'background-position-x 10s ease',
   });
 
-  const handleMouseDown = () => setArrowState({ backgroundPositionX: '-60vw' });
+  const handleMouseEnter = () => setArrowState({ backgroundPositionX: '-60vw' });
   const handleMouseUp = () =>
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
 
@@ -37,7 +37,7 @@ function Header() {
       }
     };
 
-    const handleMouseDown = (e) => {
+    const handleMouseEnter = (e) => {
       const aboutPage = document.getElementById('about-container');
       if (aboutPage && !aboutPage.contains(e.target)) {
         e.preventDefault();
@@ -46,11 +46,11 @@ function Header() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mousedown', handleMouseEnter);
     // clean-up
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mousedown', handleMouseEnter);
     };
   }, [handleAboutClose, handleAboutClose]);
 
@@ -64,7 +64,7 @@ function Header() {
     <div className="header-container">
       <div className="header-top">
         <div className="header-left">
-          <NavLink to="/">
+          <NavLink to="/redirect">
             <div className="logo"></div>
           </NavLink>
 
@@ -89,7 +89,7 @@ function Header() {
               <NavLink to="/vote">vote</NavLink>
             </li> */}
             <li>
-              <NavLink to="/dev">skills</NavLink>
+              <NavLink to="/experience">experience</NavLink>
             </li>
             <li>
               <div onClick={() => setShowAbout(true)}>about</div>
@@ -104,7 +104,7 @@ function Header() {
         <span
           className="become-middle"
           style={arrowState}
-          onMouseEnter={handleMouseDown}
+          onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseUp}
         ></span>
         <span className="become-right">
