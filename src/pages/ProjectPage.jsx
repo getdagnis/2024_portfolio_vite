@@ -41,7 +41,7 @@ function ProjectPage() {
         </div>
       </div>
       <ScrollRestoration />
-      <ProjectReactions />
+      <ProjectReactions projectKey={proj.key} />
       <div className="project-divider"></div>
       <ProjectsList />
     </div>

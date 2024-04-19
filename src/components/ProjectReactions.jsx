@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './ProjectReactions.css';
 import smartImg from '@assets/react-icons/react_smart.svg';
@@ -11,57 +11,27 @@ import boringImg from '@assets/react-icons/react_zz.svg';
 import loveImg from '@assets/react-icons/react_love.svg';
 
 const reactions = [
-  {
-    src: smartImg,
-    alt: 'Smart',
-    count: 0,
-  },
-  {
-    src: pooImg,
-    alt: 'Poo',
-    count: 2,
-  },
-  {
-    src: partyImg,
-    alt: 'Yeah!',
-    count: 0,
-  },
-  {
-    src: hipsterImg,
-    alt: 'Hip!',
-    count: 0,
-  },
-  {
-    src: winnerImg,
-    alt: 'Win!',
-    count: 1,
-  },
-  {
-    src: confusingImg,
-    alt: 'Wut?',
-    count: 0,
-  },
-  {
-    src: boringImg,
-    alt: 'Zzz..',
-    count: 3,
-  },
-  {
-    src: loveImg,
-    alt: 'Love!',
-    count: 0,
-  },
+  { key: 'smart', src: smartImg, alt: 'Smart', count: 0 },
+  { key: 'poo', src: pooImg, alt: 'Poo', count: 2 },
+  { key: 'yeah', src: partyImg, alt: 'Yeah!', count: 0 },
+  { key: 'hip', src: hipsterImg, alt: 'Hip!', count: 0 },
+  { key: 'win', src: winnerImg, alt: 'Win!', count: 1 },
+  { key: 'wut', src: confusingImg, alt: 'Wut?', count: 0 },
+  { key: 'zzz', src: boringImg, alt: 'Zzz..', count: 3 },
+  { key: 'love', src: loveImg, alt: 'Love!', count: 0 },
 ];
 
-const ProjectReactions = () => {
-  const [activeImageIndex, setActiveImageIndex] = useState('none');
+const ProjectReactions = ({ projectKey }) => {
+  const savedReaction = localStorage.getItem(`reaction-${projectKey}`);
+  const [activeReactionKey, setActiveReactionKey] = useState(savedReaction);
 
-  const handleImageClick = (index) => {
-    if (activeImageIndex === index) {
-      setActiveImageIndex('none');
-    } else {
-      setActiveImageIndex(index);
-    }
+  useEffect(() => {
+    setActiveReactionKey(savedReaction);
+  }, [savedReaction]);
+
+  const handleImageClick = (reactionKey) => {
+    setActiveReactionKey(reactionKey);
+    localStorage.setItem(`reaction-${projectKey}`, reactionKey);
   };
 
   return (
@@ -74,13 +44,13 @@ const ProjectReactions = () => {
               src={reaction.src}
               alt={reaction.alt}
               className={
-                activeImageIndex === 'none'
+                activeReactionKey === null
                   ? 'reaction-default'
-                  : activeImageIndex === index
+                  : reaction.key === activeReactionKey
                   ? 'reaction-active'
                   : 'reaction-inactive'
               }
-              onClick={() => handleImageClick(index)}
+              onClick={() => handleImageClick(reaction.key)}
             />
             <span className="reaction-count">{reaction.alt}</span>
           </li>
