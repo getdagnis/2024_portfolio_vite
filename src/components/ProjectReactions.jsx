@@ -30,8 +30,13 @@ const ProjectReactions = ({ projectKey }) => {
   }, [savedReaction]);
 
   const handleImageClick = (reactionKey) => {
-    setActiveReactionKey(reactionKey);
-    localStorage.setItem(`reaction-${projectKey}`, reactionKey);
+    if (reactionKey === activeReactionKey) {
+      setActiveReactionKey(null);
+      localStorage.removeItem(`reaction-${projectKey}`);
+    } else {
+      setActiveReactionKey(reactionKey);
+      localStorage.setItem(`reaction-${projectKey}`, reactionKey);
+    }
   };
 
   return (
