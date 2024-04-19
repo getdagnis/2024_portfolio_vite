@@ -6,6 +6,10 @@
   width: 100%;
   border-radius: var(--radius);
   margin: 3rem auto;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0;
+  }
 }
 
 #project-reactions h3 {
@@ -19,6 +23,11 @@
   padding-bottom: 3rem;
   width: 60%;
   list-style: none;
+
+  @media screen and (max-width: 1024px) {
+    width: 95%;
+    padding-bottom: 0;
+  }
 }
 
 #project-reactions li img {
@@ -26,8 +35,16 @@
   cursor: pointer;
   transform: scale(0.85);
   transition: transform 0.3s ease;
+
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+  }
 }
 
 #project-reactions li img:hover {
   transform: scale(1.1);
+
+  @media screen and (max-width: 1024px) {
+    transform: scale(1.1);
+  }
 }
