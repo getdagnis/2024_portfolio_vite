@@ -23,32 +23,32 @@ const reactions = [
   },
   {
     src: partyImg,
-    alt: 'Party',
+    alt: 'Yeah!',
     count: 0,
   },
   {
     src: hipsterImg,
-    alt: 'Hipster',
+    alt: 'Hip!',
     count: 0,
   },
   {
     src: winnerImg,
-    alt: 'Winner',
+    alt: 'Win!',
     count: 1,
   },
   {
     src: confusingImg,
-    alt: 'Confusing',
+    alt: 'Wut?',
     count: 0,
   },
   {
     src: boringImg,
-    alt: 'Boring',
+    alt: 'Zzz..',
     count: 3,
   },
   {
     src: loveImg,
-    alt: 'Love',
+    alt: 'Love!',
     count: 0,
   },
 ];
