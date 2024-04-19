@@ -1,4 +1,12 @@
 import './ProjectReactions.css';
+import smartImg from '@assets/react-icons/react_smart.svg';
+import pooImg from '@assets/react-icons/react_poo.svg';
+import partyImg from '@assets/react-icons/react_party.svg';
+import hipsterImg from '@assets/react-icons/react_hip.svg';
+import winnerImg from '@assets/react-icons/react_cup.svg';
+import confusingImg from '@assets/react-icons/react_confuse.svg';
+import boringImg from '@assets/react-icons/react_zz.svg';
+import loveImg from '@assets/react-icons/react_love.svg';
 
 const ProjectReactions = () => {
   return (
@@ -6,28 +14,28 @@ const ProjectReactions = () => {
       <h3 className="reactions-title">Your reaction</h3>
       <ul className="rections">
         <li>
-          <img src="../assets/react-icons/react_smart.svg" alt="Smart" />
+          <img src={smartImg} alt="Smart" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_poo.svg" alt="Poo" />
+          <img src={pooImg} alt="Poo" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_party.svg" alt="Party" />
+          <img src={partyImg} alt="Party" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_hip.svg" alt="Hipster" />
+          <img src={hipsterImg} alt="Hipster" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_cup.svg" alt="Winner" />
+          <img src={winnerImg} alt="Winner" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_confuse.svg" alt="Confusing" />
+          <img src={confusingImg} alt="Confusing" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_zz.svg" alt="Boring" />
+          <img src={boringImg} alt="Boring" />
         </li>
         <li>
-          <img src="../assets/react-icons/react_love.svg" alt="Love" />
+          <img src={loveImg} alt="Love" />
         </li>
       </ul>
     </div>
