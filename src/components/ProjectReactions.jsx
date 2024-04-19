@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import './ProjectReactions.css';
 import smartImg from '@assets/react-icons/react_smart.svg';
 import pooImg from '@assets/react-icons/react_poo.svg';
@@ -8,35 +10,81 @@ import confusingImg from '@assets/react-icons/react_confuse.svg';
 import boringImg from '@assets/react-icons/react_zz.svg';
 import loveImg from '@assets/react-icons/react_love.svg';
 
+const reactions = [
+  {
+    src: smartImg,
+    alt: 'Smart',
+    count: 0,
+  },
+  {
+    src: pooImg,
+    alt: 'Poo',
+    count: 2,
+  },
+  {
+    src: partyImg,
+    alt: 'Party',
+    count: 0,
+  },
+  {
+    src: hipsterImg,
+    alt: 'Hipster',
+    count: 0,
+  },
+  {
+    src: winnerImg,
+    alt: 'Winner',
+    count: 1,
+  },
+  {
+    src: confusingImg,
+    alt: 'Confusing',
+    count: 0,
+  },
+  {
+    src: boringImg,
+    alt: 'Boring',
+    count: 3,
+  },
+  {
+    src: loveImg,
+    alt: 'Love',
+    count: 0,
+  },
+];
+
 const ProjectReactions = () => {
+  const [activeImageIndex, setActiveImageIndex] = useState('none');
+
+  const handleImageClick = (index) => {
+    if (activeImageIndex === index) {
+      setActiveImageIndex('none');
+    } else {
+      setActiveImageIndex(index);
+    }
+  };
+
   return (
     <div id="project-reactions">
       <h3 className="reactions-title">Your reaction</h3>
-      <ul className="rections">
-        <li>
-          <img src={smartImg} alt="Smart" />
-        </li>
-        <li>
-          <img src={pooImg} alt="Poo" />
-        </li>
-        <li>
-          <img src={partyImg} alt="Party" />
-        </li>
-        <li>
-          <img src={hipsterImg} alt="Hipster" />
-        </li>
-        <li>
-          <img src={winnerImg} alt="Winner" />
-        </li>
-        <li>
-          <img src={confusingImg} alt="Confusing" />
-        </li>
-        <li>
-          <img src={boringImg} alt="Boring" />
-        </li>
-        <li>
-          <img src={loveImg} alt="Love" />
-        </li>
+      <ul className="reactions">
+        {reactions.map((reaction, index) => (
+          <li key={index}>
+            <img
+              src={reaction.src}
+              alt={reaction.alt}
+              className={
+                activeImageIndex === 'none'
+                  ? 'reaction-default'
+                  : activeImageIndex === index
+                  ? 'reaction-active'
+                  : 'reaction-inactive'
+              }
+              onClick={() => handleImageClick(index)}
+            />
+            <span className="reaction-count">{reaction.alt}</span>
+          </li>
+        ))}
       </ul>
     </div>
   );
