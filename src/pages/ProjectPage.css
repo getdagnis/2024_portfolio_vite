@@ -8,26 +8,12 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+    transform: translateY(1rem);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
-}
-
-#project-grid {
-  display: flex;
-}
-
-#project-nav {
-  display: none;
-  width: 2rem;
-  background-color: #eee;
-  border-radius: var(--radiusSmall);
-  margin-left: 1rem;
-}
-
-#project-nav:hover > .project-nav-open {
-  display: flex;
 }
 
 .project-nav-open {
@@ -116,5 +102,5 @@
 
 .project-divider {
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 5rem;
 }

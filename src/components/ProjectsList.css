@@ -42,7 +42,7 @@
   overflow: hidden;
   height: 120px;
   text-align: center;
-  background: var(--gridItem) no-repeat center center;
+  background: rgba(0, 0, 0, 0.05) no-repeat center center;
   background-size: 65%;
   box-sizing: border-box;
   cursor: pointer;
