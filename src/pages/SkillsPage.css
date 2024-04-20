@@ -35,14 +35,16 @@
 }
 
 #skills-container h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: -0.5px;
   padding: 0.5rem 0;
 }
 
 #skills-container h2 {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: -0.5px;
   padding: 0 0 0.25rem;
@@ -57,7 +59,7 @@
   padding: 0.75rem;
   margin: 0.75rem 0;
   font-size: 0.9rem;
-  background: var(--gridItem);
+  background: #dddddd77;
   border-radius: var(--radius);
   cursor: pointer;
 }
