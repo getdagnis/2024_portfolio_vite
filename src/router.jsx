@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import AboutPage from './pages/AboutPage';
-import ExperiencePage from './pages/ExperiencePage';
 import NotFoundPage from './pages/NotFoundPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ProjectPage from './pages/ProjectPage';
 import RedirectPage from './pages/RedirectPage';
+import SkillsPage from './pages/SkillsPage';
 import VotePage from './pages/VotePage';
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: '/about', element: <App children={<AboutPage />} /> },
       { path: '/design', element: <App children={<PortfolioPage />} /> },
       { path: '/design/project/:key', element: <App children={<ProjectPage />} /> },
-      { path: '/skills', element: <App children={<ExperiencePage />} /> },
+      { path: '/skills', element: <App children={<SkillsPage />} /> },
       { path: '/redirect', element: <App children={<RedirectPage />} /> },
       { path: '/vote', element: <App children={<VotePage />} /> },
       { path: '*', element: <App children={<NotFoundPage />} /> },
