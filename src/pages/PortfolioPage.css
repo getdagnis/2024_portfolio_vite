@@ -188,7 +188,7 @@
 }
 
 #grid-container .fast-transition {
-  transition: transform 0.2s ease;
+  transition: transform 0.1s ease;
 }
 
 #grid-container .display-none {
