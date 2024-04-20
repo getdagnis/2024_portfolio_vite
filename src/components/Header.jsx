@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './Header.css';
 import AboutPage from '../pages/AboutPage';
+import MobileMenu from './MobileMenu';
 
 function Header() {
   const [showAbout, setShowAbout] = useState(false);
@@ -24,14 +25,6 @@ function Header() {
     setShowAbout(false);
   };
 
-  // useEffect(() => {
-  //   if (showAbout) {
-  //     document.body.style.overflow = 'hidden'; // disable body background scrolling
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
-  // }, [showAbout]);
-
   useEffect(() => {
     if (!showAbout) return;
 
@@ -41,7 +34,7 @@ function Header() {
       }
     };
 
-    const handleMouseEnter = (e) => {
+    const handleMouseEnterAbout = (e) => {
       const aboutPage = document.getElementById('about-container');
       if (aboutPage && !aboutPage.contains(e.target)) {
         e.preventDefault();
@@ -50,22 +43,55 @@ function Header() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousedown', handleMouseEnter);
+    window.addEventListener('mousedown', handleMouseEnterAbout);
     // clean-up
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousedown', handleMouseEnter);
+      window.removeEventListener('mousedown', handleMouseEnterAbout);
     };
   }, [handleAboutClose, handleAboutClose]);
 
+  useEffect(() => {
+    // prevents scrolling of body when about or menu is open
+    if (showAbout || showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [showAbout, showMenu]);
+
   function handleHamburgerClick() {
-    setShowMenu(!showMenu);
+    // prevents unnecessary scroll "leftovers" caused by hamburger-inner animations
+    const siteContainer = document.getElementById('site-container');
+    const hamburger = document.querySelector('.hamburger');
+    if (showMenu) {
+      handleMenuClose();
+    }
+
+    if (!showMenu) {
+      siteContainer.style.overflow = 'hidden';
+      setShowMenu(true);
+      setTimeout(() => {
+        hamburger.classList.add('is-active');
+        hamburger.classList.add('z-index-999');
+      }, 400);
+    }
+  }
+
+  function handleMenuClose() {
+    const hamburger = document.querySelector('.hamburger');
+    const siteContainer = document.getElementById('site-container');
+
+    setShowMenu(false);
+    hamburger.classList.remove('is-active');
+    hamburger.classList.remove('z-index-999');
+    siteContainer.style.overflow = '';
   }
 
   const designActive = window.location.pathname.includes('/design') || window.location.pathname === '/design';
 
   return (
-    <div className="header-container">
+    <div id="header-container">
       <div className="header-top">
         <div className="header-left">
           <NavLink to="/redirect">
@@ -74,10 +100,7 @@ function Header() {
 
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
-        <div
-          className={`hamburger hamburger--collapse ${showMenu ? 'is-active' : ''}`}
-          onClick={() => handleHamburgerClick()}
-        >
+        <div className="hamburger hamburger--collapser" onClick={() => handleHamburgerClick()}>
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
@@ -117,6 +140,7 @@ function Header() {
         </span>
       </div>
       <AboutPage showAbout={showAbout} onClose={handleAboutClose} />
+      {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
     </div>
   );
 }
