@@ -15,27 +15,27 @@ function MobileMenu({ onClose }) {
   return (
     <div id="mobile-menu-container">
       <ul id="mobile-menu-list">
-        <li>
+        <li style={{ animationDelay: '0.25s' }}>
           <NavLink to="/redirect" className={designActive ? 'active' : ''} onClick={onClose}>
             design
           </NavLink>
         </li>
-        <li>
+        <li style={{ animationDelay: '0.3s' }}>
           <NavLink to="/skills" onClick={onClose}>
             dev skills
           </NavLink>
         </li>
-        <li>
+        <li style={{ animationDelay: '0.35s' }}>
           <NavLink to="/vote" onClick={onClose}>
             vote
           </NavLink>
         </li>
-        <li>
+        <li style={{ animationDelay: '0.4s' }}>
           <NavLink to="/blog" onClick={onClose}>
             blog
           </NavLink>
         </li>
-        <li>
+        <li style={{ animationDelay: '0.45s' }}>
           <NavLink to="/about" onClick={onClose}>
             about
           </NavLink>

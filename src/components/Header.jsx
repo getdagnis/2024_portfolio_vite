@@ -74,7 +74,7 @@ function Header() {
       setTimeout(() => {
         hamburger.classList.add('is-active');
         hamburger.classList.add('z-index-999');
-      }, 400);
+      }, 100);
     }
   }
 
