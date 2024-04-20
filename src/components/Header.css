@@ -45,22 +45,18 @@ nav > ul > li {
   margin-left: 1.5rem;
   color: black;
   transition: all 0.3s ease;
+  cursor: pointer;
   overflow: hidden;
 }
-
 nav > ul > li:hover {
   text-decoration: line-through;
   text-decoration-thickness: 0.1rem;
-  cursor: pointer;
 }
-
 nav > ul > li > .active {
   text-decoration: line-through;
-  /* text-decoration-color: black; */
   color: black;
   text-decoration-thickness: 0.1rem;
 }
-
 nav > ul > li > .active::after {
   content: '';
   display: block;
@@ -69,7 +65,6 @@ nav > ul > li > .active::after {
   background-color: var(--accent);
   margin-top: -1.15rem;
 }
-
 nav > ul > li > .active:hover {
   cursor: default;
 }

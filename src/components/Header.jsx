@@ -93,7 +93,7 @@ function Header() {
               <NavLink to="/vote">vote</NavLink>
             </li> */}
             <li>
-              <NavLink to="/experience">experience</NavLink>
+              <NavLink to="/skills">skills</NavLink>
             </li>
             <li>
               <div onClick={() => setShowAbout(true)}>about</div>
