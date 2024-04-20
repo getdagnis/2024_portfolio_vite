@@ -22,25 +22,19 @@ function MobileMenu({ onClose }) {
         </li>
         <li style={{ animationDelay: '0.3s' }}>
           <NavLink to="/skills" onClick={onClose}>
-            dev skills
+            skillset
           </NavLink>
         </li>
         <li style={{ animationDelay: '0.35s' }}>
-          <NavLink to="/vote" onClick={onClose}>
-            vote
-          </NavLink>
-        </li>
-        <li style={{ animationDelay: '0.4s' }}>
-          <NavLink to="/blog" onClick={onClose}>
-            blog
-          </NavLink>
-        </li>
-        <li style={{ animationDelay: '0.45s' }}>
           <NavLink to="/about" onClick={onClose}>
             about
           </NavLink>
         </li>
       </ul>
+      <div id="mobile-menu-bottom">
+        <div className="footer-message"></div>
+        <p>© DAGNIS SKURBE, 2024</p>
+      </div>
     </div>
   );
 }

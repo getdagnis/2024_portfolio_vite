@@ -2,7 +2,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-end;
   top: 0;
   right: 0;
@@ -42,6 +42,25 @@
   text-decoration: line-through;
 }
 
+#mobile-menu-bottom {
+  text-align: right;
+  width: auto;
+  padding: 3rem 2rem 0;
+  font-size: 0.75rem;
+}
+
+#mobile-menu-bottom > .footer-message {
+  width: 40vw;
+  height: 10vh;
+  background-size: contain;
+
+  animation: fadeIn 0.5s ease-in-out 3s backwards;
+}
+
+#mobile-menu-bottom > p {
+  opacity: 0.5;
+}
+
 @keyframes menuAppear {
   0% {
     opacity: 0;
@@ -61,5 +80,16 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
