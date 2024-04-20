@@ -55,7 +55,10 @@ const launchGridWalker = () => {
         } else if (itemInfo === previousHoveredInfo) {
           itemInfo.classList = 'thumb-info slow-transition';
         } else {
-          itemInfo.classList = 'thumb-info';
+          itemInfo.classList = 'thumb-info fast-transition';
+          setTimeout(() => {
+            itemInfo.classList.remove('fast-transition');
+          }, 200);
         }
 
         // move .thumb-info for surrounding items to where it needs to slide-in from

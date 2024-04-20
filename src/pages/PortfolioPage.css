@@ -172,24 +172,27 @@
   font-size: 0.7rem;
   font-weight: 400;
   border: var(--itemBorder);
-  border-radius: var(--radius);
   transition: transform 0.5s ease, opacity 0.01s ease;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 }
 
+#grid-container .transition-none {
+  transition: none;
+}
+
 #grid-container .slow-transition {
-  transition: transform 0.75s ease;
+  transition: transform 0.4s ease;
+}
+
+#grid-container .fast-transition {
+  transition: transform 0.2s ease;
 }
 
 #grid-container .display-none {
   display: none;
-}
-
-#grid-container .transition-none {
-  transition: none;
 }
 
 #grid-container .thumb-info-hide-top {
