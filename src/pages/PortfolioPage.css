@@ -170,6 +170,7 @@
   height: 100%;
   color: var(--walkerText);
   font-size: 0.7rem;
+  line-height: 1.2;
   font-weight: 400;
   border: var(--itemBorder);
   transition: transform 0.5s ease, opacity 0.01s ease;

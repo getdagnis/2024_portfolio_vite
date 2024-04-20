@@ -24,7 +24,6 @@ function ProjectsList() {
                 <div className="thumb-info thumb-info-hide-top">
                   <h3>{item.name}</h3>
                   <p>{item.title}</p>
-                  <p>{item.work}</p>
                 </div>
               </Link>
             )
