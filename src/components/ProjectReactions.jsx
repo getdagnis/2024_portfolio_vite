@@ -57,7 +57,7 @@ const ProjectReactions = ({ projectKey }) => {
               }
               onClick={() => handleImageClick(reaction.key)}
             />
-            <span className="reaction-count">{reaction.alt}</span>
+            <span className="reaction-subtitle">{reaction.alt}</span>
           </li>
         ))}
       </ul>

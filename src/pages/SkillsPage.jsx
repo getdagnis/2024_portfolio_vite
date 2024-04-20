@@ -7,40 +7,32 @@ function SkillsPage() {
       <div id="dev-skills-grid">
         <ul>
           <h2>Languages</h2>
-          <li className="skill">HTML5/CSS/SASS/JSS</li>
-          <li className="skill">JavaScript</li>
+          <li className="skill">JavaScript / ES6</li>
           <li className="skill">TypeScript</li>
-          <li className="skill">PHP</li>
-          <li className="skill">SQL</li>
-          <li className="skill">Python</li>
-          <li className="skill">Luau</li>
-          <li className="skill">Bash</li>
+          <li className="skill">HTML5 / CSS / SASS / LESS</li>
+          <li className="skill">SQL / NoSQL</li>
+          <li className="skill">Bash / Shell / Luau</li>
+          <li className="skill">Some PHP / Python</li>
         </ul>
-
+        <ul>
+          <h2>Tools / Libraries</h2>
+          <li className="skill">React</li>
+          <li className="skill">Redux / Redux Toolkit / MobX</li>
+          <li className="skill">Next.js / Gatsby</li>
+          <li className="skill">Node.js / Express.js</li>
+          <li className="skill">Material UI / Chakra UI / Mantine</li>
+          <li className="skill">Webpack / Babel / ESLint / Jest</li>
+          <li className="skill">React Native / Expo</li>
+        </ul>
         <ul>
           <h2>Hard Skills</h2>
-          <li className="skill">Frameworks/libraries</li>
-          <li className="skill">Tools</li>
           <li className="skill">Testing</li>
           <li className="skill">Debugging</li>
-          <li className="skill">APIs</li>
+          <li className="skill">Rest APIs</li>
           <li className="skill">Cloud services</li>
           <li className="skill">Networking</li>
           <li className="skill">Version control</li>
           <li className="skill">Data storage</li>
-        </ul>
-
-        <ul>
-          <h2>Soft Skills</h2>
-          <li className="skill">Communication</li>
-          <li className="skill">Problem-solving</li>
-          <li className="skill">Teamwork</li>
-          <li className="skill">Adaptability</li>
-          <li className="skill">Time management</li>
-          <li className="skill">Critical thinking</li>
-          <li className="skill">Attention to detail</li>
-          <li className="skill">Collaboration</li>
-          <li className="skill">Decision-making</li>
         </ul>
       </div>
       <h3>Design Skills</h3>
