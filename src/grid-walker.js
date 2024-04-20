@@ -31,7 +31,7 @@ const launchGridWalker = () => {
     });
   });
 
-  // define currently hovered item and have only items around it "infected"
+  // define currently hovered item and "infect" items directly around it
   for (const item of gridItems) {
     item.addEventListener('mouseenter', (e) => {
       const hovered = e.target;
@@ -61,22 +61,37 @@ const launchGridWalker = () => {
         // move .thumb-info for surrounding items to where it needs to slide-in from
         if (itemRow + 1 === hoverRow && Math.abs(itemCol - hoverCol <= 1)) {
           itemInfo.classList.add('thumb-info-hide-bottom');
+          setTimeout(() => {
+            itemInfo.classList.remove('transition-none');
+          }, 100);
           itemInfo.classList.remove('display-none');
         }
         if (itemRow + 1 === hoverRow && itemCol + hoverCol === 1) {
           itemInfo.classList.add('thumb-info-hide-bottom');
+          setTimeout(() => {
+            itemInfo.classList.remove('transition-none');
+          }, 100);
           itemInfo.classList.remove('display-none');
         }
         if (itemRow - 1 === hoverRow && Math.abs(hoverCol - itemCol <= 1)) {
           itemInfo.classList.add('thumb-info-hide-top');
+          setTimeout(() => {
+            itemInfo.classList.remove('transition-none');
+          }, 100);
           itemInfo.classList.remove('display-none');
         }
         if (itemRow === hoverRow && itemCol - hoverCol === 1) {
           itemInfo.classList.add('thumb-info-hide-left');
+          setTimeout(() => {
+            itemInfo.classList.remove('transition-none');
+          }, 100);
           itemInfo.classList.remove('display-none');
         }
         if (itemRow === hoverRow && itemCol - hoverCol === -1) {
           itemInfo.classList.add('thumb-info-hide-right');
+          setTimeout(() => {
+            itemInfo.classList.remove('transition-none');
+          }, 100);
           itemInfo.classList.remove('display-none');
         }
       });
