@@ -4,29 +4,33 @@ import { NavLink } from 'react-router-dom';
 import './MobileMenu.css';
 
 function MobileMenu({ onClose }) {
-  const [designActive, setDesignActive] = useState(false);
+  const [activeRoute, setActiveRoute] = useState(null);
 
   useEffect(() => {
     window.location.pathname.includes('/design') || window.location.pathname === '/'
-      ? setDesignActive(true)
-      : setDesignActive(false);
+      ? setActiveRoute('design')
+      : window.location.pathname.includes('/skills')
+      ? setActiveRoute('skills')
+      : window.location.pathname === '/about'
+      ? setActiveRoute('about')
+      : setActiveRoute(null);
   }, []);
 
   return (
     <div id="mobile-menu-container">
       <ul id="mobile-menu-list">
         <li style={{ animationDelay: '0.25s' }}>
-          <NavLink to="/redirect" className={designActive ? 'active' : ''} onClick={onClose}>
+          <NavLink to="/redirect/design" className={activeRoute === 'design' ? 'active' : ''} onClick={onClose}>
             design
           </NavLink>
         </li>
         <li style={{ animationDelay: '0.3s' }}>
-          <NavLink to="/skills" onClick={onClose}>
+          <NavLink to="/redirect/skills" className={activeRoute === 'skills' ? 'active' : ''} onClick={onClose}>
             skillset
           </NavLink>
         </li>
         <li style={{ animationDelay: '0.35s' }}>
-          <NavLink to="/about" onClick={onClose}>
+          <NavLink to="/about" className={activeRoute === 'about' ? 'active' : ''} onClick={onClose}>
             about
           </NavLink>
         </li>

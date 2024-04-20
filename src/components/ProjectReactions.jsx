@@ -17,8 +17,8 @@ const reactions = [
   { key: 'hip', src: hipsterImg, alt: 'Hip!', count: 0 },
   { key: 'win', src: winnerImg, alt: 'Win!', count: 1 },
   { key: 'wut', src: confusingImg, alt: 'Wut?', count: 0 },
-  { key: 'zzz', src: boringImg, alt: 'Zzz..', count: 3 },
   { key: 'love', src: loveImg, alt: 'Love!', count: 0 },
+  { key: 'zzz', src: boringImg, alt: 'Zzz..', count: 3 },
 ];
 
 const ProjectReactions = ({ projectKey }) => {

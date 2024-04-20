@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { path: '/design', element: <App children={<PortfolioPage />} /> },
       { path: '/design/project/:key', element: <App children={<ProjectPage />} /> },
       { path: '/skills', element: <App children={<SkillsPage />} /> },
-      { path: '/redirect', element: <App children={<RedirectPage />} /> },
+      { path: '/redirect/:to', element: <App children={<RedirectPage />} /> },
       { path: '/vote', element: <App children={<VotePage />} /> },
       { path: '*', element: <App children={<NotFoundPage />} /> },
     ],

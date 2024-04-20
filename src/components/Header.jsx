@@ -71,10 +71,11 @@ function Header() {
     if (!showMenu) {
       siteContainer.style.overflow = 'hidden';
       setShowMenu(true);
+      // let the mobile menu slide in, then show the close button
       setTimeout(() => {
         hamburger.classList.add('is-active');
         hamburger.classList.add('z-index-999');
-      }, 100);
+      }, 500);
     }
   }
 
@@ -94,7 +95,7 @@ function Header() {
     <div id="header-container">
       <div className="header-top">
         <div className="header-left">
-          <NavLink to="/redirect">
+          <NavLink to="/redirect/design">
             <div className="logo"></div>
           </NavLink>
 

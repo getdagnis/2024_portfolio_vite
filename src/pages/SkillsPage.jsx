@@ -7,32 +7,72 @@ function SkillsPage() {
       <div id="dev-skills-grid">
         <ul>
           <h2>Languages</h2>
-          <li className="skill">JavaScript / ES6</li>
-          <li className="skill">TypeScript</li>
-          <li className="skill">HTML5 / CSS / SASS / LESS</li>
-          <li className="skill">SQL / NoSQL</li>
-          <li className="skill">Bash / Shell / Luau</li>
-          <li className="skill">Some PHP / Python</li>
+          <li className="skill" style={{ animationDelay: '0.1s' }}>
+            JavaScript / ES6
+          </li>
+          <li className="skill" style={{ animationDelay: '0.2s' }}>
+            TypeScript
+          </li>
+          <li className="skill" style={{ animationDelay: '0.25s' }}>
+            HTML5 / CSS / SASS / LESS
+          </li>
+          <li className="skill" style={{ animationDelay: '0.3s' }}>
+            SQL / NoSQL
+          </li>
+          <li className="skill" style={{ animationDelay: '0.35s' }}>
+            Bash / Shell / Luau
+          </li>
+          <li className="skill" style={{ animationDelay: '0.4s' }}>
+            Some PHP / Python
+          </li>
         </ul>
         <ul>
           <h2>Tools / Libraries</h2>
-          <li className="skill">React</li>
-          <li className="skill">Redux / Redux Toolkit / MobX</li>
-          <li className="skill">Next.js / Gatsby</li>
-          <li className="skill">Node.js / Express.js</li>
-          <li className="skill">Material UI / Chakra UI / Mantine</li>
-          <li className="skill">Webpack / Babel / ESLint / Jest</li>
-          <li className="skill">React Native / Expo</li>
+          <li className="skill" style={{ animationDelay: '0.1s' }}>
+            React
+          </li>
+          <li className="skill" style={{ animationDelay: '0.2s' }}>
+            Redux / Redux Toolkit / MobX
+          </li>
+          <li className="skill" style={{ animationDelay: '0.25s' }}>
+            Next.js / Gatsby
+          </li>
+          <li className="skill" style={{ animationDelay: '0.3s' }}>
+            Node.js / Express.js
+          </li>
+          <li className="skill" style={{ animationDelay: '0.35s' }}>
+            Material UI / Chakra UI / Mantine
+          </li>
+          <li className="skill" style={{ animationDelay: '0.4s' }}>
+            Webpack / Babel / ESLint / Jest
+          </li>
+          <li className="skill" style={{ animationDelay: '0.45s' }}>
+            React Native / Expo
+          </li>
         </ul>
         <ul>
           <h2>Hard Skills</h2>
-          <li className="skill">Testing</li>
-          <li className="skill">Debugging</li>
-          <li className="skill">Rest APIs</li>
-          <li className="skill">Cloud services</li>
-          <li className="skill">Networking</li>
-          <li className="skill">Version control</li>
-          <li className="skill">Data storage</li>
+          <li className="skill" style={{ animationDelay: '0.1s' }}>
+            Testing
+          </li>
+          <li className="skill" style={{ animationDelay: '0.2s' }}>
+            Debugging
+          </li>
+          <li className="skill" style={{ animationDelay: '0.25s' }}>
+            Rest APIs
+          </li>
+          <li className="skill" style={{ animationDelay: '0.3s' }}>
+            Cloud services
+          </li>
+          <li className="skill" style={{ animationDelay: '0.35s' }}>
+            Networking
+          </li>
+          <li className="skill" style={{ animationDelay: '0.4s' }}>
+            Version control
+          </li>
+          <li className="skill" style={{ animationDelay: '0.45s' }}>
+            Data storage
+          </li>
         </ul>
       </div>
       <h3>Design Skills</h3>

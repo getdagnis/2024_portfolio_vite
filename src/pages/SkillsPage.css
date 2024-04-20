@@ -17,6 +17,10 @@
   }
 }
 
+.skill {
+  animation: fade-in 0.3s ease-in-out 0.1s backwards;
+}
+
 #dev-skills-grid,
 #design-skills-grid {
   display: grid;
