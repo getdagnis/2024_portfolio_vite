@@ -89,6 +89,7 @@
   width: 0.75rem;
   margin-bottom: 3px;
   background: url('../assets/cross.svg') no-repeat;
+  transition: transform 0.5s ease;
 }
 
 .filters-list > .close-filters:hover {
