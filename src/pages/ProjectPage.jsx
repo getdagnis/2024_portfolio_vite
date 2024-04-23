@@ -22,8 +22,10 @@ function ProjectPage() {
             {proj.work}
           </h6>
         </div>
-        <img src={`../../proj-img/${proj.key}/${proj.images[0]}`} alt={proj.name} className="main-img" />
-        <p className="description">{proj.description}</p>
+        <div className="title-image">
+          <img src={`../../proj-img/${proj.key}/${proj.images[0]}`} alt={proj.name} className="main-img" />
+          <p className="description">{proj.description}</p>
+        </div>
       </div>
       <div id="project-nav">
         <div className="project-nav-open">

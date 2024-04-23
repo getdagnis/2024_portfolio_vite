@@ -8,7 +8,9 @@ function AboutPage({ showAbout, onClose }) {
       <div id="about-container" className={showAbout ? ' ' : 'about-hidden'}>
         <div className="close" onClick={onClose}></div>
         <img className="dag-img" src="../dag_square.png" alt="Dagnis Skurbe" />
-        <div className="logo"></div>
+        <div className="about-hello-wrap">
+          <h1 className="about-hello">Hello.</h1>
+        </div>
         <p className="about-tagline animated-line">
           Creating things using <span>code & design</span> since 2003.
         </p>

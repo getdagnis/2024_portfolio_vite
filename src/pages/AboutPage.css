@@ -34,6 +34,21 @@
   margin: 0;
 }
 
+/* .about-hello-wrap {
+  overflow: hidden;
+  margin-bottom: 0.2em;
+  font-size: 4.5vw;
+  line-height: 100%;
+} */
+
+h1.about-hello {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: transparent;
+  -webkit-text-stroke: 0.02em black;
+}
+
 #about-container p.animated-line {
   animation: fade-in 0.3s ease-in backwards;
   animation-delay: 0.5s;
@@ -80,6 +95,8 @@
 
 #about-container p {
   margin-bottom: 1rem;
+  background-color: var(--accent);
+  color: black;
 }
 
 .about-tagline {
