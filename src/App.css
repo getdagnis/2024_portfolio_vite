@@ -2,8 +2,9 @@
 
 :root {
   --siteBorder: 10px;
-  --background: #f7f7f7; /* grey eeeeee; greenish #d9dfcd; greenish 2 bec4b8; yellow e6ff08 */
-  --gridItem: #ddd; /* almost-white #ffffffbb; */
+  --background: #f6f7f8; /* grey eeeeee; greenish #d9dfcd; greenish 2 bec4b8; yellow e6ff08 */
+  --gridItem: #dce2e2; /* almost-white #ffffffbb; */
+  --itemBorder: none; /* 4px solid black */
   --itemBorder: none; /* 4px solid black */
   --yellow: #e6ff08;
   --yellowTransp: #e6ff08e5;

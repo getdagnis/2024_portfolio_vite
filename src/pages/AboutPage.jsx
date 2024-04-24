@@ -12,11 +12,11 @@ function AboutPage({ showAbout, onClose }) {
           <h1 className="about-hello">Hello.</h1>
         </div>
         <p className="about-tagline animated-line">
-          Creating things using <span>code & design</span> since 2003.
+          <span>Decades of creating things using code & design</span>.
         </p>
         <p className="animated-line" style={{ animationDelay: '0.8s' }}>
-          For 20+ years Dagnis has worked professionally as a Software Developer, Graphic Designer and Creative Director
-          in Advertising, Tech and Entertainment industries in Riga, Latvia and London.
+          For 20+ years <span>Dagnis Skurbe</span> has worked professionally as a Software Developer, Graphic Designer
+          and Creative Director in Advertising, Tech and Entertainment industries in Riga, Latvia and London, UK.
         </p>
         <p className="animated-line" style={{ animationDelay: '1.1s' }}>
           He is currently working as a full-stack developer using React/Node.js with a special focus on UX and Creative
