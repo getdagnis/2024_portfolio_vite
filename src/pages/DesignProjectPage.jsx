@@ -1,11 +1,11 @@
 import { Link, ScrollRestoration, useParams } from 'react-router-dom';
 
-import ProjectsList from '../components/ProjectsList';
+import DesignProjectsList from '../components/DesignProjectsList';
 import ProjectReactions from '../components/ProjectReactions';
 import projects from '../projects.json';
-import './ProjectPage.css';
+import './DesignProjectPage.css';
 
-function ProjectPage() {
+function DesignProjectPage() {
   const params = useParams();
   const proj = projects.find((obj) => obj.key === params.key);
 
@@ -45,9 +45,9 @@ function ProjectPage() {
       <ScrollRestoration />
       <ProjectReactions projectKey={proj.key} />
       <div className="project-divider"></div>
-      <ProjectsList />
+      <DesignProjectsList />
     </div>
   );
 }
 
-export default ProjectPage;
+export default DesignProjectPage;

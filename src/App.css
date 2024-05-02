@@ -4,8 +4,6 @@
   --siteBorder: 10px;
   --background: #f6f7f8; /* grey eeeeee; greenish #d9dfcd; greenish 2 bec4b8; yellow e6ff08 */
   --gridItem: #dce2e2; /* almost-white #ffffffbb; */
-  --itemBorder: none; /* 4px solid black */
-  --itemBorder: none; /* 4px solid black */
   --radius: 0.5rem;
   --radiusSmall: 0.25rem;
 
@@ -19,13 +17,39 @@
   --colorGrey8: #0f1111;
 
   --accent: #ec002ff8; /* crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
-  --backgroundRed: #e9002fe1;
   --walker: #ff0033ef; /* dark olive 3c3c1af8; crimson dc143cf8; red e30039f8; ec002ff8; ff0033ef; electric 00e1c0ef; black #000000dd; */
   --walkerText: #37000b; /* dark electric 00382f, dark red 37000b */
+  --backgroundRed: #e9002fe1;
 
-  --yellow: #e6ff08;
-  --yellowTransp: #e6ff08e5;
-  --darkYellow: #c6de06;
+  --siteWidth: 90vw;
+  --siteMaxWidth: 1024px;
+  --gridItemHeight: 8.75rem;
+
+  @media (max-width: 820px) {
+    --gridItemHeight: 8.5rem;
+  }
+
+  @media (max-width: 720px) {
+    --gridItemHeight: 7.5rem;
+  }
+
+  @media (max-width: 520px) {
+    --gridItemHeight: 6.25rem;
+  }
+
+  @media (max-width: 320px) {
+    --gridItemHeight: 5.5rem;
+  }
+
+  @media screen and (min-width: 1280px) and (min-height: 720px) {
+    --siteMaxWidth: 1040px;
+    --gridItemHeight: 9.2rem;
+  }
+
+  @media screen and (min-width: 1280px) and (min-height: 780px) {
+    --siteMaxWidth: 1120px;
+    --gridItemHeight: 9.75rem;
+  }
 }
 
 *,
@@ -69,52 +93,19 @@ body {
   border: var(--siteBorder) solid black;
 }
 
-/* #curtain {
-  display: block;
-  position: fixed;
-  width: 100vw;
-  height: 100svh;
-  background-color: var(--walker);
-  top: 0%;
-  z-index: 998;
-  transition: all 2s ease;
-  transition-delay: 0.2s;
-}
-
-#curtain {
-  transform: translateY(-100%);
-} */
-
 #site-container {
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  justify-content: space-between; /* Align content at top and bottom */
-  width: 90vw;
-  max-width: 1024px;
+  justify-content: space-between;
   height: 100%;
   min-height: calc(100vh - var(--siteBorder));
-
-  @media screen and (min-width: 1280px) and (min-height: 720px) {
-    max-width: 1040px;
-  }
-
-  @media screen and (min-width: 1280px) and (min-height: 780px) {
-    max-width: 1120px;
-  }
-
-  /* retina screens fix */
-  /* @media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-    max-width: 960px;
-  } */
+  width: var(--siteWidth);
+  max-width: var(--siteMaxWidth);
 }
 
 @media (max-width: 800px) {
   body {
     border: calc(var(--siteBorder) / 1.5) solid black;
-  }
-
-  .site-container {
-    width: 94vw;
   }
 }

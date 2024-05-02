@@ -89,7 +89,7 @@ function Header() {
     siteContainer.style.overflow = '';
   }
 
-  const designActive = window.location.pathname.includes('/design') || window.location.pathname === '/design';
+  const designActive = window.location.pathname === '/design' || window.location.pathname.includes('/design/project');
 
   return (
     <div id="header-container">
@@ -98,14 +98,15 @@ function Header() {
           <NavLink to="/redirect/design">
             <div className="logo"></div>
           </NavLink>
-
           <p className="logo-subtitle">dev & design portfolio</p>
         </div>
+
         <div className="hamburger hamburger--collapser" onClick={() => handleHamburgerClick()}>
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
         </div>
+
         <nav>
           <ul>
             <li>
@@ -125,6 +126,7 @@ function Header() {
           </ul>
         </nav>
       </div>
+
       <div className="become-slogan">
         <span className="become-left">
           ideas<strong>become</strong>brands

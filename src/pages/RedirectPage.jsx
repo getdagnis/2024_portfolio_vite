@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './RedirectPage.css';
-import Portfolio from './PortfolioPage';
+import Portfolio from './DesignPage';
 
 function RedirectPage() {
   const navigate = useNavigate();

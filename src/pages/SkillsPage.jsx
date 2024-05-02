@@ -1,10 +1,19 @@
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './SkillsPage.css';
 
 function SkillsPage() {
+  const [skillSection, setSkillSection] = useState('dev');
+
+  const toggleSkillSection = (clicked) => {
+    setSkillSection(clicked === 'right' ? 'design' : 'dev');
+  };
+
   return (
     <div id="skills-container">
       <div id="skills-title">
-        <div className="skills-title-left">
+        <NavLink to="/skills/dev">
           DEV experience
           <svg className="skills-tab-left" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -12,9 +21,9 @@ function SkillsPage() {
               transform="translate(-7.19 -9.6)"
             />
           </svg>
-        </div>
+        </NavLink>
         <div className="skills-title-middle"></div>
-        <div className="skills-title-right">
+        <NavLink to="/skills/design">
           DESIGN experience
           <svg className="skills-tab-right" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -22,7 +31,7 @@ function SkillsPage() {
               transform="translate(-7.19 -9.6)"
             />
           </svg>
-        </div>
+        </NavLink>
       </div>
       <div id="skills-grid">
         <div className="grid-item">JavaScript</div>

@@ -1,3 +1,8 @@
+:root {
+  --skillsBorderWidth: 0.1rem;
+  --skillsBorder: var(--skillsBorderWidth) solid black;
+}
+
 #skills-container {
   padding: 1rem 0;
   min-height: 100vh;
@@ -22,7 +27,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   margin-bottom: 4rem;
-  border: 0.1rem solid black;
+  border: var(--skillsBorder);
   border-top: none;
   border-radius: 0 0 var(--radius) var(--radius);
   margin: 0.002rem;
@@ -54,7 +59,6 @@
   font-size: 0.7rem;
   line-height: 1.2;
   font-weight: 400;
-  border: var(--itemBorder);
   border-radius: var(--radius);
 }
 
@@ -73,47 +77,74 @@
   font-weight: 500;
 }
 
-#skills-title .skills-title-left,
-#skills-title .skills-title-right {
+#skills-title a[href='/skills/dev'],
+#skills-title a[href='/skills/design'] {
   position: relative;
   padding: 0.5rem 1rem;
   flex-basis: 17.25rem;
   min-width: 17.25rem;
   height: 2.25rem;
   text-align: left;
+  color: var(--colorGrey2);
+  border-bottom: 0.075rem solid black;
   box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
 }
 
-#skills-title .skills-title-right {
+#skills-title a[href='/skills/design'] {
   text-align: right;
-  color: var(--colorGrey1);
-  border-bottom: 0.1rem solid black;
 }
 
-.skills-title-middle {
-  flex-grow: 1;
-  height: 2.32rem;
-  box-sizing: border-box;
-  border-bottom: 0.1rem solid black;
-}
-
-#skills-title svg {
-  width: 17.25rem;
-  height: 2.25rem;
+#skills-title a.active {
+  color: var(--colorGrey8);
+  font-weight: 600;
+  border-bottom: none;
 }
 
 .skills-tab-left,
 .skills-tab-right {
   position: absolute;
-  top: 0.5px;
-  right: 0;
-  fill: var(--colorGrey1);
+  top: 0.04rem;
+  right: 0.0161122rem;
+  fill: var(--colorGrey6);
   stroke: black;
-  stroke-width: 0.1rem;
+  stroke-width: 0.085rem;
   z-index: -1;
+
+  transition: fill 0.1s ease;
 }
 
 #skills-title .skills-tab-right {
-  fill: var(--colorGrey6);
+  right: -0.0161122rem;
   transform: scaleX(-1);
+}
+
+#skills-title a[href='/skills/dev'].active > .skills-tab-left,
+#skills-title a[href='/skills/design'].active > .skills-tab-right {
+  fill: var(--colorGrey1);
+}
+
+.skills-title-middle {
+  position: relative;
+  flex-grow: 1;
+  height: 2.32rem;
+  box-sizing: border-box;
+  border-bottom: var(--skillsBorder);
+}
+
+.skills-title-middle::before {
+  content: '';
+  position: absolute;
+  bottom: -0.1rem;
+  left: -0.1rem;
+  right: -0.1rem;
+  height: 0.1rem;
+  background: black;
+}
+
+#skills-title svg {
+  width: 17.25rem;
+  height: 2.25rem;
 }

@@ -6,7 +6,6 @@ import './App.css';
 function App({ children }) {
   return (
     <>
-      <div id="curtain"></div>
       <div id="site-container">
         <Header />
         {children}

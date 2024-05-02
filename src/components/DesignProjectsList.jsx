@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PROJECTS from '../projects.json';
-import './ProjectsList.css';
+import './DesignProjectsList.css';
 
-function ProjectsList() {
+function DesignProjectsList() {
   return (
     <div id="project-list">
       <div id="project-list-container">
@@ -33,4 +33,4 @@ function ProjectsList() {
   );
 }
 
-export default ProjectsList;
+export default DesignProjectsList;

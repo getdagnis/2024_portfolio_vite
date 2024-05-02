@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import projects from '../projects.json';
-import './PortfolioPage.css';
+import { SCREEN_WIDTHS as SCREEN } from '../helpers/constants';
+import './DesignPage.css';
 
-function Portfolio() {
+function DesignPage() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
@@ -25,9 +26,9 @@ function Portfolio() {
   // Calculate number of columns and rows here instead of using @media query in order
   // to know each item's exact position in the grid for animation and hover effects
   const calculateColumns = (width) => {
-    if (width > 1024) return 4;
-    if (width <= 1024 && width >= 720) return 3;
-    if (width <= 720 && width >= 320) return 2;
+    if (width > SCREEN.MEDIUM) return 4;
+    if (width <= SCREEN.MEDIUM && width >= SCREEN.SMALL) return 3;
+    if (width <= SCREEN.SMALL && width >= SCREEN.XSMALL) return 2;
     return 1;
   };
 
@@ -61,16 +62,17 @@ function Portfolio() {
   };
 
   const getThumbInfoInitialClass = (col, row) => {
+    const returnClass = 'thumb-info';
     if (row === 1) {
-      return 'thumb-info thumb-info-hide-top';
+      return returnClass.concat(' thumb-info-hide-top');
     }
     if (col === 4) {
-      return 'thumb-info thumb-info-hide-right';
+      return returnClass.concat(' thumb-info-hide-right');
     }
     if (col === 1) {
-      return 'thumb-info thumb-info-hide-left';
+      return returnClass.concat(' thumb-info-hide-left');
     }
-    return 'thumb-info thumb-info-hide-top';
+    return returnClass.concat(' thumb-info-hide-top');
   };
 
   return (
@@ -124,4 +126,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default DesignPage;
