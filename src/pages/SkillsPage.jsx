@@ -3,123 +3,52 @@ import './SkillsPage.css';
 function SkillsPage() {
   return (
     <div id="skills-container">
-      <h3>Dev Skills</h3>
-      <div id="dev-skills-grid">
-        <ul>
-          <h2>Languages</h2>
-          <li className="skill" style={{ animationDelay: '0.1s' }}>
-            JavaScript / ES6
-          </li>
-          <li className="skill" style={{ animationDelay: '0.2s' }}>
-            TypeScript
-          </li>
-          <li className="skill" style={{ animationDelay: '0.25s' }}>
-            HTML5 / CSS / SASS / LESS
-          </li>
-          <li className="skill" style={{ animationDelay: '0.3s' }}>
-            SQL / NoSQL
-          </li>
-          <li className="skill" style={{ animationDelay: '0.35s' }}>
-            Bash / Shell / Luau
-          </li>
-          <li className="skill" style={{ animationDelay: '0.4s' }}>
-            Some PHP / Python
-          </li>
-        </ul>
-        <ul>
-          <h2>Tools / Libraries</h2>
-          <li className="skill" style={{ animationDelay: '0.1s' }}>
-            React
-          </li>
-          <li className="skill" style={{ animationDelay: '0.2s' }}>
-            Redux / Redux Toolkit / MobX
-          </li>
-          <li className="skill" style={{ animationDelay: '0.25s' }}>
-            Next.js / Gatsby
-          </li>
-          <li className="skill" style={{ animationDelay: '0.3s' }}>
-            Node.js / Express.js
-          </li>
-          <li className="skill" style={{ animationDelay: '0.35s' }}>
-            Material UI / Chakra UI / Mantine
-          </li>
-          <li className="skill" style={{ animationDelay: '0.4s' }}>
-            Webpack / Babel / ESLint / Jest
-          </li>
-          <li className="skill" style={{ animationDelay: '0.45s' }}>
-            React Native / Expo
-          </li>
-        </ul>
-        <ul>
-          <h2>Hard Skills</h2>
-          <li className="skill" style={{ animationDelay: '0.1s' }}>
-            Testing
-          </li>
-          <li className="skill" style={{ animationDelay: '0.2s' }}>
-            Debugging
-          </li>
-          <li className="skill" style={{ animationDelay: '0.25s' }}>
-            Rest APIs
-          </li>
-          <li className="skill" style={{ animationDelay: '0.3s' }}>
-            Cloud services
-          </li>
-          <li className="skill" style={{ animationDelay: '0.35s' }}>
-            Networking
-          </li>
-          <li className="skill" style={{ animationDelay: '0.4s' }}>
-            Version control
-          </li>
-          <li className="skill" style={{ animationDelay: '0.45s' }}>
-            Data storage
-          </li>
-        </ul>
+      <div id="skills-title">
+        <div className="skills-title-left">
+          DEV experience
+          <svg className="skills-tab-left" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M259.09,36,240.14,19a33.08,33.08,0,0,0-22.07-8.44H16.46a8.26,8.26,0,0,0-8.27,8.26V72H281.67V44.65A33.85,33.85,0,0,1,259.09,36Z"
+              transform="translate(-7.19 -9.6)"
+            />
+          </svg>
+        </div>
+        <div className="skills-title-middle"></div>
+        <div className="skills-title-right">
+          DESIGN experience
+          <svg className="skills-tab-right" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M259.09,36,240.14,19a33.08,33.08,0,0,0-22.07-8.44H16.46a8.26,8.26,0,0,0-8.27,8.26V72H281.67V44.65A33.85,33.85,0,0,1,259.09,36Z"
+              transform="translate(-7.19 -9.6)"
+            />
+          </svg>
+        </div>
       </div>
-      <h3>Design Skills</h3>
-      <div id="design-skills-grid">
-        <ul>
-          <h2>Applications</h2>
-          <li className="skill">Adobe Illustrator</li>
-          <li className="skill">Adobe Photoshop</li>
-          <li className="skill">Adobe InDesign</li>
-          <li className="skill">Adobe Animator</li>
-          <li className="skill">Adobe Premiere</li>
-          <li className="skill">Combustion</li>
-          <li className="skill">Maya/3Ds Max</li>
-          <li className="skill">Cinema 4D</li>
-          <li className="skill">FontLab (designer)</li>
-        </ul>
-
-        <ul>
-          <h2>Hard Skills</h2>
-          <li className="skill">Logos and branding</li>
-          <li className="skill">Illustrations, icon design</li>
-          <li className="skill">Font design</li>
-          <li className="skill">Vector animation</li>
-          <li className="skill">Video editing/animation</li>
-          <li className="skill">HTML5 animation</li>
-          <li className="skill">Rastra/GIF animation</li>
-          <li className="skill">3D modeling</li>
-          <li className="skill">3D texturing/lighting</li>
-          <li className="skill">3D animation</li>
-        </ul>
-
-        <ul>
-          <h2>Soft Skills</h2>
-          <li className="skill">Creative direction</li>
-          <li className="skill">Art direction</li>
-          <li className="skill">Design team lead</li>
-          <li className="skill">Brand guidance</li>
-          <li className="skill">Copywriting</li>
-          <li className="skill">User experience</li>
-          <li className="skill">Product design</li>
-          <li className="skill">Product ownership</li>
-          <li className="skill">Campaign management</li>
-          <li className="skill">Design budgeting</li>
-        </ul>
+      <div id="skills-grid">
+        <div className="grid-item">JavaScript</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
+        <div className="grid-item">grid-item</div>
       </div>
     </div>
   );
 }
 
 export default SkillsPage;
+
+// <svg xmlns="http://www.w3.org/2000/svg">
+//   <path
+//     className="skills-tab-left"
+//     d="M259.09,36,240.14,19a33.08,33.08,0,0,0-22.07-8.44H16.46a8.26,8.26,0,0,0-8.27,8.26V72H281.67V44.65A33.85,33.85,0,0,1,259.09,36Z"
+//     transform="translate(-7.19 -9.6)"
+//   />
+// </svg>;
