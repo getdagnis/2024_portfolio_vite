@@ -43,7 +43,7 @@
     --gridItemHeight: 8.75rem;
   }
 
-  @media screen and (min-width: 1280px) and (min-height: 840px) {
+  @media screen and (min-width: 1280px) and (min-height: 780px) {
     --siteMaxWidth: 1120px;
     --gridItemHeight: 9.75rem;
   }
