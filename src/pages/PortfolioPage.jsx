@@ -40,11 +40,13 @@ function Portfolio() {
       .map((thumb, index) => {
         const row = Math.floor(index / 4) + 1; // Calculate row number
         const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
+        const rowColor = row % 5 === 0 ? 'row-color-5' : `row-color-${row % 5}`;
+        console.log('🚀🚀 rowColor', row, rowColor);
 
         return {
           ...thumb,
           key: thumb.key,
-          className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names,
+          className: `grid-item col-${col} row-${row} ${rowColor} itemBounceAnim`, // Combined class names,
           col: col,
           row: row,
         };

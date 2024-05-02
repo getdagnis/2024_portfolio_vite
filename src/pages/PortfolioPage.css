@@ -143,7 +143,7 @@
     background-size: 55%;
   }
 
-  @media (min-height: 790px) and (min-width: 1024px) {
+  @media (min-height: 740px) and (min-width: 1024px) {
     height: 155px;
     background-size: 65%;
   }
@@ -220,6 +220,26 @@
   font-weight: 600;
   font-size: 0.7rem;
   text-transform: uppercase;
+}
+
+#grid-container .row-color-1 > .thumb-info {
+  background-color: var(--rowColor1);
+}
+
+#grid-container .row-color-2 > .thumb-info {
+  background-color: var(--rowColor2);
+}
+
+#grid-container .row-color-3 > .thumb-info {
+  background-color: var(--rowColor3);
+}
+
+#grid-container .row-color-4 > .thumb-info {
+  background-color: var(--rowColor4);
+}
+
+#grid-container .row-color-5 > .thumb-info {
+  background-color: var(--rowColor5);
 }
 
 #grid-container .grid-item:hover > .thumb-info {

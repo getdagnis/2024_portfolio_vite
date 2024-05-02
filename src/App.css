@@ -9,11 +9,29 @@
   --yellow: #e6ff08;
   --yellowTransp: #e6ff08e5;
   --darkYellow: #c6de06;
-  --accent: #ec002ff8; /* crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
+  --accent: #b334fff8; /* bright ec002ff8; crimson dc143cf8; red ec002ff8; electric #00c9abf8 */
   --radius: 0.5rem;
   --radiusSmall: 0.25rem;
-  --walker: #ff0033ef; /* dark olive 3c3c1af8; crimson dc143cf8; red e30039f8; ec002ff8; ff0033ef; electric 00e1c0ef; black #000000dd; */
+  --walker: #b334ffe8; /* bright ff0033ef; dark olive 3c3c1af8; crimson dc143cf8; red e30039f8; ec002ff8; ff0033ef; electric 00e1c0ef; black #000000dd; */
   --walkerText: #37000b; /* dark electric 00382f, dark red 37000b */
+
+  --colorGrey1: #f6f7f8;
+  --colorGrey2: #d4d6d6;
+  --colorGrey3: #bcc1c1;
+  --colorGrey4: #9ea8a8;
+  --colorGrey5: #7e8787;
+  --colorGrey6: #474c4c;
+  --colorGrey7: #1e2121;
+  --colorGrey8: #0f1111;
+
+  --colorAccent: #ec002ff8;
+  --colorWalker: #ff0033ef;
+
+  --rowColor1: #738cffe8;
+  --rowColor2: #7e73ffe8;
+  --rowColor3: #9c36ffe8;
+  --rowColor4: #b334ffe8;
+  --rowColor5: #c830f2e8;
 }
 
 *,
@@ -29,11 +47,11 @@ body {
 *::selection,
 body::selection {
   background-color: var(--accent);
-  color: black;
+  color: var(--colorGrey8);
 }
 
 a {
-  color: black;
+  color: var(--colorGrey8);
   text-decoration: none;
 }
 
@@ -83,8 +101,12 @@ body {
   height: 100%;
   min-height: calc(100vh - var(--siteBorder));
 
-  @media screen and (min-width: 1440px) {
-    max-width: 1180px;
+  @media screen and (min-width: 1280px) and (min-height: 740px) {
+    max-width: 1080px;
+  }
+
+  @media screen and (min-width: 1440px) and (min-height: 880px) {
+    max-width: 1220px;
   }
 
   /* retina screens fix */
