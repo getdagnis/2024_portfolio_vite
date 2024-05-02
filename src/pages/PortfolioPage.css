@@ -143,7 +143,7 @@
     background-size: 55%;
   }
 
-  @media (min-height: 790px) and (min-width: 1024px) {
+  @media (min-height: 740px) and (min-width: 1024px) {
     height: 155px;
     background-size: 65%;
   }

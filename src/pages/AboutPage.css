@@ -8,7 +8,7 @@
   overflow-y: auto;
   padding: 2rem;
   color: black;
-  background-color: #e9002fe1; /* white rgba(256, 256, 256, 0.95) */
+  background-color: var(--backgroundRed); /* white rgba(256, 256, 256, 0.95) */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
