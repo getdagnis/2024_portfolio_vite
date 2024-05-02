@@ -2,12 +2,12 @@ import { Link, ScrollRestoration, useParams } from 'react-router-dom';
 
 import DesignProjectsList from '../components/DesignProjectsList';
 import ProjectReactions from '../components/ProjectReactions';
-import projects from '../projects.json';
+import PROJECTS from '../constants/projects.json';
 import './DesignProjectPage.css';
 
 function DesignProjectPage() {
   const params = useParams();
-  const proj = projects.find((obj) => obj.key === params.key);
+  const proj = PROJECTS.find((obj) => obj.key === params.key);
 
   return (
     <div id="project-container">
@@ -29,7 +29,7 @@ function DesignProjectPage() {
       </div>
       <div id="project-nav">
         <div className="project-nav-open">
-          {projects.map((p, index) => (
+          {PROJECTS.map((p, index) => (
             <Link
               to={`/design/project/${p.key}`}
               key={p.key}

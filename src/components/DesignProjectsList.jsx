@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import PROJECTS from '../projects.json';
+import PROJECTS from '../constants/projects.json';
 import './DesignProjectsList.css';
 
 function DesignProjectsList() {

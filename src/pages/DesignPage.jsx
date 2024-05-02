@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import projects from '../projects.json';
-import { SCREEN_WIDTHS as SCREEN } from '../helpers/constants';
+import PROJECTS from '../constants/projects.json';
+import { SCREEN_WIDTHS as SCREEN } from '../constants/constants';
 import './DesignPage.css';
 
 function DesignPage() {
@@ -27,7 +27,7 @@ function DesignPage() {
   // to know each item's exact position in the grid for animation and hover effects
   const calculateColumns = (width) => {
     if (width > SCREEN.MEDIUM) return 4;
-    if (width <= SCREEN.MEDIUM && width >= SCREEN.SMALL) return 3;
+    if (width <= SCREEN.MEDIUM && width > SCREEN.SMALL) return 3;
     if (width <= SCREEN.SMALL && width >= SCREEN.XSMALL) return 2;
     return 1;
   };
@@ -36,22 +36,20 @@ function DesignPage() {
 
   useEffect(() => {
     // filter items that are supposed to be shown and update necessary properties
-    const items = projects
-      .filter((thumb) => thumb.show === true)
-      .map((thumb, index) => {
-        const row = Math.floor(index / 4) + 1; // Calculate row number
-        const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
+    const items = PROJECTS.filter((thumb) => thumb.show === true).map((thumb, index) => {
+      const row = Math.floor(index / 4) + 1; // Calculate row number
+      const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
 
-        return {
-          ...thumb,
-          key: thumb.key,
-          className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names,
-          col: col,
-          row: row,
-        };
-      });
+      return {
+        ...thumb,
+        key: thumb.key,
+        className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names,
+        col: col,
+        row: row,
+      };
+    });
     setGridItems(items);
-  }, [projects, screenWidth]);
+  }, [PROJECTS, screenWidth]);
 
   const handleFiltersToggle = () => {
     setSeeFilters(!seeFilters);
@@ -85,7 +83,7 @@ function DesignPage() {
             created identities
           </li>
           <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
-            own projects
+            own PROJECTS
           </li>
           <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFiltering('cli')}>
             clients

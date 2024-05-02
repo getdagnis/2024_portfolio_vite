@@ -36,7 +36,11 @@
   min-height: 50vh;
   padding: 1rem;
 
-  @media screen and (max-width: 880px) {
+  @media screen and (max-width: 1080px) {
+    grid-gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 920px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -47,12 +51,13 @@
 }
 
 #skills-grid .grid-item {
-  min-height: 8.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   text-align: left;
+  height: var(--gridItemHeight);
+  min-height: var(--gridItemHeight);
   padding: 0.5rem;
   background: var(--gridItem);
   color: var(--walkerText);
@@ -64,7 +69,7 @@
 
 #skills-grid .grid-item:first-child {
   grid-column: span 2;
-  grid-row: 1 / 3;
+  grid-row: span 2;
   height: auto;
 }
 
@@ -112,7 +117,6 @@
   stroke: black;
   stroke-width: 0.085rem;
   z-index: -1;
-
   transition: fill 0.1s ease;
 }
 
@@ -147,4 +151,28 @@
 #skills-title svg {
   width: 17.25rem;
   height: 2.25rem;
+}
+
+@media screen and (max-width: 680px) {
+  #skills-title {
+    display: none;
+  }
+
+  .skills-title-middle::before {
+    bottom: -0.1rem;
+    left: -0.1rem;
+    right: 0;
+    background-color: black;
+  }
+
+  #skills-grid {
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: none;
+    margin: 0;
+    margin-top: 0;
+    height: 100%;
+    min-height: 50vh;
+    padding: 0;
+  }
 }

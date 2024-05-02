@@ -16,7 +16,7 @@
 .logo {
   width: 440px;
   min-height: 35px;
-  max-width: 73vw;
+  max-width: 55vw;
   margin-bottom: 0.1rem;
   background: url('../assets/logo_full.svg') center left no-repeat;
   cursor: pointer;
@@ -47,6 +47,7 @@ nav > ul > li {
   transition: all 0.3s ease;
   cursor: pointer;
   overflow: hidden;
+  text-decoration: underline;
 }
 nav > ul > li:hover {
   text-decoration: line-through;
