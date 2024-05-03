@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import './AboutPage.css';
 
-function AboutPage({ showAbout, onClose }) {
+function AboutPage({ showAbout, onClose, location }) {
+  location && console.log('🚀🚀 location', location);
+
   return (
     <>
-      <div className={showAbout ? 'about-background' : 'hidden'}></div>
       <div id="about-container" className={showAbout ? ' ' : 'about-hidden'}>
         <div className="close" onClick={onClose}></div>
         <img className="dag-img" src="../dag_square.png" alt="Dagnis Skurbe" />

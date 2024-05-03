@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+
+import AboutPage from '../pages/AboutPage';
+import ButtonNav from '../components-ui/ButtonNav';
+import MobileMenu from '../components/MobileMenu';
 
 import './Header.css';
-import AboutPage from '../pages/AboutPage';
-import MobileMenu from './MobileMenu';
 
 function Header() {
   const [showAbout, setShowAbout] = useState(false);
@@ -90,6 +92,7 @@ function Header() {
   }
 
   const designActive = window.location.pathname === '/design' || window.location.pathname.includes('/design/project');
+  const location = useLocation();
 
   return (
     <div id="header-container">
@@ -107,23 +110,25 @@ function Header() {
           </span>
         </div>
 
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/" className={designActive ? 'active' : ''}>
-                design
-              </NavLink>
-            </li>
-            {/* <li>
+        <nav id="header-nav">
+          <ButtonNav>
+            <NavLink to="/" className={designActive ? 'active' : ''}>
+              design
+            </NavLink>
+          </ButtonNav>
+          {/*
+          <ButtonNav>
               <NavLink to="/vote">vote</NavLink>
-            </li> */}
-            <li>
-              <NavLink to="/skills">skills</NavLink>
-            </li>
-            <li>
-              <div onClick={() => setShowAbout(true)}>about</div>
-            </li>
-          </ul>
+            </ButtonNav>
+          */}
+          <ButtonNav>
+            <NavLink to="/skills/dev">skills</NavLink>
+          </ButtonNav>
+          <ButtonNav>
+            <div className={showAbout ? 'active' : ''} onClick={() => setShowAbout(true)}>
+              about
+            </div>
+          </ButtonNav>
         </nav>
       </div>
 
@@ -142,7 +147,7 @@ function Header() {
           brands<strong className="b">become</strong>icons
         </span>
       </div>
-      <AboutPage showAbout={showAbout} onClose={handleAboutClose} />
+      <AboutPage location={{ location }} showAbout={showAbout} onClose={handleAboutClose} />
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
     </div>
   );

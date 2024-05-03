@@ -14,7 +14,7 @@ function SkillsPage() {
     <div id="skills-container">
       <div id="skills-title">
         <NavLink to="/skills/dev">
-          DEV experience
+          <p className="left">DEV experience</p>
           <svg className="skills-tab-left" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M259.09,36,240.14,19a33.08,33.08,0,0,0-22.07-8.44H16.46a8.26,8.26,0,0,0-8.27,8.26V72H281.67V44.65A33.85,33.85,0,0,1,259.09,36Z"
@@ -24,7 +24,7 @@ function SkillsPage() {
         </NavLink>
         <div className="skills-title-middle"></div>
         <NavLink to="/skills/design">
-          DESIGN experience
+          <p className="right">DESIGN experience</p>
           <svg className="skills-tab-right" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M259.09,36,240.14,19a33.08,33.08,0,0,0-22.07-8.44H16.46a8.26,8.26,0,0,0-8.27,8.26V72H281.67V44.65A33.85,33.85,0,0,1,259.09,36Z"
