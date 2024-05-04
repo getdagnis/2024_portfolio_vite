@@ -4,11 +4,12 @@
   --siteBorder: 10px;
   --background: #f6f7f8; /* grey eeeeee; greenish #d9dfcd; greenish 2 bec4b8; yellow e6ff08 */
   --gridItem: #dce2e2; /* almost-white #ffffffbb; */
+  --gridItemActive: #d7e0e0; /* almost-white #ffffffbb; */
   --radius: 0.5rem;
   --radiusSmall: 0.25rem;
 
   --colorGrey1: #f6f7f8;
-  --colorGrey2: #d4d6d6;
+  --colorGrey2: #dce2e2;
   --colorGrey3: #bcc1c1;
   --colorGrey4: #9ea8a8;
   --colorGrey5: #7e8787;

@@ -1,0 +1,116 @@
+{
+  "designSkills": [
+    {
+      "key": "graphic",
+      "section": "design",
+      "title": "Graphic Design",
+      "describe": "Since 2005 professionally. Have attended workshops and lectures by Stephan Sagmeister, Paul Scher, Bob Gill, Jan Wilker. 2 years attending public lectures in Royal Academy of Arts, London. Have tought a lecture course on product design in Riga Stradins’ University. ",
+      "details": "Expertise in creating visually compelling and brand-aligned designs.",
+      "class": "design-large"
+    },
+    {
+      "key": "adobe",
+      "section": "design",
+      "title": "Adobe Creative Suite",
+      "describe": "Since 2005 professionally. Have attended workshops and lectures by Stephan Sagmeister, Paul Scher, Bob Gill, Jan Wilker. 2 years attending public lectures in Royal Academy of Arts, London. Have tought a lecture course on product design in Riga Stradins’ University. ",
+      "details": "Proficient in Adobe software for professional graphic and video editing.",
+      "class": "design-large adobe"
+    },
+    {
+      "key": "video",
+      "section": "design",
+      "title": "Video Editing // Animation",
+      "describe": "Skilled in dynamic video production and effects animation.",
+      "details": "Skilled in dynamic video production and effects animation.",
+      "class": "regular-size"
+    },
+    {
+      "key": "3d",
+      "section": "design",
+      "title": "3D Modeling & Animation",
+      "describe": "Advanced 3D modeling, texturing, lighting, and animation.",
+      "details": "Advanced 3D modeling, texturing, lighting, and animation.",
+      "class": "regular-size"
+    },
+    {
+      "key": "ux",
+      "section": "design",
+      "title": "User Experience Design",
+      "describe": "Creating intuitive and effective user interfaces and experiences.",
+      "details": "Creating intuitive and effective user interfaces and experiences.",
+      "class": "regular-size"
+    },
+    {
+      "key": "creative",
+      "section": "design",
+      "title": "Creative Direction",
+      "describe": "Campaign Strategy // Art Direction // Brand Guidance",
+      "details": "Leading creative initiatives for brand and product strategies.",
+      "class": "regular-size"
+    },
+    {
+      "key": "anim",
+      "section": "design",
+      "title": "Animation",
+      "describe": "Crafting engaging animations for web and digital media.",
+      "details": "Crafting engaging animations for web and digital media.",
+      "class": "regular-size"
+    },
+    {
+      "key": "lead",
+      "section": "design",
+      "title": "Design Leadership",
+      "describe": "Team Management // Product Design // Design Budgeting",
+      "details": "Guiding design teams towards innovative and cost-effective solutions.",
+      "class": "regular-size"
+    },
+    {
+      "key": "copy",
+      "section": "design",
+      "title": "Copywriting",
+      "describe": "Developing compelling narratives for marketing and communications.",
+      "details": "Developing compelling narratives for marketing and communications.",
+      "class": "regular-size"
+    },
+    {
+      "key": "font",
+      "section": "design",
+      "title": "Font Design",
+      "describe": "Designing custom fonts and typography for various applications.",
+      "details": "Designing custom fonts and typography for various applications.",
+      "class": "regular-size"
+    },
+    {
+      "key": "product",
+      "section": "design",
+      "title": "Product Design",
+      "describe": "Innovating and refining products from concept to market.",
+      "details": "Innovating and refining products from concept to market.",
+      "class": "regular-size"
+    },
+    {
+      "key": "web",
+      "section": "design",
+      "title": "Web Design",
+      "describe": "Building functional and aesthetically pleasing web interfaces.",
+      "details": "Building functional and aesthetically pleasing web interfaces.",
+      "class": "regular-size"
+    },
+    {
+      "key": "copy2",
+      "section": "design",
+      "title": "Copywriting",
+      "describe": "Developing compelling narratives for marketing and communications.",
+      "details": "Developing compelling narratives for marketing and communications.",
+      "class": "regular-size"
+    },
+    {
+      "key": "font2",
+      "section": "design",
+      "title": "Font Design",
+      "describe": "Designing custom fonts and typography for various applications.",
+      "details": "Designing custom fonts and typography for various applications.",
+      "class": "regular-size"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "devSkills": [
+    {
+      "key": "lng_js",
+      "section": "dev",
+      "title": "JavaScript // TypeScript",
+      "describe": "5+ years using: React.js // Node.js // Redux // Next.js // Material UI // MobX // Chakra UI // Gatsby // Mantine // Webpack // Babel // ESlint // Jest // React Native // Expo and others",
+      "details": "Professional skills with popular frameworks and tools for front and back-end development.",
+      "class": "dev-large"
+    },
+    {
+      "key": "lng_css",
+      "section": "dev",
+      "title": "CSS3+ // SASS // LESS // JSSS",
+      "describe": "20+ years of love for designing complex, responsive CSS layouts",
+      "details": "Love for designing complex, responsive, animated CSS layouts",
+      "class": "dev-dark regular-size"
+    },
+    {
+      "key": "lng_php",
+      "section": "dev",
+      "title": "PHP // SQL // NoSQL",
+      "describe": "Experience working with PHP // MySQL // PostgreSQL // MongoDB +",
+      "details": "Skilled in both traditional and modern database technologies.",
+      "class": "dev-dark regular-size"
+    },
+    {
+      "key": "lng_html",
+      "section": "dev",
+      "title": "HTML5+ // SEO",
+      "describe": "Semantic, cross-browser, accessible and SEO optimized HTML skills",
+      "details": "Crafting high-quality, standards-compliant web pages.",
+      "class": "dev-dark regular-size"
+    },
+    {
+      "key": "apps",
+      "section": "dev",
+      "title": "Mobile Apps",
+      "describe": "Cross-platform iOS and Android mobile apps using React Native",
+      "details": "Building high-performance single-page applications with modern frameworks.",
+      "class": "dev-dark regular-size"
+    },
+
+    {
+      "key": "ai",
+      "section": "dev",
+      "title": "AI integration // Prompts",
+      "describe": "OpenAI // GPT // AI model integration // Prompt design",
+      "details": "Expertise in integrating AI services and crafting effective prompts for various applications.",
+      "class": "regular-size"
+    },
+    {
+      "key": "git",
+      "section": "dev",
+      "title": "Version control",
+      "describe": "Git // branching // GitHub // GitLab // Bitbucket",
+      "details": "Deep proficiency in Git and related platforms for effective version management.",
+      "class": "regular-size"
+    },
+    {
+      "key": "rest",
+      "section": "dev",
+      "title": "Rest APIs",
+      "describe": "RESTful services using JSON // XML over HTTP // HTTPS",
+      "details": "Advanced design and integration of web APIs for robust data interchange.",
+      "class": "regular-size"
+    },
+    {
+      "key": "cloud",
+      "section": "dev",
+      "title": "Cloud services",
+      "describe": "Azure // Firebase // Heroku // Netlify // AWS // Serverless // Cloud integrations",
+      "details": "Extensive experience in deploying and managing applications in the cloud.",
+      "class": "regular-size"
+    },
+
+    {
+      "key": "test",
+      "section": "dev",
+      "title": "Testing",
+      "describe": "Day-to-day testing experience using React Testing Library // Jest // Cypress",
+      "details": "Implementing rigorous testing protocols to ensure software quality.",
+      "class": "regular-size"
+    },
+    {
+      "key": "debug",
+      "section": "dev",
+      "title": "Debugging",
+      "describe": "Chrome DevTools // Fiddler // Wireshark // VS Code",
+      "details": "Skilled in efficient problem-solving with top industry tools.",
+      "class": "regular-size"
+    },
+    {
+      "key": "docker",
+      "section": "dev",
+      "title": "Docker // Shell scripting",
+      "describe": "Docker // Docker Toolbox // Bash scripts for automation",
+      "details": "Expertise in containerization and script automation for scalable deployments.",
+      "class": "regular-size"
+    },
+
+    {
+      "key": "agile",
+      "section": "dev",
+      "title": "Scrum, CI/CD, Agile",
+      "describe": "Agile methodologies, Azure, Scrum, Kanban, JIRA for teams, JIRA API",
+      "details": "Agile methodologies, Azure, Scrum, Kanban, JIRA for teams, JIRA API",
+      "class": "regular-size"
+    }
+  ]
+}

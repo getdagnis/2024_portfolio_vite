@@ -14,15 +14,15 @@ function AboutPage({ showAbout, onClose, location }) {
           <h1 className="about-hello">Hello.</h1>
         </div>
         <p className="about-tagline animated-line">
-          <span>Decades of creating things using code & design</span>.
+          <span>"Building single page JS applications a decade before it was cool"</span>
         </p>
         <p className="animated-line" style={{ animationDelay: '0.8s' }}>
-          For 20+ years <span>Dagnis Skurbe</span> has worked professionally as a Software Developer, Graphic Designer
+          For 20+ years <span>Dagnis Skurbe</span> has worked professionally as a Front-End Developer, Graphic Designer
           and Creative Director in Advertising, Tech and Entertainment industries in Riga, Latvia and London, UK.
         </p>
         <p className="animated-line" style={{ animationDelay: '1.1s' }}>
-          He is currently working as a full-stack developer using React/Node.js with a special focus on UX and Creative
-          Direction.
+          He is currently working as a full-stack developer using{' '}
+          <span>React/Node.js with a special focus on UX, Product Ownership and Creative Direction.</span>
         </p>
         <p className="animated-line" style={{ animationDelay: '1.4s' }}>
           <span>Dagnis is available</span> for full-time or part-time work as a software engineer, graphic designer and
