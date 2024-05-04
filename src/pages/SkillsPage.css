@@ -52,27 +52,95 @@
   }
 }
 
-#skills-grid .grid-item {
+#skills-grid .skill-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
   text-align: left;
   height: var(--gridItemHeight);
   min-height: var(--gridItemHeight);
-  padding: 0.5rem;
+  padding: 0.75rem;
   background: var(--gridItem);
   color: var(--walkerText);
   font-size: 0.7rem;
   line-height: 1.2;
   font-weight: 400;
   border-radius: var(--radius);
+  animation: itemBounceAnim 0.7s;
+  cursor: crosshair;
+
+  @keyframes itemBounceAnim {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(50px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @media screen and (max-width: 680px) {
+    height: fit-content;
+  }
 }
 
-#skills-grid .grid-item:first-child {
+#skills-grid .skill-icon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1rem;
+  margin-left: -0.1rem;
+  /* opacity: 0.1; */
+  /* transform: translateY(20%); */
+  transition: all 0.6s ease;
+}
+
+#skills-grid .skill-item:hover > .skill-item-top > .skill-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#skill-item-bottom > h3 {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.1px;
+  /* transform: translateY(200%); */
+  transition: all 0.6s ease;
+}
+
+#skills-grid .skill-item:hover > #skill-item-bottom > h3 {
+  transform: translateY(0);
+}
+
+#skill-item-bottom > p {
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+  font-weight: 300;
+  font-size: 0.8rem;
+  /* opacity: 0; */
+  /* transform: translateY(200%); */
+  transition: all 0.6s ease;
+}
+
+#skills-grid .skill-item:hover > #skill-item-bottom > p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#skills-grid .skill-item:first-child {
   grid-column: span 2;
   grid-row: span 2;
   height: auto;
+  background-color: var(--colorGrey7);
+  padding: 1rem 0.85rem;
+  color: white;
 
   @media screen and (max-width: 920px) {
     height: calc(var(--gridItemHeight) * 2);
@@ -84,7 +152,28 @@
   }
 }
 
-#skills-title {
+#skills-grid .skill-item:first-child .skill-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+#skills-grid .skill-item:first-child h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+#skills-grid .skill-item:first-child p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+#skills-grid .skill-item.grey-5 {
+  background-color: var(--colorGrey6);
+  color: white;
+}
+
+#skills-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,8 +182,8 @@
   font-weight: 500;
 }
 
-#skills-title a[href='/skills/dev'],
-#skills-title a[href='/skills/design'] {
+#skills-top a[href='/skills/dev'],
+#skills-top a[href='/skills/design'] {
   position: relative;
   padding: 0.5rem 1rem;
   flex-basis: 17.25rem;
@@ -109,21 +198,21 @@
   transition: color 0.2s ease;
 }
 
-#skills-title a[href='/skills/design'] {
+#skills-top a[href='/skills/design'] {
   text-align: right;
 }
 
-#skills-title a.active {
+#skills-top a.active {
   color: var(--colorGrey8);
   font-weight: 600;
   border-bottom: none;
 }
 
-#skills-title a.active > p.left {
+#skills-top a.active > p.left {
   animation: tabSlideLeft 1s ease backwards;
 }
 
-#skills-title a.active > p.right {
+#skills-top a.active > p.right {
   animation: tabSlideRight 1s ease backwards;
 }
 
@@ -139,13 +228,13 @@ svg.skills-tab-right {
   transition: fill 0.1s ease;
 }
 
-#skills-title svg.skills-tab-right {
+#skills-top svg.skills-tab-right {
   right: -0.0161122rem;
   transform: scaleX(-1);
 }
 
-#skills-title a[href='/skills/dev'].active > .skills-tab-left,
-#skills-title a[href='/skills/design'].active > .skills-tab-right {
+#skills-top a[href='/skills/dev'].active > .skills-tab-left,
+#skills-top a[href='/skills/design'].active > .skills-tab-right {
   fill: var(--colorGrey1);
 }
 
@@ -167,13 +256,13 @@ svg.skills-tab-right {
   background: black;
 }
 
-#skills-title svg {
+#skills-top svg {
   width: 17.25rem;
   height: 2.25rem;
 }
 
 @media screen and (max-width: 680px) {
-  #skills-title {
+  #skills-top {
     display: none;
   }
 
