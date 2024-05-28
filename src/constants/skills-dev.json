@@ -4,7 +4,7 @@
       "key": "lng_js",
       "section": "dev",
       "title": "JavaScript // TypeScript",
-      "describe": "5+ years using: React.js // Node.js // Redux // Next.js // Material UI // MobX // Chakra UI // Gatsby // Mantine // Webpack // Babel // ESlint // Jest // React Native // Expo and others",
+      "describe": "10+ years JavaScript. 5+ years using: React.js // Node.js // Redux // Next.js // Material UI // MobX // Chakra UI // Gatsby // Mantine // Webpack // Babel // ESlint // Jest // React Native // Expo and others",
       "details": "Professional skills with popular frameworks and tools for front and back-end development.",
       "class": "dev-large"
     },
@@ -14,7 +14,7 @@
       "title": "CSS3+ // SASS // LESS // JSSS",
       "describe": "20+ years of love for designing complex, responsive CSS layouts",
       "details": "Love for designing complex, responsive, animated CSS layouts",
-      "class": "dev-dark regular-size"
+      "class": "dark-item regular-size"
     },
     {
       "key": "lng_php",
@@ -22,7 +22,7 @@
       "title": "PHP // SQL // NoSQL",
       "describe": "Experience working with PHP // MySQL // PostgreSQL // MongoDB +",
       "details": "Skilled in both traditional and modern database technologies.",
-      "class": "dev-dark regular-size"
+      "class": "dark-item regular-size"
     },
     {
       "key": "lng_html",
@@ -30,7 +30,7 @@
       "title": "HTML5+ // SEO",
       "describe": "Semantic, cross-browser, accessible and SEO optimized HTML skills",
       "details": "Crafting high-quality, standards-compliant web pages.",
-      "class": "dev-dark regular-size"
+      "class": "dark-item regular-size"
     },
     {
       "key": "apps",
@@ -38,7 +38,7 @@
       "title": "Mobile Apps",
       "describe": "Cross-platform iOS and Android mobile apps using React Native",
       "details": "Building high-performance single-page applications with modern frameworks.",
-      "class": "dev-dark regular-size"
+      "class": "dark-item regular-size"
     },
 
     {

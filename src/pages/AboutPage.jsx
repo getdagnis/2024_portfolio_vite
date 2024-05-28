@@ -14,7 +14,7 @@ function AboutPage({ showAbout, onClose, location }) {
           <h1 className="about-hello">Hello.</h1>
         </div>
         <p className="about-tagline animated-line">
-          <span>"Building single page JS applications a decade before it was cool"</span>
+          <span className="about-tagline-span">Two decades of building things using code and design.</span>
         </p>
         <p className="animated-line" style={{ animationDelay: '0.8s' }}>
           For 20+ years <span>Dagnis Skurbe</span> has worked professionally as a Front-End Developer, Graphic Designer
@@ -29,7 +29,7 @@ function AboutPage({ showAbout, onClose, location }) {
           consultant for both startups and large enterprises.
         </p>
         <p className="animated-line" style={{ animationDelay: '1.7s' }}>
-          Have a project in mind? Get in touch via <span>dagnis@dagn.is</span> or the links below.
+          Have a project in mind? Let's do it together! Reach out to <span>dagnis@dagn.is</span> or the links below.
         </p>
       </div>
     </>

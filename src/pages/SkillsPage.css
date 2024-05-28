@@ -67,8 +67,8 @@
   height: var(--gridItemHeight);
   min-height: fit-content;
   padding: 0.5rem 0.5rem 0.75rem 0.85rem;
-  background: var(--colorGrey2);
-  color: var(--walkerText);
+  background: var(--colorGrey5);
+  color: white;
   font-size: 0.7rem;
   line-height: 1.2;
   font-weight: 400;
@@ -92,7 +92,8 @@
   }
 }
 
-#skills-grid .skill-item:hover {
+#skills-grid .skill-item:hover,
+#skills-grid .skill-item.dark-item:hover {
   background: var(--gridItemActive);
 
   @media screen and (max-width: 560px) {
@@ -134,7 +135,7 @@
 
   @media screen and (max-width: 560px) {
     margin-top: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -145,11 +146,12 @@
 #skill-item-bottom > p {
   margin-bottom: 0.25rem;
   line-height: 1.2;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.8rem;
   opacity: 0;
   transform: translateY(200%);
   transition: all 0.6s ease;
+  color: black;
 
   @media screen and (max-width: 1279px) {
     font-size: 0.75rem;
@@ -157,9 +159,10 @@
 }
 
 #skills-grid .skill-item.regular-size #skill-item-bottom > p {
-  max-width: calc(var(--gridItemHeight) * 2.5);
+  max-width: 90%;
 
   @media screen and (max-width: 560px) {
+    font-size: 0.95rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -178,8 +181,8 @@
   grid-column: span 2;
   grid-row: span 2;
   height: auto;
-  background-color: var(--colorGrey8);
-  padding: 0.75rem 1rem 0.85rem;
+  background-color: var(--colorGrey7);
+  padding: 0.75rem 1rem 1.5rem;
   color: white;
 
   @media screen and (max-width: 920px) {
@@ -189,7 +192,13 @@
   @media screen and (max-width: 560px) {
     grid-column: span 1;
     height: fit-content;
+    padding-bottom: 0.5rem;
   }
+}
+
+#skills-grid .skill-item.dev-large:hover,
+#skills-grid .skill-item.design-large:hover {
+  background-color: var(--colorGrey8);
 }
 
 #skills-grid .skill-item.design-large {
@@ -222,18 +231,19 @@
 
 #skills-grid .skill-item.dev-large p,
 #skills-grid .skill-item.design-large p {
+  color: white;
   font-size: 0.9rem;
   line-height: 1.3;
 }
 
-#skills-grid .skill-item.dev-dark,
-#skills-grid .skill-item.design-dark {
-  background-color: var(--colorGrey6);
-  color: white;
+#skills-grid .skill-item.dark-item,
+#skills-grid .skill-item.dark-item {
+  /* background-color: var(--colorGrey6);
+  color: white; */
 }
 
-#skills-grid .skill-item.dev-dark #skill-item-bottom > h3,
-#skills-grid .skill-item.design-dark #skill-item-bottom > h3 {
+#skills-grid .skill-item.dark-item #skill-item-bottom > h3,
+#skills-grid .skill-item.dark-item #skill-item-bottom > h3 {
   /* color: black; */
 }
 
