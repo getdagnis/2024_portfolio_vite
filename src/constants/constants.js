@@ -5,3 +5,12 @@ export const SCREEN_WIDTHS = {
   LARGE: 1440,
   XLARGE: 1920,
 };
+
+export const DESIGN_FILTERS = [
+  { key: 'all', title: 'All' },
+  { key: 'identitites', title: 'Created Identities' },
+  { key: 'publishing', title: 'Publishing' },
+  { key: 'sports', title: 'Sports' },
+  { key: 'own', title: 'Own Projects' },
+  { key: 'smart', title: 'Smart' },
+];

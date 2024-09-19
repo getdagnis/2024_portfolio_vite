@@ -9,7 +9,7 @@ function DesignPage() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('ide');
+  const [activeFilter, setActiveFilter] = useState('identities');
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,23 +76,28 @@ function DesignPage() {
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
-        <div className="filters-button" onClick={handleFiltersToggle}></div>
+        <div className="filters-button" onClick={handleFiltersToggle}>
+          <div>{activeFilter === 'all' ? 'active' : ''}</div>
+        </div>
         <ul className="filters-list">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
-          <li className={activeFilter === 'ide' ? 'active' : ''} onClick={() => handleFiltering('ide')}>
+          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFiltering('all')}>
+            all
+          </li>
+          <li className={activeFilter === 'identities' ? 'active' : ''} onClick={() => handleFiltering('identities')}>
             created identities
           </li>
           <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
-            own PROJECTS
+            own projects
           </li>
-          <li className={activeFilter === 'cli' ? 'active' : ''} onClick={() => handleFiltering('cli')}>
-            clients
+          <li className={activeFilter === 'smart' ? 'active' : ''} onClick={() => handleFiltering('smart')}>
+            smart
           </li>
-          <li className={activeFilter === 'pub' ? 'active' : ''} onClick={() => handleFiltering('pub')}>
+          <li className={activeFilter === 'publishing' ? 'active' : ''} onClick={() => handleFiltering('publishing')}>
             publishing
           </li>
-          <li className={activeFilter === 'oth' ? 'active' : ''} onClick={() => handleFiltering('oth')}>
-            other
+          <li className={activeFilter === 'sports' ? 'active' : ''} onClick={() => handleFiltering('sports')}>
+            sports
           </li>
         </ul>
       </div>

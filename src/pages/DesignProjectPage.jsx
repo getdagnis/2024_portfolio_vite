@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, ScrollRestoration, useParams } from 'react-router-dom';
 
 import DesignProjectsList from '../components/DesignProjectsList';
@@ -6,8 +7,8 @@ import PROJECTS from '../constants/projects.json';
 import './DesignProjectPage.css';
 
 function DesignProjectPage() {
-  const params = useParams();
-  const proj = PROJECTS.find((obj) => obj.key === params.key);
+  const { key: projectKey } = useParams();
+  const proj = PROJECTS.find((obj) => obj.key === projectKey);
 
   return (
     <div id="project-container">
@@ -33,7 +34,7 @@ function DesignProjectPage() {
             <Link
               to={`/design/project/${p.key}`}
               key={p.key}
-              className={p.key === params.key ? 'proj-thumb active' : 'proj-thumb'}
+              className={p.key === projectKey ? 'proj-thumb active' : 'proj-thumb'}
               style={{
                 backgroundImage: `url(../../thumbs/${p.key}.svg)`,
                 animationDelay: `${0.3 + index / 25}s`, // apply bounce animation delay
@@ -43,7 +44,7 @@ function DesignProjectPage() {
         </div>
       </div>
       <ScrollRestoration />
-      <ProjectReactions projectKey={proj.key} />
+      <ProjectReactions projectKey={projectKey} />
       <div className="project-divider"></div>
       <DesignProjectsList />
     </div>
