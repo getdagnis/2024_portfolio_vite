@@ -1,5 +1,5 @@
 export const SCREEN_WIDTHS = {
-  XSMALL: 320,
+  XSMALL: 380,
   SMALL: 680,
   MEDIUM: 1024,
   LARGE: 1440,
@@ -7,12 +7,13 @@ export const SCREEN_WIDTHS = {
 };
 
 export const DESIGN_FILTERS = [
-  { key: 'all', title: 'All' },
-  { key: 'identity', title: 'Created Identities' },
-  { key: 'publishing', title: 'Publishing' },
-  { key: 'sports', title: 'Sports' },
-  { key: 'own', title: 'Own Projects' },
-  { key: 'smart', title: 'Smart' },
-  { key: 'famous', title: 'Well known' },
-  { key: 'rejected', title: 'Rejected' },
+  { key: 'all', title: 'All', display: true, mobile: true },
+  { key: 'identity', title: 'Identities', display: true, mobile: true },
+  { key: 'smart', title: 'Smart', display: true, mobile: true },
+  { key: 'famous', title: 'Famous', display: true, mobile: true },
+  { key: 'sports', title: 'Sports', display: true, mobile: true },
+  { key: 'own', title: 'Own', display: false },
+  { key: 'startup', title: 'Startups', display: true, mobile: false },
+  { key: 'publishing', title: 'Publishing', display: true, mobile: false },
+  { key: 'other', title: 'Other', display: true, mobile: true },
 ];

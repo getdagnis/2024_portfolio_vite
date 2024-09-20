@@ -122,7 +122,7 @@ function Header() {
             </ButtonNav>
           */}
           <ButtonNav>
-            <NavLink to="/skills/dev">dev skills</NavLink>
+            <NavLink to="/skills/dev">dev skillset</NavLink>
           </ButtonNav>
           <ButtonNav>
             <div className={showAbout ? 'active' : ''} onClick={() => setShowAbout(true)}>

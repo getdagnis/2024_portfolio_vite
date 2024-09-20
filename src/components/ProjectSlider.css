@@ -50,8 +50,8 @@
 }
 
 #mobile-menu-bottom > .footer-message {
-  width: 40vw;
-  height: 10vh;
+  width: 70vw;
+  height: fit-content;
   background-size: contain;
 
   animation: fadeIn 0.5s ease-in-out 3s backwards;

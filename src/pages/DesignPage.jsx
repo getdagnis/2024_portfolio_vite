@@ -11,6 +11,8 @@ function DesignPage() {
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [isHiding, setIsHiding] = useState(false);
+  const [wasHiding, setWasHiding] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,8 +26,6 @@ function DesignPage() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Calculate number of columns and rows here instead of using @media query in order
-  // to know each item's exact position in the grid for animation and hover effects
   const calculateColumns = (width) => {
     if (width > SCREEN.MEDIUM) return 4;
     if (width <= SCREEN.MEDIUM && width > SCREEN.SMALL) return 3;
@@ -36,23 +36,40 @@ function DesignPage() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    console.log('🍌🥕 activeFilter', activeFilter);
-    const items = PROJECTS.filter(
-      (thumb) => thumb.show === true && (thumb.category.includes(activeFilter) || activeFilter === 'all')
-    ).map((thumb, index) => {
-      const row = Math.floor(index / 4) + 1; // Calculate row number
-      const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
+    if (!isHiding) {
+      const filteredItems = PROJECTS.filter(
+        (thumb) => thumb.show === true && (thumb.category.includes(activeFilter) || activeFilter === 'all')
+      ).map((thumb, index) => {
+        const row = Math.floor(index / columns) + 1; // Calculate row number
+        const col = (index % columns) + 1; // Calculate column number
 
-      return {
-        ...thumb,
-        key: thumb.key,
-        className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names,
-        col: col,
-        row: row,
-      };
-    });
-    setGridItems(items);
-  }, [PROJECTS, screenWidth, activeFilter]);
+        return {
+          ...thumb,
+          key: thumb.key,
+          className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names
+          col: col,
+          row: row,
+        };
+      });
+      setGridItems(filteredItems);
+    }
+  }, [activeFilter, screenWidth, isHiding]);
+
+  const handleFilterChange = (newFilter) => {
+    if (activeFilter !== newFilter) {
+      const calculateTimeOut =
+        gridItems.length > 12 ? gridItems.length * 25 : gridItems.length > 4 ? gridItems.length * 100 : 400;
+      setIsHiding(true);
+
+      // Remove the items visually after 1000ms (or the length of the animation)
+      setTimeout(() => {
+        setGridItems([]);
+        setIsHiding(false);
+      }, calculateTimeOut);
+
+      setActiveFilter(newFilter);
+    }
+  };
 
   const handleFiltersToggle = () => {
     seeFilters && setActiveFilter('all');
@@ -73,46 +90,59 @@ function DesignPage() {
     return returnClass.concat(' thumb-info-hide-top');
   };
 
+  const showThisFilter = (filter) => {
+    if (filter.key === 'all' || filter.display !== true) {
+      return false;
+    }
+
+    if (screenWidth <= SCREEN.SMALL && filter.mobile !== true) {
+      return false;
+    }
+
+    return true;
+  };
+
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
         <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
-          {DESIGN_FILTERS.map((filter) => (
-            <li
-              key={filter.key}
-              className={activeFilter === filter.key ? 'active' : ''}
-              onClick={() => setActiveFilter(filter.key)}
-            >
-              {filter.title}
-            </li>
-          ))}
+          {DESIGN_FILTERS.map(
+            (filter) =>
+              showThisFilter(filter) && (
+                <li
+                  key={filter.key}
+                  className={activeFilter === filter.key ? 'active' : ''}
+                  onClick={() => handleFilterChange(filter.key)}
+                >
+                  {filter.title}
+                </li>
+              )
+          )}
         </ul>
       </div>
       <div id="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
-        {gridItems.map(
-          (item, index) =>
-            item.show === true && (
-              <Link
-                to={`/design/project/${item.key}`}
-                key={item.key + activeFilter}
-                className={item.className ? item.className : ' '}
-                style={{
-                  backgroundImage: `url(../../thumbs/${item.key}.svg)`,
-                  animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
-                }}
-                data-grid-col={item.col}
-                data-grid-row={item.row}
-              >
-                <div className={getThumbInfoInitialClass(item.col, item.row)}>
-                  <h3>{item.name}</h3>
-                  <p>{item.title}</p>
-                  <p>{item.work}</p>
-                </div>
-              </Link>
-            )
-        )}
+        {/* Render grid items */}
+        {gridItems.map((item, index) => (
+          <Link
+            to={`/design/project/${item.key}`}
+            key={item.key}
+            className={`${item.className} ${isHiding ? 'itemHideAnim' : wasHiding ? 'itemAppearAnim' : ''}`} // Apply hide animation if items are hiding
+            style={{
+              backgroundImage: `url(../../thumbs/${item.key}.svg)`,
+              animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
+            }}
+            data-grid-col={item.col}
+            data-grid-row={item.row}
+          >
+            <div className={getThumbInfoInitialClass(item.col, item.row)}>
+              <h3>{item.name}</h3>
+              <p>{item.title}</p>
+              <p>{item.work}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

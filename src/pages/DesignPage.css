@@ -60,16 +60,6 @@
   }
 }
 
-#grid-container .itemBounceAnim {
-  animation: itemBounceAnim 0.7s;
-}
-
-#grid-container .itemHideAnim {
-  animation: itemHideAnim 0.5s;
-  animation-fill-mode: backwards;
-  transform: scale(0);
-}
-
 #grid-container .thumb-info {
   display: flex;
   flex-direction: column;
@@ -146,8 +136,8 @@
 .filters-button {
   position: relative;
   background: url('../assets/filter.svg') no-repeat;
-  height: 10px;
-  width: 1rem;
+  height: 0.75rem;
+  width: 1.15rem;
   font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -179,7 +169,7 @@
 .filters-list > li {
   display: inline-block;
   width: auto;
-  margin: 0 1rem 0 0.5rem;
+  margin: 0 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -230,12 +220,28 @@
   transition: transform 0.5s ease;
 }
 
+#grid-container .itemBounceAnim {
+  animation: itemBounceAnim 0.7s;
+}
+
+#grid-container .itemHideAnim {
+  animation: itemHideAnim 0.5s;
+  animation-fill-mode: backwards;
+  transform: scale(0);
+}
+
+#grid-container .itemAppearAnim {
+  animation: itemHideAnim 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0 !important;
+}
+
 @keyframes itemBounceAnim {
   0% {
     transform: translateY(0);
   }
   20% {
-    transform: translateY(50px);
+    transform: translateY(2.5rem);
   }
   100% {
     transform: translateY(0px);
@@ -253,5 +259,17 @@
   70% {
     transform: scale(0);
     opacity: 0;
+  }
+}
+
+@keyframes itemAppearAnim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }

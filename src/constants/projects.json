@@ -84,7 +84,7 @@
       "image-9.jpg"
     ],
     "show": true,
-    "category": ["all", "identity", "smart", "own", "sports"]
+    "category": ["all", "identity", "own", "sports"]
   },
   {
     "key": "liepaja",
@@ -516,7 +516,7 @@
     "images": [],
     "allimages": [],
     "show": true,
-    "category": ["other"]
+    "category": ["other", "sports"]
   },
   {
     "key": "cska",
@@ -540,7 +540,7 @@
     "images": [],
     "allimages": [],
     "show": true,
-    "category": ["other"]
+    "category": ["other", "sports"]
   },
   {
     "key": "atlant2",
@@ -552,6 +552,6 @@
     "images": [],
     "allimages": [],
     "show": false,
-    "category": ["other"]
+    "category": ["other", "sports"]
   }
 ]
