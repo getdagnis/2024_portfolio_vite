@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { doc, getDoc } from 'firebase/firestore'; // Use getDoc to fetch specific document
+import { doc, getDoc, updateDoc, increment } from 'firebase/firestore'; // Import Firestore update functions
 
 import './ProjectReactions.css';
 import smartImg from '@assets/react-icons/react_smart.svg';
@@ -23,63 +23,87 @@ const imageMap = {
   'react_zz.svg': boringImg,
 };
 
-const getProjectReactions = async (projectKey) => {
-  try {
-    const projectDocRef = doc(db, 'reactions', projectKey); // Use doc() to fetch specific project
-    const projectDoc = await getDoc(projectDocRef);
-
-    if (projectDoc.exists()) {
-      return projectDoc.data();
-    } else {
-      console.error('No reactions found for projectKey:', projectKey);
-      return null;
-    }
-  } catch (error) {
-    console.error('Error getting reactions document: ', error);
-    return null;
-  }
-};
-
 const ProjectReactions = ({ projectKey }) => {
   const savedReaction = localStorage.getItem(`reaction-${projectKey}`);
   const [activeReactionKey, setActiveReactionKey] = useState(savedReaction);
-  const [reactions, setReactions] = useState([]);
+  const [reactions, setReactions] = useState(null); // Holds Firestore reactions
+  const [isUpdating, setIsUpdating] = useState(false); // To prevent double updates
+  const [isCountTransitioning, setIsCountTransitioning] = useState(null); // CSS transition flag
 
-  useEffect(() => {
-    setActiveReactionKey(savedReaction);
-  }, [savedReaction]);
-
+  // Fetch reactions from Firestore on component load
   useEffect(() => {
     const fetchData = async () => {
       if (projectKey) {
-        const reactionsData = await getProjectReactions(projectKey); // Fetch reactions for the specific project
-        setReactions(reactionsData); // Update state after fetching
+        const projectDocRef = doc(db, 'reactions', projectKey);
+        const projectDoc = await getDoc(projectDocRef);
+
+        if (projectDoc.exists()) {
+          setReactions(projectDoc.data()); // Store Firestore data in state
+        } else {
+          setReactions({ reactions: {} }); // Empty if no data exists
+        }
       }
     };
+
     fetchData();
-  }, [projectKey]); // Add projectKey as a dependency
+  }, [projectKey]);
 
-  useEffect(() => {
-    if (reactions) {
-      console.log('🍌🥕 reactions', reactions);
-    }
-  }, [reactions]); // Log whenever reactions change
+  // Update Firestore reaction count and local state
+  const updateReactionCount = async (reactionKey, newCount) => {
+    if (newCount < 0) return; // Prevent negative counts
 
-  const handleReactionClick = (reactionKey) => {
-    if (reactionKey === activeReactionKey) {
-      setActiveReactionKey(null);
-      localStorage.removeItem(`reaction-${projectKey}`);
-    } else {
-      setActiveReactionKey(reactionKey);
-      localStorage.setItem(`reaction-${projectKey}`, reactionKey);
+    const projectDocRef = doc(db, 'reactions', projectKey);
+
+    try {
+      // Update Firestore
+      await updateDoc(projectDocRef, {
+        [`reactions.${reactionKey}.count`]: newCount,
+      });
+
+      // Update local state with new count
+      setReactions((prevReactions) => {
+        const updatedReactions = { ...prevReactions };
+        updatedReactions.reactions[reactionKey].count = newCount;
+        return updatedReactions;
+      });
+    } catch (error) {
+      console.error('Error updating reaction count: ', error);
     }
   };
 
-  // const getReactionCount = () => {
-  //   return 'some number';
-  // };
+  // Handle reaction click
+  const handleReactionClick = async (reactionKey) => {
+    if (isUpdating || !reactions) return; // Prevent double updates
 
-  console.log('🍌🥕 Object.entries(reactions)', JSON.stringify(Object.entries(reactions)));
+    setIsUpdating(true);
+    setIsCountTransitioning(reactionKey); // Apply CSS transition to the clicked reaction
+
+    const currentReactionCount = reactions?.reactions?.[reactionKey]?.count || 0;
+
+    if (reactionKey === activeReactionKey) {
+      // Remove reaction if it's already active
+      await updateReactionCount(reactionKey, currentReactionCount - 1);
+      setActiveReactionKey(null);
+      localStorage.removeItem(`reaction-${projectKey}`);
+    } else {
+      // Remove +1 from the previous reaction if any
+      if (activeReactionKey) {
+        const previousReactionCount = reactions?.reactions?.[activeReactionKey]?.count || 0;
+        await updateReactionCount(activeReactionKey, previousReactionCount - 1);
+      }
+
+      // Add +1 to the new reaction
+      await updateReactionCount(reactionKey, currentReactionCount + 1);
+      setActiveReactionKey(reactionKey);
+      localStorage.setItem(`reaction-${projectKey}`, reactionKey);
+    }
+
+    // Simulate delay to match CSS transition
+    setTimeout(() => {
+      setIsUpdating(false); // Unlock UI after updating
+      setIsCountTransitioning(null); // Clear transition effect
+    }, 1000);
+  };
 
   return (
     <div id="project-reactions">
@@ -90,7 +114,7 @@ const ProjectReactions = ({ projectKey }) => {
           Object.entries(reactions['reactions']).map(([key, reaction], index) => (
             <li key={index}>
               <img
-                src={imageMap[reaction.img]} // Map Firestore img filename to the imported asset
+                src={imageMap[reaction.img]}
                 alt={reaction.alt}
                 className={
                   activeReactionKey === null
@@ -101,9 +125,8 @@ const ProjectReactions = ({ projectKey }) => {
                 }
                 onClick={() => handleReactionClick(key)}
               />
-              <span className="reaction-subtitle">
-                {reaction.alt}
-                {reaction.count > 0 && ` (${reaction.count})`}
+              <span className={`reaction-count ${isCountTransitioning === key ? 'reaction-count-updating' : ''}`}>
+                {reaction.alt} {reaction.count > 0 && `(${reaction.count})`}
               </span>
             </li>
           ))}

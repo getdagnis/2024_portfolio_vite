@@ -8,9 +8,11 @@ export const SCREEN_WIDTHS = {
 
 export const DESIGN_FILTERS = [
   { key: 'all', title: 'All' },
-  { key: 'identitites', title: 'Created Identities' },
+  { key: 'identity', title: 'Created Identities' },
   { key: 'publishing', title: 'Publishing' },
   { key: 'sports', title: 'Sports' },
   { key: 'own', title: 'Own Projects' },
   { key: 'smart', title: 'Smart' },
+  { key: 'famous', title: 'Well known' },
+  { key: 'rejected', title: 'Rejected' },
 ];

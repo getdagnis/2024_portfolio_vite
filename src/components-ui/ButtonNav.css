@@ -16,7 +16,6 @@
 }
 
 #button-nav:hover {
-  text-decoration: line-through;
   text-decoration-thickness: 0.1rem;
 }
 
@@ -26,7 +25,8 @@
   text-decoration-thickness: 0.1rem;
 }
 
-#button-nav > *::after {
+#button-nav > *::after,
+#button-nav > *:hover::after {
   content: '';
   position: absolute;
   top: 0;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import PROJECTS from '../constants/projects.json';
+import { DESIGN_FILTERS } from '../constants/constants';
 import { SCREEN_WIDTHS as SCREEN } from '../constants/constants';
 import './DesignPage.css';
 
@@ -9,7 +10,7 @@ function DesignPage() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
   const [seeFilters, setSeeFilters] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('identities');
+  const [activeFilter, setActiveFilter] = useState('all');
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,8 +36,10 @@ function DesignPage() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    // filter items that are supposed to be shown and update necessary properties
-    const items = PROJECTS.filter((thumb) => thumb.show === true).map((thumb, index) => {
+    console.log('🍌🥕 activeFilter', activeFilter);
+    const items = PROJECTS.filter(
+      (thumb) => thumb.show === true && (thumb.category.includes(activeFilter) || activeFilter === 'all')
+    ).map((thumb, index) => {
       const row = Math.floor(index / 4) + 1; // Calculate row number
       const col = (index % calculateColumns(window.innerWidth)) + 1; // Calculate column number
 
@@ -49,14 +52,11 @@ function DesignPage() {
       };
     });
     setGridItems(items);
-  }, [PROJECTS, screenWidth]);
+  }, [PROJECTS, screenWidth, activeFilter]);
 
   const handleFiltersToggle = () => {
+    seeFilters && setActiveFilter('all');
     setSeeFilters(!seeFilters);
-  };
-
-  const handleFiltering = (keyword) => {
-    setActiveFilter(keyword);
   };
 
   const getThumbInfoInitialClass = (col, row) => {
@@ -76,29 +76,18 @@ function DesignPage() {
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
-        <div className="filters-button" onClick={handleFiltersToggle}>
-          <div>{activeFilter === 'all' ? 'active' : ''}</div>
-        </div>
+        <div className="filters-button" onClick={handleFiltersToggle}></div>
         <ul className="filters-list">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
-          <li className={activeFilter === 'all' ? 'active' : ''} onClick={() => handleFiltering('all')}>
-            all
-          </li>
-          <li className={activeFilter === 'identities' ? 'active' : ''} onClick={() => handleFiltering('identities')}>
-            created identities
-          </li>
-          <li className={activeFilter === 'own' ? 'active' : ''} onClick={() => handleFiltering('own')}>
-            own projects
-          </li>
-          <li className={activeFilter === 'smart' ? 'active' : ''} onClick={() => handleFiltering('smart')}>
-            smart
-          </li>
-          <li className={activeFilter === 'publishing' ? 'active' : ''} onClick={() => handleFiltering('publishing')}>
-            publishing
-          </li>
-          <li className={activeFilter === 'sports' ? 'active' : ''} onClick={() => handleFiltering('sports')}>
-            sports
-          </li>
+          {DESIGN_FILTERS.map((filter) => (
+            <li
+              key={filter.key}
+              className={activeFilter === filter.key ? 'active' : ''}
+              onClick={() => setActiveFilter(filter.key)}
+            >
+              {filter.title}
+            </li>
+          ))}
         </ul>
       </div>
       <div id="grid-container" style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
@@ -107,7 +96,7 @@ function DesignPage() {
             item.show === true && (
               <Link
                 to={`/design/project/${item.key}`}
-                key={item.key}
+                key={item.key + activeFilter}
                 className={item.className ? item.className : ' '}
                 style={{
                   backgroundImage: `url(../../thumbs/${item.key}.svg)`,
