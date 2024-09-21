@@ -150,10 +150,10 @@
 .filters-button::after {
   content: 'FILTER';
   position: absolute;
-  left: 22px;
+  left: 2rem;
   top: -2px;
   opacity: 0;
-  transition: 0.3s opacity ease 0.3s;
+  transition: 0.3s opacity ease;
 }
 
 .filters-button:hover::after {

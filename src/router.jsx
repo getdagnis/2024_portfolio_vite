@@ -7,6 +7,7 @@ import DesignProjectPage from './pages/DesignProjectPage';
 import RedirectPage from './pages/RedirectPage';
 import SkillsPage from './pages/SkillsPage';
 import VotePage from './pages/VotePage';
+import ContactForm from './pages/ContactForm';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: '/skills/design', element: <App children={<SkillsPage />} /> },
       { path: '/skills/:section', element: <Navigate to="/skills/dev" /> },
       { path: '/redirect/:to', element: <App children={<RedirectPage />} /> },
+      { path: '/contact', element: <App children={<ContactForm />} /> },
       { path: '/vote', element: <App children={<VotePage />} /> },
       { path: '*', element: <App children={<NotFoundPage />} /> },
     ],

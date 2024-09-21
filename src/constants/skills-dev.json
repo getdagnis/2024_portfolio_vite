@@ -4,7 +4,7 @@
       "key": "lng_js",
       "section": "dev",
       "title": "React // TypeScript // Next.js",
-      "describe": "20+ years using JS. 6+ years using: Typescript & React + Node // Redux // Material UI // MobX // Chakra UI // Gatsby // Mantine // Webpack // Babel // ESlint // Jest // React Native // Expo etc.",
+      "describe": "12+ years using JavaScript profesionally. 6+ years using: Typescript // React // Node // Redux // Material UI // MobX // Chakra UI // Gatsby // Mantine // Webpack // Babel // ESlint // Jest // React Native // Expo etc.",
       "details": "Professional skills with popular frameworks and tools for front and back-end development.",
       "class": "dev-large"
     },
@@ -17,18 +17,10 @@
       "class": "dark-item regular-size"
     },
     {
-      "key": "lng_php",
-      "section": "dev",
-      "title": "PHP // SQL // NoSQL",
-      "describe": "Experience working with PHP // MySQL // PostgreSQL // MongoDB +",
-      "details": "Skilled in both traditional and modern database technologies.",
-      "class": "dark-item regular-size"
-    },
-    {
       "key": "lng_html",
       "section": "dev",
       "title": "HTML5+ // SEO",
-      "describe": "Semantic, cross-browser, accessible and SEO optimized HTML skills",
+      "describe": "Semantic, cross-browser, accessible and SEO optimized HTML skills since around 2003",
       "details": "Crafting high-quality, standards-compliant web pages.",
       "class": "dark-item regular-size"
     },
@@ -36,24 +28,31 @@
       "key": "apps",
       "section": "dev",
       "title": "Mobile Apps",
-      "describe": "Cross-platform iOS and Android mobile apps using React Native",
+      "describe": "Good experience with React Native, working on cross-platform iOS and Android mobile apps",
       "details": "Building high-performance single-page applications with modern frameworks.",
       "class": "dark-item regular-size"
     },
-
     {
       "key": "ai",
       "section": "dev",
       "title": "AI integration // Prompts",
-      "describe": "OpenAI // GPT // AI model integration // Prompt design",
+      "describe": "Very active user of AI services // ChatGPT // AI model integration // Prompt design",
       "details": "Expertise in integrating AI services and crafting effective prompts for various applications.",
       "class": "regular-size"
+    },
+    {
+      "key": "lng_php",
+      "section": "dev",
+      "title": "PHP // SQL // NoSQL",
+      "describe": "Occassional experience working with PHP & MySQL since 2003 // Now also PostgreSQL // MongoDB",
+      "details": "Skilled in both traditional and modern database technologies.",
+      "class": "dark-item regular-size"
     },
     {
       "key": "git",
       "section": "dev",
       "title": "Version control",
-      "describe": "Git // branching // GitHub // GitLab // Bitbucket",
+      "describe": "Senior experience using versioning tools // GitHub // GitLab // Bitbucket",
       "details": "Deep proficiency in Git and related platforms for effective version management.",
       "class": "regular-size"
     },
@@ -61,7 +60,7 @@
       "key": "rest",
       "section": "dev",
       "title": "Rest APIs",
-      "describe": "RESTful services using JSON // XML over HTTP // HTTPS",
+      "describe": "Experienced designing and integrating APIs for RESTful services using",
       "details": "Advanced design and integration of web APIs for robust data interchange.",
       "class": "regular-size"
     },
@@ -69,7 +68,7 @@
       "key": "cloud",
       "section": "dev",
       "title": "Cloud services",
-      "describe": "Azure // Firebase // Heroku // Netlify // AWS // Serverless // Cloud integrations",
+      "describe": "Excellent skills using Firebase // Heroku // Netlify // AWS // Serverless // Cloud integrations",
       "details": "Extensive experience in deploying and managing applications in the cloud.",
       "class": "regular-size"
     },

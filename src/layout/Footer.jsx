@@ -11,15 +11,27 @@ function Footer() {
           </div>
           <div className="footer-right">
             <h3>Thanks for visiting! Get in touch!</h3>
-            <ul>
+            <ul id="footer-links">
               <li>
-                mail: <strong>dagnis@dagn.is</strong>
+                mail: <span className="footer-mail"></span>
               </li>
               <li>
-                x: <strong>@getdagnis</strong>
+                x:{' '}
+                <a className="footer-link" href="https://x.com/getdagnis" target="_blank">
+                  <strong>@getdagnis</strong>
+                </a>
               </li>
               <li>
-                fb: <strong>dagnis.skurbe</strong>
+                fb:{' '}
+                <a className="footer-link" href="https://fb.com/getdagnis" target="_blank">
+                  <strong>dagnis.skurbe</strong>
+                </a>
+              </li>
+              <li>
+                linkedin:{' '}
+                <a className="footer-link" href="https://linkedin.com/in/getdagnis" target="_blank">
+                  <strong>linkedin.com/in/getdagnis</strong>
+                </a>
               </li>
               <h6>© Dagnis Skurbe, 2024</h6>
             </ul>

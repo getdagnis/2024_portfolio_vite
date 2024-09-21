@@ -38,14 +38,17 @@ function DesignPage() {
   useEffect(() => {
     if (!isHiding) {
       const filteredItems = PROJECTS.filter(
-        (thumb) => thumb.show === true && (thumb.category.includes(activeFilter) || activeFilter === 'all')
-      ).map((thumb, index) => {
+        (project) =>
+          project.show === true &&
+          project.category.includes('all') &&
+          (project.category.includes(activeFilter) || activeFilter === 'all')
+      ).map((project, index) => {
         const row = Math.floor(index / columns) + 1; // Calculate row number
         const col = (index % columns) + 1; // Calculate column number
 
         return {
-          ...thumb,
-          key: thumb.key,
+          ...project,
+          key: project.key,
           className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names
           col: col,
           row: row,

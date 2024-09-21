@@ -50,11 +50,12 @@
 }
 
 #mobile-menu-bottom > .footer-message {
+  display: block;
   width: 50vw;
   height: 10vh;
   background-size: contain;
 
-  animation: fadeIn 0.5s ease-in-out 2s backwards;
+  animation: fadeIn 0.5s ease-in-out 1s backwards;
 }
 
 #mobile-menu-bottom > p {

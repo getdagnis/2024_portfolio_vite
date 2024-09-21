@@ -84,7 +84,7 @@
       "image-9.jpg"
     ],
     "show": true,
-    "category": ["all", "identity", "own", "sports"]
+    "category": ["all", "identity", "famous", "sports"]
   },
   {
     "key": "liepaja",
@@ -372,7 +372,7 @@
     "images": [],
     "allimages": [],
     "show": true,
-    "category": ["other"]
+    "category": ["sports"]
   },
   {
     "key": "rsu",
@@ -432,7 +432,7 @@
     "images": [],
     "allimages": [],
     "show": true,
-    "category": ["all", "identity", "smart", "famous"]
+    "category": ["all", "identity", "smart"]
   },
   {
     "key": "guw",

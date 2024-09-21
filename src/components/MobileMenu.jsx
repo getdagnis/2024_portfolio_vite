@@ -26,7 +26,7 @@ function MobileMenu({ onClose }) {
         </li>
         <li style={{ animationDelay: '0.3s' }}>
           <NavLink to="/redirect/skills" className={activeRoute === 'skills' ? 'active' : ''} onClick={onClose}>
-            skillset
+            dev skillset
           </NavLink>
         </li>
         <li style={{ animationDelay: '0.35s' }}>
@@ -36,7 +36,7 @@ function MobileMenu({ onClose }) {
         </li>
       </ul>
       <div id="mobile-menu-bottom">
-        <div className="footer-message"></div>
+        <NavLink to="/contact" className="footer-message" onClick={onClose}></NavLink>
         <p>© DAGNIS SKURBE, 2024</p>
       </div>
     </div>
