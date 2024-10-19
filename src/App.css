@@ -101,6 +101,16 @@ body {
   max-width: var(--siteMaxWidth);
 }
 
+#site-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  margin: 1rem 0 2rem;
+}
+
 @media (max-width: 800px) {
   body {
     border: calc(var(--siteBorder) / 1.5) solid black;

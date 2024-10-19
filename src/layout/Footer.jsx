@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -7,7 +8,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-left">
             <div className="logo"></div>
-            <div className="footer-message"></div>
+            <NavLink to="/contact" className="footer-message"></NavLink>
           </div>
           <div className="footer-right">
             <h3>Thanks for visiting! Get in touch!</h3>

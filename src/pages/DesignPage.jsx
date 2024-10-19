@@ -12,7 +12,6 @@ function DesignPage() {
   const [seeFilters, setSeeFilters] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [isHiding, setIsHiding] = useState(false);
-  const [wasHiding, setWasHiding] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -131,10 +130,10 @@ function DesignPage() {
           <Link
             to={`/design/project/${item.key}`}
             key={item.key}
-            className={`${item.className} ${isHiding ? 'itemHideAnim' : wasHiding ? 'itemAppearAnim' : ''}`} // Apply hide animation if items are hiding
+            className={`${item.className} ${isHiding ? 'itemHideAnim' : ''}`}
             style={{
               backgroundImage: `url(../../thumbs/${item.key}.svg)`,
-              animationDelay: `${index / 25 + item.col * 0.05}s`, // Apply animation delay formula
+              animationDelay: `${index / 25 + item.col * 0.05}s`, // Animation delay formula so that each item bounces a bit later
             }}
             data-grid-col={item.col}
             data-grid-row={item.row}

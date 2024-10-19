@@ -18,7 +18,7 @@ function App({ children }) {
     <>
       <div id="site-container">
         <Header />
-        {children}
+        <div id="site-content">{children}</div>
         <Footer />
       </div>
     </>

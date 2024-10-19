@@ -1,6 +1,9 @@
 #contact-form {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
   width: 100%;
   margin: 1rem 0 2rem;

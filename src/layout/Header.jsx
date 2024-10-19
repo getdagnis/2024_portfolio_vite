@@ -117,15 +117,13 @@ function Header() {
             </NavLink>
           </ButtonNav>
           <ButtonNav>
-            <NavLink to="/skills/dev">skillset</NavLink>
+            <NavLink to="/skills/dev">dev skillset</NavLink>
           </ButtonNav>
           <ButtonNav>
-            <NavLink to="/battle">battle</NavLink>
+            <NavLink to="/vote">vote</NavLink>
           </ButtonNav>
           <ButtonNav>
-            <div className={showAbout ? 'active' : ''} onClick={() => setShowAbout(true)}>
-              about
-            </div>
+            <NavLink to="/about">about</NavLink>
           </ButtonNav>
         </nav>
       </div>
