@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import './AboutPage.css';
 
 function AboutPage({ showAbout, onClose, location }) {
-  console.log('🍌🥕 showAbout', showAbout);
   return (
     <>
       <div id="about-container" className={showAbout ? ' ' : 'about-hidden'}>
