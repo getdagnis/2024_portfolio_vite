@@ -15,17 +15,51 @@ function Header() {
     transition: 'background-position-x 15s ease',
   });
   const [becomeState, setBecomeState] = useState({});
-  const arrowElement = useRef(null);
-  const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
-  const becomeElement = useRef(null);
+  const [sloganState, setSloganState] = useState({});
+  const [shotCount, setShotCount] = useState(0);
 
-  const handleArrowMouseEnter = () =>
-    setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw` });
+  const arrowElement = useRef(null);
+  const becomeElement = useRef(null);
+  const sloganElement = useRef(null);
+  const hoverStartTime = useRef(null);
+
+  const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
+
+  useEffect(() => {
+    setShotCount(0);
+    setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' });
+  }, []);
+
+  const handleArrowMouseEnter = () => {
+    hoverStartTime.current = performance.now();
+    setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw)` });
+  };
 
   const handleArrowMouseLeave = () => {
+    const hoverEndTime = performance.now();
+    const hoverTime = hoverEndTime - hoverStartTime.current;
+
+    shootTheArrow(hoverTime);
+
+    if (hoverTime > 2000) {
+      bounceTheIcons(hoverTime);
+    }
+  };
+
+  const shootTheArrow = ({ hoverTime }) => {
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
-    setBecomeState({ transform: 'translateX(0.5%)', transition: 'all 0.01s ease-out' });
-    setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
+
+    setTimeout(
+      () => setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' }),
+      500
+    );
+  };
+
+  const bounceTheIcons = ({ hoverTime }) => {
+    setShotCount(shotCount + 1);
+    console.log('🍌🥕 shotCount', shotCount);
+    console.log('🍌🥕 hoverTime', hoverTime);
+
     setTimeout(
       () => setArrowState({ backgroundPositionX: '115%', transition: 'background-position-x 0.1s ease-out' }),
       100
@@ -38,10 +72,59 @@ function Header() {
       () => setArrowState({ backgroundPositionX: '102%', transition: 'background-position-x 0.1s ease-out' }),
       400
     );
-    setTimeout(
-      () => setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' }),
-      500
-    );
+
+    setBecomeState({ transform: 'translateX(0.5%)', transition: 'all 0.01s ease-out' });
+    setBecomeState({
+      transform: 'translateX(8%)',
+      transition: 'all 0.01s ease-out',
+    });
+    setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
+
+    if (shotCount > 2) {
+      setSloganState({
+        transform: `rotate(2.82deg)`,
+        transformOrigin: 'center left',
+        transition: 'transform 0.1s ease-out',
+      });
+
+      setTimeout(
+        () =>
+          setBecomeState({
+            animation: 'becomeSloganFall 2.5s ease-out',
+            animationFillMode: 'forwards',
+            transition: 'transform 0.05s ease-out',
+          }),
+        600
+      );
+
+      setTimeout(
+        () =>
+          setSloganState({
+            animation: 'becomeSloganFall 2.5s ease-out',
+            animationFillMode: 'forwards',
+            transition: 'transform 0.05s ease-out',
+          }),
+        2000
+      );
+
+      setTimeout(
+        () =>
+          setSloganState({
+            display: 'none',
+          }),
+        4490
+      );
+
+      return;
+    }
+
+    if (shotCount > 0) {
+      setSloganState({
+        transform: `rotate(0.${shotCount * 3}deg)`,
+        transformOrigin: 'center left',
+        transition: 'transform 0.1s ease-out',
+      });
+    }
   };
 
   const handleAboutClose = () => {
@@ -149,7 +232,7 @@ function Header() {
         </nav>
       </div>
 
-      <div className="become-slogan">
+      <div className="become-slogan" style={sloganState} ref={sloganElement}>
         <span className="become-left">
           ideas<strong>become</strong>brands
         </span>
