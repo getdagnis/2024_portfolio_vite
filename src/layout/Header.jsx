@@ -14,16 +14,35 @@ function Header() {
     backgroundPositionX: 'right',
     transition: 'background-position-x 15s ease',
   });
+  const [becomeState, setBecomeState] = useState({});
   const arrowElement = useRef(null);
   const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
+  const becomeElement = useRef(null);
 
-  // slowly move the arrow to the left, as if pulling a spring
   const handleArrowMouseEnter = () =>
     setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw` });
-  // release the arrow as a spring
-  // TODO: instead of transition — an animation with bounce back on the end
-  const handleArrowMouseLeave = () =>
+
+  const handleArrowMouseLeave = () => {
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
+    setBecomeState({ transform: 'translateX(0.5%)', transition: 'all 0.01s ease-out' });
+    setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
+    setTimeout(
+      () => setArrowState({ backgroundPositionX: '115%', transition: 'background-position-x 0.1s ease-out' }),
+      100
+    );
+    setTimeout(
+      () => setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' }),
+      200
+    );
+    setTimeout(
+      () => setArrowState({ backgroundPositionX: '102%', transition: 'background-position-x 0.1s ease-out' }),
+      400
+    );
+    setTimeout(
+      () => setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' }),
+      500
+    );
+  };
 
   const handleAboutClose = () => {
     setShowAbout(false);
@@ -141,7 +160,7 @@ function Header() {
           onMouseLeave={handleArrowMouseLeave}
           ref={arrowElement}
         ></span>
-        <span className="become-right">
+        <span className="become-right" style={becomeState} ref={becomeElement}>
           brands<strong className="b">become</strong>icons
         </span>
       </div>

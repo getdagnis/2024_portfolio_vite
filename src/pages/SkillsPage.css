@@ -282,16 +282,34 @@
   border-bottom: none;
 }
 
+#skills-top p.left,
+#skills-top p.right {
+  transform: none;
+  transition: transform 0.3s ease-in;
+}
+
+#skills-top p.left:hover {
+  transform: translateX(-5%);
+  transition: transform 1s ease;
+}
+
+#skills-top p.right:hover {
+  transform: translateX(-5%);
+  transition: transform 1s ease;
+}
+
 #skills-top a.active > p.left {
+  transform: none;
   animation: tabSlideLeft 1s ease backwards;
 }
 
 #skills-top a.active > p.right {
+  transform: none;
   animation: tabSlideRight 1s ease backwards;
 }
 
-svg.skills-tab-left,
-svg.skills-tab-right {
+#skills-top svg.skills-tab-left,
+#skills-top svg.skills-tab-right {
   position: absolute;
   top: 0.04rem;
   right: 0.0161122rem;

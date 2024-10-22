@@ -16,6 +16,7 @@
 }
 
 #button-nav:hover {
+  text-decoration: line-through;
   text-decoration-thickness: 0.1rem;
 }
 

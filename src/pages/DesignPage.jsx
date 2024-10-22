@@ -104,6 +104,8 @@ function DesignPage() {
     return true;
   };
 
+  console.log(DESIGN_FILTERS[0]);
+
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
