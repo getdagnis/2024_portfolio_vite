@@ -18,9 +18,11 @@ function Header() {
   const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
 
   // slowly move the arrow to the left, as if pulling a spring
-  const handleMouseEnter = () => setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw` });
+  const handleArrowMouseEnter = () =>
+    setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw` });
   // release the arrow as a spring
-  const handleMouseUp = () =>
+  // TODO: instead of transition — an animation with bounce back on the end
+  const handleArrowMouseLeave = () =>
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
 
   const handleAboutClose = () => {
@@ -36,7 +38,7 @@ function Header() {
       }
     };
 
-    const handleMouseEnterAbout = (e) => {
+    const handleArrowMouseEnterAbout = (e) => {
       const aboutPage = document.getElementById('about-container');
       if (aboutPage && !aboutPage.contains(e.target)) {
         e.preventDefault();
@@ -45,11 +47,11 @@ function Header() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousedown', handleMouseEnterAbout);
+    window.addEventListener('mousedown', handleArrowMouseEnterAbout);
     // clean-up
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousedown', handleMouseEnterAbout);
+      window.removeEventListener('mousedown', handleArrowMouseEnterAbout);
     };
   }, [handleAboutClose, handleAboutClose]);
 
@@ -117,7 +119,7 @@ function Header() {
             </NavLink>
           </ButtonNav>
           <ButtonNav>
-            <NavLink to="/skills/dev">dev skillset</NavLink>
+            <NavLink to="/skills/dev">dev skills</NavLink>
           </ButtonNav>
           <ButtonNav>
             <NavLink to="/vote">vote</NavLink>
@@ -135,8 +137,8 @@ function Header() {
         <span
           className="become-middle"
           style={arrowState}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseUp}
+          onMouseEnter={handleArrowMouseEnter}
+          onMouseLeave={handleArrowMouseLeave}
           ref={arrowElement}
         ></span>
         <span className="become-right">

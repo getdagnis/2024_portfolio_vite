@@ -26,7 +26,7 @@ function MobileMenu({ onClose }) {
         </li>
         <li style={{ animationDelay: '0.3s' }}>
           <NavLink to="/redirect/skills" className={activeRoute === 'skills' ? 'active' : ''} onClick={onClose}>
-            dev skillset
+            dev skills
           </NavLink>
         </li>
         <li style={{ animationDelay: '0.35s' }}>

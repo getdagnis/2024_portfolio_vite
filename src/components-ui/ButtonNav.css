@@ -35,7 +35,7 @@
   width: 100%;
   height: 1rem;
   overflow: hidden;
-  background-color: var(--accent);
+  background-color: var(--walker);
   transform: translateY(-100%);
   transition: transform 0.3s ease;
 }

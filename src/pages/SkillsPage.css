@@ -302,6 +302,11 @@ svg.skills-tab-right {
   transition: fill 0.1s ease;
 }
 
+p.left:hover + svg.skills-tab-left,
+p.right:hover + svg.skills-tab-right {
+  animation: skillsPulse 2s infinite;
+}
+
 #skills-top svg.skills-tab-right {
   right: -0.0161122rem;
   transform: scaleX(-1);
@@ -310,6 +315,11 @@ svg.skills-tab-right {
 #skills-top a[href='/skills/dev'].active > .skills-tab-left,
 #skills-top a[href='/skills/design'].active > .skills-tab-right {
   fill: var(--colorGrey1);
+}
+
+#skills-top a[href='/skills/dev'].active > svg.skills-tab-left,
+#skills-top a[href='/skills/design'].active > svg.skills-tab-right {
+  animation: none;
 }
 
 .skills-title-middle {
@@ -390,5 +400,19 @@ svg.skills-tab-right {
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes skillsPulse {
+  0% {
+    fill: var(--colorGrey6);
+  }
+
+  50% {
+    fill: var(--colorGrey7);
+  }
+
+  100% {
+    fill: var(--colorGrey6);
   }
 }
