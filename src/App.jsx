@@ -3,7 +3,6 @@ import ReactGA from 'react-ga4';
 
 import Header from './layout/Header';
 import Footer from './layout/Footer';
-import ContactModal from './components/ContactModal';
 import './App.css';
 
 // Google Analytics
@@ -22,7 +21,6 @@ function App({ children }) {
         <Header />
         <div id="site-content">{children}</div>
         <Footer />
-        <ContactModal showContactModal={false} />
       </div>
     </>
   );
