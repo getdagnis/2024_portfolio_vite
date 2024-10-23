@@ -1,3 +1,18 @@
+#contact-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(100, 100, 100, 0.95);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  z-index: 999;
+}
+
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -5,13 +20,32 @@
   align-items: center;
   text-align: center;
   gap: 1rem;
-  width: 100%;
-  margin: 1rem 0 2rem;
+  width: 98%;
+  max-width: 35rem;
+  padding: 1rem;
+  translate: 0 -5vh;
 }
 
-#contact-form label {
-  font-weight: 600;
-  font-size: larger;
+#contact-form .top {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: white;
+}
+
+#contact-form .label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-kerning: normal;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0;
+}
+
+#contact-form .subtitle {
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: left;
 }
 
 #contact-form input,
@@ -20,7 +54,7 @@
   font-size: inherit;
   padding: 0.5rem;
   max-width: 40rem;
-  border: 2px solid var(--colorGrey1);
+  border: 2px solid black;
   outline: none;
   background-color: #ffffff;
   border-radius: 5px;
@@ -34,30 +68,58 @@
 
 #contact-form input::placeholder,
 #contact-form textarea::placeholder {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 #contact-form input:focus,
 #contact-form textarea:focus {
   outline: none;
-  border: 2px solid var(--colorGrey2);
+  border: 2px solid var(--walker);
 }
 
 #contact-form button,
 #thanks-message button {
   padding: 0.5rem 1rem;
-  background-color: var(--walker);
-  color: #fff;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: Poppins, Inter, Helvetica, Arial;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 44px;
   max-width: 40rem;
   cursor: pointer;
-  transition: background-color 1.5s ease;
+  transition: all 0.12 ease;
 }
 
-#contact-form button:hover {
-  background-color: black;
-  transition: background-color 0.5s ease;
+#contact-form button:hover,
+#thanks-message button:hover {
+  /* background-color: var(--walker);
+  transition: background-color 0.3s ease; */
+  -webkit-animation: shadow-pop-br 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+  animation: shadow-pop-br 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+#contact-form button:active,
+#thanks-message button:active {
+  animation: none;
+}
+
+#thanks-message button {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+#thanks-message {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--colorGrey2);
+  font-size: 1.5rem;
 }
 
 #contact-form button:disabled {
@@ -67,6 +129,23 @@
 
 #contact-form button:disabled:hover {
   background-color: #ccc;
+}
+
+#contact-form .modal-close {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: crimson;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: url(../assets/cross.svg) no-repeat center center;
+  transition: transform 0.5s ease;
+  filter: invert(1);
+}
+
+#contact-form .modal-close:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
 }
 
 #contact-form .error {
@@ -108,4 +187,39 @@
 #thanks-message .thanks-message-button {
   margin: 1rem 0 3rem;
   width: fit-content;
+}
+
+@-webkit-keyframes shadow-pop-br {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e,
+      0 0 #3e3e3e;
+    box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e,
+      6px 6px #3e3e3e, 7px 7px #3e3e3e, 4px 4px #3e3e3e;
+    box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e, 6px 6px #3e3e3e,
+      7px 7px #3e3e3e, 4px 4px #3e3e3e;
+    -webkit-transform: translateX(-4px) translateY(-4px);
+    transform: translateX(-4px) translateY(-4px);
+  }
+}
+@keyframes shadow-pop-br {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e,
+      0 0 #3e3e3e;
+    box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e,
+      6px 6px #3e3e3e, 7px 7px #3e3e3e, 4px 4px #3e3e3e;
+    box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e, 6px 6px #3e3e3e,
+      7px 7px #3e3e3e, 4px 4px #3e3e3e;
+    -webkit-transform: translateX(-4px) translateY(-4px);
+    transform: translateX(-4px) translateY(-4px);
+  }
 }
