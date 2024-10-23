@@ -52,6 +52,7 @@
   font-weight: 600;
   font-size: 1.75rem;
   margin: 0;
+  width: fit-content;
   transform: translate(0, 0); /* translate(2rem, 0) */
   cursor: pointer;
   transition: transform 0.3s ease-out;

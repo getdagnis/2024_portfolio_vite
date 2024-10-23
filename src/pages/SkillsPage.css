@@ -67,7 +67,7 @@
   height: var(--gridItemHeight);
   min-height: fit-content;
   padding: 0.5rem 0.5rem 0.75rem 0.85rem;
-  background: var(--colorGrey5);
+  background: var(--colorGrey3);
   color: white;
   font-size: 0.7rem;
   line-height: 1.2;
@@ -75,7 +75,6 @@
   border-radius: var(--radius);
   animation: skillsItemBounce 0.7s;
   overflow: hidden;
-  cursor: crosshair;
   transition: background 0.5s ease;
 
   @media screen and (max-width: 1279px) {
@@ -94,7 +93,7 @@
 
 #skills-grid .skill-item:hover,
 #skills-grid .skill-item.dark-item:hover {
-  background: var(--gridItemActive);
+  background: var(--colorGrey4);
 
   @media screen and (max-width: 560px) {
     background: var(--gridItemActive);
@@ -109,6 +108,7 @@
   width: 2.75rem;
   height: 2.75rem;
   margin-bottom: 1rem;
+  opacity: 0.8;
   margin-left: -0.1rem;
   /* opacity: 0.15; */
   /* transform: translateY(20%); */
