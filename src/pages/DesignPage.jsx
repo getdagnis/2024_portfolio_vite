@@ -107,8 +107,8 @@ function DesignPage() {
   return (
     <div id="portfolio">
       <div className={!seeFilters ? 'portfolio-filters' : 'portfolio-filters filters-shown'}>
-        <div className="filters-button" onClick={handleFiltersToggle}></div>
-        <ul className="filters-list">
+        <div className="filters-button armageddon" onClick={handleFiltersToggle}></div>
+        <ul className="filters-list armageddon">
           <li className="close-filters" onClick={handleFiltersToggle}></li>
           {DESIGN_FILTERS.map(
             (filter) =>
@@ -130,7 +130,7 @@ function DesignPage() {
           <Link
             to={`/design/project/${item.key}`}
             key={item.key}
-            className={`${item.className} ${isHiding ? 'itemHideAnim' : ''}`}
+            className={`${item.className} ${isHiding ? 'itemHideAnim armageddon ' : 'armageddon'}`}
             style={{
               backgroundImage: `url(../../thumbs/${item.key}.svg)`,
               animationDelay: `${index / 25 + item.col * 0.05}s`, // Animation delay formula so that each item bounces a bit later

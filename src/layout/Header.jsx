@@ -8,6 +8,7 @@ import MobileMenu from '../components/MobileMenu';
 import './Header.css';
 
 function Header() {
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [arrowState, setArrowState] = useState({
@@ -17,6 +18,8 @@ function Header() {
   const [becomeState, setBecomeState] = useState({});
   const [sloganState, setSloganState] = useState({});
   const [shotCount, setShotCount] = useState(0);
+  const [armageddon, setArmageddon] = useState(false);
+  const [showDammit, setShowDammit] = useState(false);
 
   const arrowElement = useRef(null);
   const becomeElement = useRef(null);
@@ -26,11 +29,31 @@ function Header() {
   const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 2000);
+
     setShotCount(0);
     setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' });
+
+    return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const elements = document.querySelectorAll('.armageddon');
+    if (armageddon) {
+      elements.forEach((el) => {
+        const randomDelay = (Math.random() * 4 + 1).toFixed(2);
+        el.style.animation = 'armageddon 1.5s ease-out';
+        el.style.animationDelay = `${randomDelay}s`;
+        el.style.animationFillMode = 'forwards';
+      });
+    }
+    setArmageddon(false);
+  }, [armageddon]);
+
   const handleArrowMouseEnter = () => {
+    if (!isPageLoaded) return;
     hoverStartTime.current = performance.now();
     setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw)` });
   };
@@ -80,12 +103,14 @@ function Header() {
     });
     setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
 
-    if (shotCount > 2) {
-      setSloganState({
-        transform: `rotate(2.82deg)`,
-        transformOrigin: 'center left',
-        transition: 'transform 0.1s ease-out',
-      });
+    if (shotCount > 3) {
+      setTimeout(() => {
+        setSloganState({
+          transform: `rotate(2.82deg)`,
+          transformOrigin: 'center left',
+          transition: 'transform 0.1s ease-out',
+        });
+      }, 600);
 
       setTimeout(
         () =>
@@ -107,24 +132,31 @@ function Header() {
         2000
       );
 
-      setTimeout(
-        () =>
-          setSloganState({
-            display: 'none',
-          }),
-        4490
-      );
+      setTimeout(() => {
+        setArmageddon(true);
+      }, 4500);
+
+      setTimeout(() => {
+        dammitYouBrokeMySite();
+      }, 11000);
 
       return;
     }
 
     if (shotCount > 0) {
-      setSloganState({
-        transform: `rotate(0.${shotCount * 3}deg)`,
-        transformOrigin: 'center left',
-        transition: 'transform 0.1s ease-out',
-      });
+      setTimeout(() => {
+        setSloganState({
+          transform: `rotate(0.${shotCount * 2}deg)`,
+          transformOrigin: 'center left',
+          transition: 'transform 0.1s ease-out',
+        });
+      }, 600);
     }
+  };
+
+  const dammitYouBrokeMySite = () => {
+    setShowDammit(true);
+    document.body.style.overflow = 'hidden';
   };
 
   const handleAboutClose = () => {
@@ -200,12 +232,13 @@ function Header() {
 
   return (
     <div id="header-container">
+      {armageddon && <div className="overlay-block"></div>}
       <div className="header-top">
         <div className="header-left">
           <NavLink to="/redirect/design">
-            <div className="logo"></div>
+            <div className="logo armageddon"></div>
           </NavLink>
-          <p className="logo-subtitle">dev & design portfolio</p>
+          <p className="logo-subtitle armageddon">dev & design portfolio</p>
         </div>
 
         <div className="hamburger hamburger--collapser" onClick={() => handleHamburgerClick()}>
@@ -214,7 +247,7 @@ function Header() {
           </span>
         </div>
 
-        <nav id="header-nav">
+        <nav id="header-nav" className="armageddon">
           <ButtonNav>
             <NavLink to="/" className={designActive ? 'active' : ''}>
               design
@@ -224,10 +257,10 @@ function Header() {
             <NavLink to="/skills/dev">dev skills</NavLink>
           </ButtonNav>
           <ButtonNav>
-            <NavLink to="/vote">vote</NavLink>
+            <NavLink to="/about">about</NavLink>
           </ButtonNav>
           <ButtonNav>
-            <NavLink to="/about">about</NavLink>
+            <NavLink to="/contact">contact</NavLink>
           </ButtonNav>
         </nav>
       </div>
@@ -249,6 +282,7 @@ function Header() {
       </div>
       <AboutPage location={{ location }} showAbout={showAbout} onClose={handleAboutClose} />
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
+      {showDammit && <div className="dammit"></div>}
     </div>
   );
 }

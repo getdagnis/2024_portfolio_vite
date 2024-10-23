@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1rem 0;
+  padding: 0;
 }
 
 .proj-head {
@@ -46,11 +46,26 @@
 }
 
 .proj-head h3 {
+  position: relative;
   text-transform: uppercase;
   letter-spacing: -0.5px;
   font-weight: 600;
   font-size: 1.75rem;
   margin: 0;
+  transform: translate(0, 0); /* translate(2rem, 0) */
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+div.proj-title > h3:hover {
+  transform: translate(2.5rem, 0);
+  transition: transform 0.3s ease-out;
+}
+
+div.proj-title > h3:hover > .back-arrow-container {
+  opacity: 1;
+  left: -32px;
+  transition: all 0.2s ease 0.2s;
 }
 
 .proj-head h6 {
@@ -58,6 +73,39 @@
   font-size: 0.75rem;
   font-weight: 400;
   margin-top: 0;
+}
+
+.back-arrow-container {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 0;
+  top: 30%;
+  left: -42px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-top: 2.5px solid #000;
+  border-left: 2.5px solid #000;
+  transform: rotate(-45deg);
+}
+
+.back-arrow::after {
+  content: '';
+  display: block;
+  width: 2.5px;
+  height: 24px;
+  background-color: black;
+  transform: rotate(-45deg) translate(7.5px, 2px);
+  left: 0;
+  top: 0;
 }
 
 #project-details .title-divider {

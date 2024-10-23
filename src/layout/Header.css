@@ -20,6 +20,9 @@
   margin-bottom: 0.1rem;
   background: url('../assets/logo_full.svg') center left no-repeat;
   cursor: pointer;
+  /* animation: makeItFall 1s ease-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; */
 
   @media (max-width: 800px) {
     width: 380px;
@@ -195,6 +198,31 @@ strong {
   z-index: 999;
 }
 
+.overlay-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  background-color: white;
+  opacity: 0;
+}
+
+.dammit {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--walker);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  translate: 0 -100vh;
+  animation: dammit 0.7s ease-in forwards;
+}
+
 @media (max-width: 800px) {
   nav#header-nav {
     display: none;
@@ -230,33 +258,43 @@ strong {
   }
 
   to {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
     transform: translateY(125vh);
+    display: none;
   }
 }
 
-@keyframes makeItFall {
-  0% {
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
-  }
-
+@keyframes armageddon {
   20%,
-  60% {
-    transform: rotate(80deg);
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
-  }
-
-  40%,
-  80% {
-    transform: rotate(60deg);
-    transform-origin: top left;
-    animation-timing-function: ease-in-out;
+  40% {
+    transform: rotate(-1deg);
+    transform-origin: center right;
   }
 
   to {
-    transform: rotate(-90deg);
-    transform: translateY(125vh);
+    transform: translateY(150vh);
+  }
+}
+
+@keyframes dammit {
+  from {
+    translate: 0 -100vh;
+  }
+
+  40% {
+    translate: 0;
+  }
+
+  55%,
+  85% {
+    translate: 0 -15vh;
+  }
+
+  70% {
+    translate: 0;
+  }
+
+  to {
+    translate: 0;
   }
 }

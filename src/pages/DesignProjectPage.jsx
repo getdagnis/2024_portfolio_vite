@@ -16,14 +16,23 @@ function DesignProjectPage() {
       <div className="arrow-next"></div>
       <div id="project-details">
         <div className="proj-head">
-          <h3>{proj.name}</h3>
+          <Link to={`/design`}>
+            <div className="proj-title">
+              <h3>
+                <div className="back-arrow-container armageddon">
+                  <span className="back-arrow"></span>
+                </div>
+                {proj.name}
+              </h3>
+            </div>
+          </Link>
           <h6>
             {proj.title}
             <span className="title-divider">/</span>
             {proj.work}
           </h6>
         </div>
-        <div className="title-image">
+        <div className="title-image armageddon">
           <img src={`../../proj-img/${proj.key}/${proj.images[0]}`} alt={proj.name} className="main-img" />
           <p className="description">{proj.description}</p>
         </div>
