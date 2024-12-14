@@ -1,4 +1,5 @@
-#contact-modal {
+#contact-modal,
+#thanks-message {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,13 +8,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(110, 110, 110, 0.95);
+  background-color: var(--greyOpaque0);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   z-index: 999;
 }
 
-#contact-form {
+#contact-form,
+#ty-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  color: white;
+  color: black;
 }
 
 #contact-form .label {
@@ -44,7 +46,7 @@
 }
 
 #contact-form .subtitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
   text-align: left;
 }
@@ -57,7 +59,7 @@
   max-width: 40rem;
   border: 2px solid black;
   outline: none;
-  background-color: #ffffff;
+  background-color: #ffffffdd;
   border-radius: 5px;
   font-size: 1rem;
   resize: none;
@@ -71,65 +73,21 @@
 #contact-form textarea::placeholder {
   opacity: 0.8;
 }
+
+#contact-form .modal-button {
+  background-color: #ffffffee;
+}
+
 #contact-form input:focus,
-#contact-form textarea:focus {
+#contact-form textarea:focus,
+#contact-form .modal-button:hover {
   outline: none;
   border: 2px solid var(--walker);
-}
-
-#contact-form button,
-#thanks-message button {
-  padding: 0.5rem 1rem;
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-family: Poppins, Inter, Helvetica, Arial;
-  font-weight: 700;
-  text-transform: uppercase;
-  height: 44px;
-  max-width: 40rem;
-  cursor: pointer;
-  transition: all 0.12 ease;
-}
-
-#contact-form button:hover,
-#thanks-message button:hover {
-  /* background-color: var(--walker);
-  transition: background-color 0.3s ease; */
-  -webkit-animation: shadow-pop-br 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation: shadow-pop-br 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-}
-
-#contact-form button:active,
-#thanks-message button:active {
-  animation: none;
-}
-
-#thanks-message button {
-  font-size: 1rem;
-  margin-top: 2rem;
-}
-
-#thanks-message {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--colorGrey2);
-  font-size: 1.5rem;
 }
 
 #contact-form button:disabled {
   background-color: var(--colorGrey2);
   cursor: not-allowed;
-}
-
-#contact-form button:disabled:hover {
-  background-color: #ccc;
 }
 
 #contact-form .modal-close {
@@ -183,11 +141,6 @@
 
 #thanks-message {
   text-align: center;
-}
-
-#thanks-message .thanks-message-button {
-  margin: 1rem 0 3rem;
-  width: fit-content;
 }
 
 @-webkit-keyframes shadow-pop-br {

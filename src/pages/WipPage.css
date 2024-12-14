@@ -1,0 +1,51 @@
+.wip {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--greyOpaque1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  translate: 0 -100vh;
+  animation: dammit 0.7s ease-in forwards;
+  user-select: none;
+}
+
+.modal-h1 {
+  width: fit-content;
+  max-width: 768px;
+  text-align: center;
+  line-height: 1.3;
+  color: black;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.modal-button {
+  color: black;
+  font-weight: 600;
+  width: fit-content;
+  min-width: 12rem;
+  max-width: 90vw;
+  margin-top: 1.5rem;
+  margin: 0;
+  padding: 0.55rem 1.15rem;
+  border: 2.25px solid black;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: rgba(256, 256, 256, 0.5);
+  font-size: 1rem;
+}
+
+.modal-button:hover {
+  background-color: rgba(256, 256, 256, 1);
+}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import ButtonNav from '../components-ui/ButtonNav';
 import MobileMenu from '../components/MobileMenu';
@@ -15,7 +15,7 @@ function Header() {
   });
   const [becomeState, setBecomeState] = useState({});
   const [sloganState, setSloganState] = useState({});
-  const [shotCount, setShotCount] = useState(0);
+  const [shotCount, setShotCount] = useState(1);
   const [armageddon, setArmageddon] = useState(false);
   const [showDamn, setShowDamn] = useState(false);
 
@@ -36,8 +36,6 @@ function Header() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  debugger;
 
   useEffect(() => {
     const elements = document.querySelectorAll('.armageddon');
@@ -65,7 +63,7 @@ function Header() {
     shootTheArrow(hoverTime);
 
     if (hoverTime > 2000) {
-      bounceTheIcons(hoverTime);
+      bounceTheIconsText(hoverTime);
     }
   };
 
@@ -78,10 +76,8 @@ function Header() {
     );
   };
 
-  const bounceTheIcons = ({ hoverTime }) => {
+  const bounceTheIconsText = ({ hoverTime }) => {
     setShotCount(shotCount + 1);
-    console.log('🍌🥕 shotCount', shotCount);
-    console.log('🍌🥕 hoverTime', hoverTime);
 
     setTimeout(
       () => setArrowState({ backgroundPositionX: '115%', transition: 'background-position-x 0.1s ease-out' }),
@@ -103,7 +99,7 @@ function Header() {
     });
     setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
 
-    if (shotCount > 3) {
+    if (shotCount > 2) {
       setTimeout(() => {
         setSloganState({
           transform: `rotate(2.82deg)`,
@@ -138,7 +134,7 @@ function Header() {
 
       setTimeout(() => {
         damnYouBrokeMySite();
-      }, 11000);
+      }, 9000);
 
       return;
     }
@@ -146,7 +142,7 @@ function Header() {
     if (shotCount > 0) {
       setTimeout(() => {
         setSloganState({
-          transform: `rotate(0.${shotCount * 2}deg)`,
+          transform: `rotate(0.${shotCount * 2.5}deg)`,
           transformOrigin: 'center left',
           transition: 'transform 0.1s ease-out',
         });
@@ -210,7 +206,7 @@ function Header() {
 
         <nav id="header-nav" className="armageddon">
           <ButtonNav>
-            <NavLink to="/" className={designActive ? 'active' : ''}>
+            <NavLink to="/design" className={designActive ? 'active' : ''}>
               design
             </NavLink>
           </ButtonNav>
@@ -242,7 +238,12 @@ function Header() {
         </span>
       </div>
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
-      {showDamn && <div className="dammit"></div>}
+      {showDamn && (
+        <div className="dammit">
+          <h1>damn. you broke my site.</h1>
+          <p onClick={() => window.location.reload()}>please click here to refresh the page.</p>
+        </div>
+      )}
     </div>
   );
 }

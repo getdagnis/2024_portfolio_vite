@@ -37,11 +37,15 @@ function ContactForm() {
   if (state.succeeded) {
     return (
       <div id="thanks-message">
-        <h3>Thank you!</h3>
-        <h3> I'll check my email soon.</h3>
-        <button onClick={() => navigate({ pathname: `/design` })} className="thanks-message-button">
-          Back to portfolio
-        </button>
+        <div id="ty-wrapper">
+          <h1 className="modal-h1">
+            Thank you!
+            <br /> I'll check my email soon.
+          </h1>
+          <div className="modal-button" onClick={() => navigate({ pathname: `/design` })}>
+            back to portfolio
+          </div>
+        </div>
       </div>
     );
   }
@@ -69,7 +73,7 @@ function ContactForm() {
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea id="message" style={{ animationDelay: '1.2s' }} name="message" placeholder="message" required />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
-        <button style={{ animationDelay: '1.5s' }} type="submit" disabled={state.submitting}>
+        <button className="modal-button" style={{ animationDelay: '1.5s' }} type="submit" disabled={state.submitting}>
           Send!
         </button>
         <div className="modal-close" onClick={handleClose}></div>
