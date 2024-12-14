@@ -7,15 +7,17 @@ function WipPage() {
   return (
     <div className="wip">
       <h1 className="modal-h1">
-        welcome.
+        Welcome!
         <br />
-        this site is work in progress.
+        This site is currently under construction.
         <br />
-        missing works will be added.
+        Any missing works will be added shortly.
       </h1>
-      <NavLink className="modal-button" to="/redirect/design">
-        continue anyway
-      </NavLink>
+      <div className="wip-buttons">
+        <NavLink className="modal-button" to="/redirect/design">
+          that's ok
+        </NavLink>
+      </div>
     </div>
   );
 }

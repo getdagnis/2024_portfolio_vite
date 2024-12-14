@@ -1,15 +1,17 @@
 #about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  gap: 1rem;
-  padding: 0 1rem;
+  padding: 0;
   width: 100%;
-  max-width: 750px;
   background: url('../assets/about.png') no-repeat center 100px;
   background-size: contain;
+}
+
+#about .about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  text-align: left;
+  gap: 1rem;
+  min-height: 100vh;
 }
 
 #about .about-title,

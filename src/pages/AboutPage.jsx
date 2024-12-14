@@ -41,17 +41,14 @@ function AboutPage() {
 
   return (
     <div id="about">
-      <ExperienceTimeline />
-      <div className="about-text">timeline and about section incoming.</div>
-      {entries.map((entry) => (
-        <div key={entry.id} className="about-list-item" onClick={() => handleClick(entry.id)}>
-          <div className="about-list-item">
-            <span>{entry.year}</span>
-            {entry.title}
-          </div>
-          {activeEntry === entry.id && <p className="about-text">{entry.text}</p>}
+      <div className="about-grid">
+        <div className="left-about">
+          <h1>about the author</h1>
         </div>
-      ))}
+        <div className="right-about">list of experiences</div>
+        <h1>about this site</h1>
+      </div>
+      <ExperienceTimeline />
     </div>
   );
 }
