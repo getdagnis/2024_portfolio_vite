@@ -7,7 +7,7 @@ import MobileMenu from '../components/MobileMenu';
 import './Header.css';
 
 const ARMAGGEDON_START_COUNT = 1;
-const SHOTCOUNT_BEFORE_ARMAGGEDON = 3;
+const SHOTCOUNT_BEFORE_ARMAGGEDON = 4;
 
 function Header() {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -102,7 +102,7 @@ function Header() {
     });
     setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
 
-    if (shotCount > SHOTCOUNT_BEFORE_ARMAGGEDON) {
+    if (shotCount === SHOTCOUNT_BEFORE_ARMAGGEDON) {
       setTimeout(() => {
         setSloganState({
           transform: `rotate(2.82deg)`,
@@ -137,15 +137,15 @@ function Header() {
 
       setTimeout(() => {
         damnYouBrokeMySite();
-      }, 11000);
+      }, 12000);
 
       return;
     }
 
-    if (shotCount > 0) {
+    if (shotCount > ARMAGGEDON_START_COUNT) {
       setTimeout(() => {
         setSloganState({
-          transform: `rotate(0.${shotCount * 2.5}deg)`,
+          transform: `rotate(0.${shotCount * 3}deg)`,
           transformOrigin: 'center left',
           transition: 'transform 0.1s ease-out',
         });

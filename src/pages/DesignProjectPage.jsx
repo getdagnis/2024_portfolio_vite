@@ -3,6 +3,7 @@ import { Link, ScrollRestoration, useParams } from 'react-router-dom';
 
 import DesignProjectsList from '../components/DesignProjectsList';
 import ProjectReactions from '../components/ProjectReactions';
+
 import PROJECTS from '../constants/projects.json';
 import './DesignProjectPage.css';
 
@@ -12,8 +13,6 @@ function DesignProjectPage() {
 
   return (
     <div id="project-container">
-      <div className="arrow-prev"></div>
-      <div className="arrow-next"></div>
       <div id="project-details">
         <div className="proj-head">
           <Link to={`/design`}>
@@ -33,7 +32,7 @@ function DesignProjectPage() {
           </h6>
         </div>
         <div className="title-image armageddon">
-          <img src={`../../proj-img/${proj.key}/${proj.images[0]}`} alt={proj.name} className="main-img" />
+          <img src={`../../proj-img/${proj.key}/${proj.mainImage}`} alt={proj.name} className="main-img" />
           <p className="description">{proj.description}</p>
         </div>
       </div>
@@ -53,6 +52,8 @@ function DesignProjectPage() {
         </div>
       </div>
       <ScrollRestoration />
+      <div className="arrow-prev"></div>
+      <div className="arrow-next"></div>
       <ProjectReactions projectKey={projectKey} />
       <div className="project-divider"></div>
       <DesignProjectsList />
