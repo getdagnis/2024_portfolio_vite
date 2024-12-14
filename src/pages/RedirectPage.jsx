@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './RedirectPage.css';
-import Portfolio from './DesignPage';
+import DesignPage from './DesignPage';
 
 function RedirectPage() {
   const navigate = useNavigate();
@@ -9,13 +9,11 @@ function RedirectPage() {
 
   // this redirect simulates page refresh on the portfolio page (animation on re-render)
   useEffect(() => {
-    navigate({
-      pathname: `/${params.to}`,
-    });
-  }, [navigate]);
+    navigate(`/${params.to}`, { replace: true });
+  }, [navigate, params.to]);
 
   // importing portfolio page to prevent layout shift
-  return <Portfolio />;
+  return <DesignPage />;
 }
 
 export default RedirectPage;
