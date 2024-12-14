@@ -7,7 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(120, 120, 120, 0.95);
+  background-color: rgba(110, 110, 110, 0.95);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   z-index: 999;
@@ -24,6 +24,7 @@
   max-width: 35rem;
   padding: 1rem;
   translate: 0 -5vh;
+  animation: fadeIn 0.5s ease-in backwards;
 }
 
 #contact-form .top {
@@ -221,5 +222,15 @@
       7px 7px #3e3e3e, 4px 4px #3e3e3e;
     -webkit-transform: translateX(-4px) translateY(-4px);
     transform: translateX(-4px) translateY(-4px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }

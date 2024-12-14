@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
-import AboutPage from '../pages/AboutPage';
 import ButtonNav from '../components-ui/ButtonNav';
 import MobileMenu from '../components/MobileMenu';
 
@@ -9,7 +8,6 @@ import './Header.css';
 
 function Header() {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [arrowState, setArrowState] = useState({
     backgroundPositionX: 'right',
@@ -19,7 +17,7 @@ function Header() {
   const [sloganState, setSloganState] = useState({});
   const [shotCount, setShotCount] = useState(0);
   const [armageddon, setArmageddon] = useState(false);
-  const [showDammit, setShowDammit] = useState(false);
+  const [showDamn, setShowDamn] = useState(false);
 
   const arrowElement = useRef(null);
   const becomeElement = useRef(null);
@@ -38,6 +36,8 @@ function Header() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  debugger;
 
   useEffect(() => {
     const elements = document.querySelectorAll('.armageddon');
@@ -137,7 +137,7 @@ function Header() {
       }, 4500);
 
       setTimeout(() => {
-        dammitYouBrokeMySite();
+        damnYouBrokeMySite();
       }, 11000);
 
       return;
@@ -154,49 +154,10 @@ function Header() {
     }
   };
 
-  const dammitYouBrokeMySite = () => {
-    setShowDammit(true);
+  const damnYouBrokeMySite = () => {
+    setShowDamn(true);
     document.body.style.overflow = 'hidden';
   };
-
-  const handleAboutClose = () => {
-    setShowAbout(false);
-  };
-
-  useEffect(() => {
-    if (!showAbout) return;
-
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        handleAboutClose();
-      }
-    };
-
-    const handleArrowMouseEnterAbout = (e) => {
-      const aboutPage = document.getElementById('about-container');
-      if (aboutPage && !aboutPage.contains(e.target)) {
-        e.preventDefault();
-        handleAboutClose();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('mousedown', handleArrowMouseEnterAbout);
-    // clean-up
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('mousedown', handleArrowMouseEnterAbout);
-    };
-  }, [handleAboutClose, handleAboutClose]);
-
-  useEffect(() => {
-    // prevents scrolling of body when about or menu is open
-    if (showAbout || showMenu) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [showAbout, showMenu]);
 
   function handleHamburgerClick() {
     // prevents unnecessary scroll "leftovers" caused by hamburger-inner animations
@@ -280,9 +241,8 @@ function Header() {
           brands<strong className="b">become</strong>icons
         </span>
       </div>
-      <AboutPage location={{ location }} showAbout={showAbout} onClose={handleAboutClose} />
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
-      {showDammit && <div className="dammit"></div>}
+      {showDamn && <div className="dammit"></div>}
     </div>
   );
 }

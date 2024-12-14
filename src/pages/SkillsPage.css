@@ -143,6 +143,11 @@
   transform: translateY(0);
 }
 
+#skills-grid .skill-item:hover > .skill-item-top > .skill-icon {
+  transform: rotateY(360deg);
+  transition: all 1.2s ease;
+}
+
 #skill-item-bottom > p {
   margin-bottom: 0.25rem;
   line-height: 1.2;

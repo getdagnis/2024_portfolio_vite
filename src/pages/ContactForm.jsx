@@ -49,17 +49,27 @@ function ContactForm() {
   return (
     <div id="contact-modal">
       <form id="contact-form" onSubmit={handleSubmit}>
-        <div className="top">
+        <div className="top" style={{ animationDelay: '0.3s' }}>
           <label className="label" htmlFor="email">
             Reach out to me
           </label>
-          <div className="subtitle">(whatever it is on your mind)</div>
+          <div className="subtitle" style={{ animationDelay: '0.6s' }}>
+            (whatever is on your mind)
+          </div>
         </div>
-        <input id="email" type="email" name="email" autoFocus placeholder="email" required />
+        <input
+          id="email"
+          style={{ animationDelay: '0.9s' }}
+          type="email"
+          name="email"
+          autoFocus
+          placeholder="email"
+          required
+        />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <textarea id="message" name="message" placeholder="message" required />
+        <textarea id="message" style={{ animationDelay: '1.2s' }} name="message" placeholder="message" required />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
-        <button type="submit" disabled={state.submitting}>
+        <button style={{ animationDelay: '1.5s' }} type="submit" disabled={state.submitting}>
           Send!
         </button>
         <div className="modal-close" onClick={handleClose}></div>
