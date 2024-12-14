@@ -74,7 +74,7 @@ function ContactForm() {
         <textarea id="message" style={{ animationDelay: '1.2s' }} name="message" placeholder="message" required />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
         <button className="modal-button" style={{ animationDelay: '1.5s' }} type="submit" disabled={state.submitting}>
-          Send!
+          send!
         </button>
         <div className="modal-close" onClick={handleClose}></div>
       </form>

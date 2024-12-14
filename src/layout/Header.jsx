@@ -6,6 +6,9 @@ import MobileMenu from '../components/MobileMenu';
 
 import './Header.css';
 
+const ARMAGGEDON_START_COUNT = 1;
+const SHOTCOUNT_BEFORE_ARMAGGEDON = 3;
+
 function Header() {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -15,7 +18,7 @@ function Header() {
   });
   const [becomeState, setBecomeState] = useState({});
   const [sloganState, setSloganState] = useState({});
-  const [shotCount, setShotCount] = useState(1);
+  const [shotCount, setShotCount] = useState(ARMAGGEDON_START_COUNT);
   const [armageddon, setArmageddon] = useState(false);
   const [showDamn, setShowDamn] = useState(false);
 
@@ -31,7 +34,7 @@ function Header() {
       setIsPageLoaded(true);
     }, 2000);
 
-    setShotCount(0);
+    setShotCount(ARMAGGEDON_START_COUNT);
     setArrowState({ backgroundPositionX: '100%', transition: 'background-position-x 0.2s ease-out' });
 
     return () => clearTimeout(timer);
@@ -99,7 +102,7 @@ function Header() {
     });
     setTimeout(() => setBecomeState({ transform: 'none', transition: 'transform 0.05s ease-out' }), 50);
 
-    if (shotCount > 2) {
+    if (shotCount > SHOTCOUNT_BEFORE_ARMAGGEDON) {
       setTimeout(() => {
         setSloganState({
           transform: `rotate(2.82deg)`,
@@ -134,7 +137,7 @@ function Header() {
 
       setTimeout(() => {
         damnYouBrokeMySite();
-      }, 9000);
+      }, 11000);
 
       return;
     }
@@ -166,7 +169,7 @@ function Header() {
     if (!showMenu) {
       siteContainer.style.overflow = 'hidden';
       setShowMenu(true);
-      // let the mobile menu slide in, then show the close button
+      // let the mobile menu slide in, only then show the close button
       setTimeout(() => {
         hamburger.classList.add('is-active');
         hamburger.classList.add('z-index-999');
@@ -184,8 +187,8 @@ function Header() {
     siteContainer.style.overflow = '';
   }
 
-  const designActive = window.location.pathname === '/design' || window.location.pathname.includes('/design/project');
   const location = useLocation();
+  const designActive = location.pathname.includes('/design');
 
   return (
     <div id="header-container">
@@ -240,8 +243,11 @@ function Header() {
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
       {showDamn && (
         <div className="dammit">
-          <h1>damn. you broke my site.</h1>
-          <p onClick={() => window.location.reload()}>please click here to refresh the page.</p>
+          <h1 className="modal-h1">damn. you broke my site.</h1>
+          <h1 className="modal-h1">but it's ok.</h1>
+          <div id="armageddon-btn" className="modal-button" onClick={() => window.location.reload()}>
+            please click here to reload it.
+          </div>
         </div>
       )}
     </div>

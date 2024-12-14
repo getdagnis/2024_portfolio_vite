@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 function WipPage() {
   return (
     <div className="wip">
-      <h1>
+      <h1 className="modal-h1">
         welcome.
         <br />
         this site is work in progress.

@@ -37,7 +37,7 @@
   height: 1rem;
   overflow: hidden;
   background-color: var(--walker);
-  transform: translateY(-100%);
+  transform: translateY(-101%);
   transition: transform 0.3s ease;
 }
 

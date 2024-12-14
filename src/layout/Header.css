@@ -221,7 +221,7 @@ strong {
   -webkit-backdrop-filter: blur(5px);
   z-index: 9999;
   translate: 0 -100vh;
-  animation: dammit 0.7s ease-in forwards;
+  animation: dammitAnimation 0.7s ease-in forwards;
   user-select: none;
 }
 
@@ -231,23 +231,13 @@ strong {
   text-transform: uppercase;
   font-weight: 700;
   width: fit-content;
+  animation: dammit 0.7s ease-in backwards 3s;
 }
 
-.dammit p {
-  color: black;
-  letter-spacing: -0.5px;
-  font-weight: 600;
-  width: fit-content;
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border: 2.5px solid black;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.dammit p:hover {
-  background-color: rgba(256, 256, 256, 0.5);
+div #armageddon-btn {
+  animation: dammit 0.7s ease-in backwards;
+  animation-delay: 4s;
+  padding: 0.5rem 1.5rem;
 }
 
 .wip {
@@ -322,7 +312,7 @@ strong {
   }
 }
 
-@keyframes dammit {
+@keyframes dammitAnimation {
   from {
     translate: 0 -100vh;
   }

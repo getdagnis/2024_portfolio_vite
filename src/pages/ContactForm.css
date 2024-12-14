@@ -75,7 +75,7 @@
 }
 
 #contact-form .modal-button {
-  background-color: #ffffffee;
+  margin: 0;
 }
 
 #contact-form input:focus,
