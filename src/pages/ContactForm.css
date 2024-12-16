@@ -88,6 +88,8 @@
 #contact-form button:disabled {
   background-color: var(--colorGrey2);
   cursor: not-allowed;
+  border-color: grey;
+  color: grey;
 }
 
 #contact-form .modal-close {

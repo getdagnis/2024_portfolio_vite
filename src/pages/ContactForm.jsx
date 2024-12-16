@@ -6,19 +6,20 @@ import './ContactForm.css';
 
 function ContactForm() {
   const [state, handleSubmit] = useForm('mblrvgbl');
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
   const navigate = useNavigate();
 
   const handleClose = () => {
+    localStorage.setItem('email', email);
     navigate({
       pathname: `/design`,
     });
   };
 
   useEffect(() => {
-    // Set the body's overflow to hidden when the component mounts
     document.body.style.overflow = 'hidden';
 
-    // Add the 'Escape' key listener
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         handleClose();
@@ -27,11 +28,19 @@ function ContactForm() {
 
     document.addEventListener('keydown', handleEscape);
 
-    // Clean up on unmount: remove event listener and reset body overflow
     return () => {
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', handleEscape);
     };
+  }, []);
+
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('email');
+    if (savedEmail) {
+      setEmail(savedEmail);
+    } else {
+      setEmail('');
+    }
   }, []);
 
   if (state.succeeded) {
@@ -42,7 +51,7 @@ function ContactForm() {
             Thank you!
             <br /> I'll check my email soon.
           </h1>
-          <div className="modal-button" onClick={() => navigate({ pathname: `/design` })}>
+          <div className="modal-button" onClick={handleClose}>
             back to portfolio
           </div>
         </div>
@@ -66,14 +75,29 @@ function ContactForm() {
           style={{ animationDelay: '0.9s' }}
           type="email"
           name="email"
-          autoFocus
+          autoFocus={email}
           placeholder="email"
+          value={email}
           required
+          onChange={(e) => setEmail(e.target.value)}
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <textarea id="message" style={{ animationDelay: '1.2s' }} name="message" placeholder="message" required />
+        <textarea
+          autoFocus={!email}
+          id="message"
+          style={{ animationDelay: '1.2s' }}
+          name="message"
+          placeholder="message"
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
-        <button className="modal-button" style={{ animationDelay: '1.5s' }} type="submit" disabled={state.submitting}>
+        <button
+          className="modal-button"
+          style={{ opacity: message.length > 5 ? 1 : 0.5 }}
+          type="submit"
+          disabled={state.submitting || message.length <= 5}
+        >
           send!
         </button>
         <div className="modal-close" onClick={handleClose}></div>

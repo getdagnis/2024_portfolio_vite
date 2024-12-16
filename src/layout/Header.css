@@ -235,9 +235,19 @@ strong {
 }
 
 div #armageddon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: dammit 0.7s ease-in backwards;
   animation-delay: 4s;
   padding: 0.5rem 1.5rem;
+}
+
+.reload-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.3rem;
+  margin-top: -0.1rem;
 }
 
 .wip {

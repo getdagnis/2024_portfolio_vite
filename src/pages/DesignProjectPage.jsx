@@ -36,20 +36,20 @@ function DesignProjectPage() {
           <p className="description">{proj.description}</p>
         </div>
       </div>
-      <div id="project-nav">
-        <div className="project-nav-open">
-          {PROJECTS.map((p, index) => (
-            <Link
-              to={`/design/project/${p.key}`}
-              key={p.key}
-              className={p.key === projectKey ? 'proj-thumb active' : 'proj-thumb'}
-              style={{
-                backgroundImage: `url(../../thumbs/${p.key}.svg)`,
-                animationDelay: `${0.3 + index / 25}s`, // apply bounce animation delay
-              }}
-            ></Link>
-          ))}
-        </div>
+      <div className={`project-grid${proj.grid}`}>
+        {proj.images.map((image, index) => (
+          <div
+            className="img-container"
+            key={index}
+            style={{
+              background: `url(../../proj-img/${proj.key}/${image.src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            {/* <img src={`../../proj-img/${proj.key}/${image.src}`} alt={proj.name} /> */}
+          </div>
+        ))}
       </div>
       <ScrollRestoration />
       <div className="arrow-prev"></div>

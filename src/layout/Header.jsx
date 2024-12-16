@@ -234,6 +234,7 @@ function Header() {
           style={arrowState}
           onMouseEnter={handleArrowMouseEnter}
           onMouseLeave={handleArrowMouseLeave}
+          // onClick={handleArrowMouseLeave}
           ref={arrowElement}
         ></span>
         <span className="become-right" style={becomeState} ref={becomeElement}>
@@ -243,10 +244,10 @@ function Header() {
       {showMenu && <MobileMenu showMenu={showMenu} onClose={handleMenuClose} />}
       {showDamn && (
         <div className="dammit">
-          <h1 className="modal-h1">damn. you broke my site.</h1>
-          <h1 className="modal-h1">but it's ok.</h1>
+          <h1 className="modal-h1">damn. you&nbsp;broke&nbsp;my&nbsp;site.</h1>
+          <h1 className="modal-h1">but&nbsp;no&nbsp;worries. we&nbsp;can&nbsp;restore&nbsp;it.</h1>
           <div id="armageddon-btn" className="modal-button" onClick={() => window.location.reload()}>
-            please click here to reload it.
+            click here to reload <img className="reload-icon" src="../../public/reload.svg" />
           </div>
         </div>
       )}

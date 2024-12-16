@@ -7,7 +7,7 @@ function Footer() {
       <div className="become-slogan">
         <div className="footer-grid">
           <div className="footer-left">
-            <div className="logo"></div>
+            <NavLink to="/contact" className="logo"></NavLink>
             <NavLink to="/contact" className="footer-message"></NavLink>
           </div>
           <div className="footer-right">
