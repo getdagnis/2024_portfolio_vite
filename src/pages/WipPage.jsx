@@ -9,6 +9,7 @@ function WipPage() {
     <>
       <DesignPage />
       <div className="wip">
+        <div className="wip-image"></div>
         <h1 className="modal-h1">
           Welcome!
           <br />

@@ -12,7 +12,7 @@ function RedirectPage() {
     navigate(`/${params.to}`, { replace: true });
   }, [navigate, params.to]);
 
-  // importing portfolio page to prevent layout shift
+  // returning portfolio page to prevent layout shift after redirect
   return <DesignPage />;
 }
 

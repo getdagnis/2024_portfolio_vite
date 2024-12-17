@@ -247,7 +247,7 @@ function Header() {
           <h1 className="modal-h1">damn. you&nbsp;broke&nbsp;my&nbsp;site.</h1>
           <h1 className="modal-h1">but&nbsp;no&nbsp;worries. we&nbsp;can&nbsp;restore&nbsp;it.</h1>
           <div id="armageddon-btn" className="modal-button" onClick={() => window.location.reload()}>
-            click here to reload <img className="reload-icon" src="../../public/reload.svg" />
+            RELOAD <img className="reload-icon" src="../../public/reload.svg" />
           </div>
         </div>
       )}

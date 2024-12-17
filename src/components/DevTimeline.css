@@ -4,6 +4,8 @@
   user-select: none;
   overflow: hidden;
   z-index: 1;
+  margin-top: 2rem;
+  text-align: left;
 }
 
 .timeline-title {

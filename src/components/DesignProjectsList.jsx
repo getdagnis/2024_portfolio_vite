@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import PROJECTS from '../constants/projects.json';
 import './DesignProjectsList.css';
 
-function DesignProjectsList() {
+function DesignProjectsList({ currentProject }) {
+  const seenProjects = JSON.parse(sessionStorage.getItem('seenprojects')) || [];
+  const projects = PROJECTS.filter((project) => !seenProjects.includes(project.key) && project.key !== currentProject);
+
   return (
     <div id="project-list">
       <div id="project-list-container">
-        {PROJECTS.map(
+        {projects.map(
           (item, index) =>
             item.show === true && (
               <Link

@@ -59,3 +59,10 @@
 .modal-button:hover {
   background-color: rgba(256, 256, 256, 1);
 }
+
+.wip-image {
+  width: 6rem;
+  height: 6rem;
+  background: url('../assets/wip.svg') center center no-repeat;
+  margin-bottom: 1rem;
+}

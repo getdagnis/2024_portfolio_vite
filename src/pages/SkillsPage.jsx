@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import DevTimeline from '../components/DevTimeline';
 import SKILLS_DESIGN from '../constants/skills-design.json';
 import SKILLS_DEV from '../constants/skills-dev.json';
 import './SkillsPage.css';
@@ -50,6 +51,7 @@ function SkillsPage() {
           ? SKILLS_DESIGN.designSkills.map((skill, index) => renderSkill(skill, index))
           : SKILLS_DEV.devSkills.map((skill, index) => renderSkill(skill, index))}
       </div>
+      {skillSection === 'dev' && <DevTimeline />}
     </div>
   );
 }

@@ -71,7 +71,6 @@ const ProjectReactions = ({ projectKey }) => {
     }
   };
 
-  // Handle reaction click
   const handleReactionClick = async (reactionKey) => {
     if (isUpdating || !reactions) return; // Prevent double updates
 

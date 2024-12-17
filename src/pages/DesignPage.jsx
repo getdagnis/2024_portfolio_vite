@@ -9,8 +9,8 @@ import './DesignPage.css';
 function DesignPage() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [gridItems, setGridItems] = useState([]);
-  const [seeFilters, setSeeFilters] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState(sessionStorage.getItem('activefilter') || 'all');
+  const [seeFilters, setSeeFilters] = useState(activeFilter !== 'all');
   const [isHiding, setIsHiding] = useState(false);
 
   useEffect(() => {
@@ -35,15 +35,15 @@ function DesignPage() {
   const [columns, setColumns] = useState(calculateColumns(window.innerWidth));
 
   useEffect(() => {
-    if (!isHiding) {
-      const filteredItems = PROJECTS.filter(
-        (project) =>
-          project.show === true &&
-          project.category.includes('all') &&
-          (project.category.includes(activeFilter) || activeFilter === 'all')
-      ).map((project, index) => {
-        const row = Math.floor(index / columns) + 1; // Calculate row number
-        const col = (index % columns) + 1; // Calculate column number
+    if (isHiding) return;
+    let filteredItems = [];
+
+    if (activeFilter === 'unseen') {
+      const seenProjects = JSON.parse(sessionStorage.getItem('seenprojects')) || [];
+
+      filteredItems = PROJECTS.filter((project) => !seenProjects.includes(project.key)).map((project, index) => {
+        const row = Math.floor(index / columns) + 1; // Calculate thumbs row count
+        const col = (index % columns) + 1; // Calculate thumbs column count
 
         return {
           ...project,
@@ -54,7 +54,46 @@ function DesignPage() {
         };
       });
       setGridItems(filteredItems);
+      return;
     }
+
+    if (activeFilter === 'seen') {
+      const seenProjects = JSON.parse(sessionStorage.getItem('seenprojects')) || [];
+
+      filteredItems = PROJECTS.filter((project) => seenProjects.includes(project.key)).map((project, index) => {
+        const row = Math.floor(index / columns) + 1; // Calculate thumbs row count
+        const col = (index % columns) + 1; // Calculate thumbs column count
+
+        return {
+          ...project,
+          key: project.key,
+          className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names
+          col: col,
+          row: row,
+        };
+      });
+      setGridItems(filteredItems);
+      return;
+    }
+
+    filteredItems = PROJECTS.filter(
+      (project) =>
+        project.show === true &&
+        project.category.includes('all') &&
+        (project.category.includes(activeFilter) || activeFilter === 'all')
+    ).map((project, index) => {
+      const row = Math.floor(index / columns) + 1; // Calculate row number
+      const col = (index % columns) + 1; // Calculate column number
+
+      return {
+        ...project,
+        key: project.key,
+        className: `grid-item col-${col} row-${row} itemBounceAnim`, // Combined class names
+        col: col,
+        row: row,
+      };
+    });
+    setGridItems(filteredItems);
   }, [activeFilter, screenWidth, isHiding]);
 
   const handleFilterChange = (newFilter) => {
@@ -70,11 +109,13 @@ function DesignPage() {
       }, calculateTimeOut);
 
       setActiveFilter(newFilter);
+      sessionStorage.setItem('activefilter', newFilter);
     }
   };
 
   const handleFiltersToggle = () => {
-    seeFilters && setActiveFilter('all');
+    setActiveFilter('all');
+    sessionStorage.setItem('activefilter', 'all');
     setSeeFilters(!seeFilters);
   };
 

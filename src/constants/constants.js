@@ -8,7 +8,7 @@ export const SCREEN_WIDTHS = {
 
 export const DESIGN_FILTERS = [
   { key: 'all', title: 'All', display: true, mobile: true },
-  { key: 'identity', title: 'Identities', display: true, mobile: true },
+  { key: 'identity', title: 'Identities', display: true, mobile: false },
   { key: 'smart', title: 'Smart', display: true, mobile: true },
   { key: 'famous', title: 'Famous', display: true, mobile: true },
   { key: 'sports', title: 'Sports', display: true, mobile: true },
@@ -16,6 +16,7 @@ export const DESIGN_FILTERS = [
   { key: 'startup', title: 'Startups', display: true, mobile: false },
   { key: 'publishing', title: 'Publishing', display: true, mobile: false },
   { key: 'unseen', title: 'Unseen', display: true, mobile: true },
+  { key: 'seen', title: 'Seen', display: true, mobile: true },
 ];
 
 export const TIMELINE = [

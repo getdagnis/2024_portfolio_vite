@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import DevTimeline from '../components/DevTimeline';
 import { ScrollRestoration } from 'react-router-dom';
 import './AboutPage.css';
 
@@ -49,7 +48,6 @@ function AboutPage() {
         <div className="right-about">list of experiences</div>
         <h1>about this site</h1>
       </div>
-      <DevTimeline />
       <ScrollRestoration />
     </div>
   );

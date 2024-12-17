@@ -4,7 +4,7 @@
 }
 
 #skills-container {
-  padding: 1rem 0;
+  padding: 1rem 0 0;
   min-height: 100vh;
   min-height: 100dvh;
   animation: fade-in 0.3s ease-in-out 0.1s backwards;
