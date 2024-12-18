@@ -5,6 +5,7 @@ import ImageModal from '../components/ImageModal';
 
 import DesignProjectsList from '../components/DesignProjectsList';
 import ProjectReactions from '../components/ProjectReactions';
+import ButtonNextProject from '../components-ui/ButtonNextProject';
 
 import PROJECTS from '../constants/projects.json';
 import './DesignProjectPage.css';
@@ -25,6 +26,19 @@ function DesignProjectPage() {
     document.body.style.overflow = 'auto';
     setModalImage(null);
   };
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
 
   useEffect(() => {
     console.log('🍌🥕 modalImage', modalImage);
@@ -109,7 +123,22 @@ function DesignProjectPage() {
         </div>
         <div className="title-image armageddon">
           <img src={`../../proj-img/${proj.key}/${proj.mainImage}`} alt={proj.name} className="main-img" />
-          <div className="description">{proj.description}</div>
+          <div className="description">
+            <p>{proj.description}</p>
+            {proj.site && (
+              <p>
+                Website:{' '}
+                <span>
+                  <a href={`http://${proj.site}`} target="_blank">
+                    {proj.site}
+                  </a>
+                </span>
+              </p>
+            )}
+            <p>
+              Year: <span>{proj.year}</span>
+            </p>
+          </div>
         </div>
       </div>
       <div id="project-grid" className={`project-grid${proj.grid ? proj.grid : '1'}`}>
@@ -127,8 +156,10 @@ function DesignProjectPage() {
         ))}
       </div>
       <ScrollRestoration />
-      <div className="arrow-prev"></div>
-      <div className="arrow-next"></div>
+      <div id="previous-next">
+        <ButtonNextProject type="left">Previous</ButtonNextProject>
+        <ButtonNextProject type="right">Next</ButtonNextProject>
+      </div>
       <ProjectReactions projectKey={projectKey} />
       <div className="project-divider"></div>
       <DesignProjectsList currentProject={projectKey} />

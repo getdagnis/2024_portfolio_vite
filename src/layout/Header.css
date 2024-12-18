@@ -54,6 +54,7 @@ nav#header-nav {
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius);
+  user-select: none;
   z-index: 999;
 
   @media (max-width: 320px) {

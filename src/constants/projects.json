@@ -361,7 +361,7 @@
     "title": "Quick Loans",
     "work": "Logo, Identity",
     "year": "2021",
-    "description": "Logo, identity and other graphic works for the Ukraine based quick loan company.",
+    "description": "Logo, identity and other graphic works for a Ukraine based quick loan company CashKiosk.",
     "mainImage": "main.jpg",
     "grid": 1,
     "images": [
@@ -431,7 +431,7 @@
     "title": "Quick Loans",
     "work": "Logo, Identity, App",
     "year": "2021",
-    "description": "Logo, identity and app for the Ukraine based quick loan company.",
+    "description": "Logo, identity and app for a Ukraine based quick loan company Pablo. Illustrations by ",
     "mainImage": "main.jpg",
     "grid": 1,
     "images": [
@@ -464,56 +464,14 @@
         "rowSpan": 1
       },
       {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
         "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-9.jpg",
         "caption": null,
         "size": "medium",
         "colSpan": 2,
         "rowSpan": 2
       },
       {
-        "src": "image-11.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-10.jpg",
+        "src": "image-5.jpg",
         "caption": null,
         "size": "medium",
         "colSpan": 2,
@@ -524,117 +482,12 @@
     "category": ["all", "identity", "app", "startup"]
   },
   {
-    "key": "basket",
-    "name": "Liepājas Basketbols",
-    "title": "Basketball Club",
-    "work": "Logo, Identity, Jerseys",
-    "year": "2018",
-    "description": "basket description",
-    "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-9.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-10.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-11.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      }
-    ],
-    "show": false,
-    "category": ["all", "identity", "sports"]
-  },
-  {
     "key": "sponsor",
     "name": "SponsorKing",
-    "title": "sponsoring agency",
-    "work": "full identity",
+    "title": "Sponsoring Agency",
+    "work": "Full identity",
     "year": "2013",
-    "description": "sponsor description",
+    "description": "Logo and identity for a Riga, Latvia based sponsoring agency.",
     "mainImage": "main.jpg",
     "grid": 1,
     "images": [
@@ -647,20 +500,6 @@
       },
       {
         "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
         "caption": null,
         "size": "medium",
         "colSpan": 1,
@@ -676,24 +515,54 @@
     "title": "architecture office",
     "work": "logo, web, business cards, font",
     "year": "2006",
-    "description": "made description",
+    "description": "MADE arhitekti is an award winning architecture office based in Riga, Latvia focusing on sustainable, minimmalistic, conceptual architecuture. Logo I made for them in 2006 is still in use today, making it one of my longest lasting logos and the longest that has remained unchanged.",
     "mainImage": "main.jpg",
-    "images": ["_template.jpg", "image-0.jpg"],
-    "allimages": ["_template.jpg", "image-0.jpg"],
+    "site": "made.lv",
+    "images": [
+      {
+        "src": "image-1.png",
+        "caption": null,
+        "size": "medium",
+        "colSpan": 1,
+        "rowSpan": 1
+      },
+      {
+        "src": "image-2.png",
+        "caption": null,
+        "size": "medium",
+        "colSpan": 1,
+        "rowSpan": 1
+      }
+    ],
     "show": true,
     "category": ["all", "identity", "smart"]
   },
   {
     "key": "zivtina",
-    "name": "Zelta Zivtiņa",
+    "name": "Zelta Zivtiņa — logo refresh",
     "title": "Mobile Prepaid Card",
-    "work": "logo &amp; Brand Refresh",
+    "work": "Logo & Brand Refresh",
     "year": "2005",
-    "description": "zivtina description",
-    "mainImage": "main.jpg",
-    "images": [],
-    "allimages": [],
+    "description": "Zelta Zivtina is the largest mobile pay-as-you-go mobile card in Latvia by one of two of the largest mobile operators. In 2005 I had a chance to refesh their logo as well as work on a new brand/advertising concept while working under DDB Latvia.",
+    "mainImage": "main.png",
+    "images": [
+      {
+        "src": "image-1.png",
+        "caption": null,
+        "size": "medium",
+        "colSpan": 1,
+        "rowSpan": 1
+      },
+      {
+        "src": "image-2.png",
+        "caption": null,
+        "size": "medium",
+        "colSpan": 1,
+        "rowSpan": 1
+      }
+    ],
     "show": true,
+    "site": "zeltazivtina.lv",
     "category": ["all", "identity", "famous"]
   },
   {
@@ -880,8 +749,8 @@
   },
   {
     "key": "var",
-    "name": "var name",
-    "title": "var - what it is",
+    "name": "Latvija var!",
+    "title": "Latvija var! is a nationwide activity with purpos",
     "work": "var - what was done",
     "year": "var year",
     "description": "var description",

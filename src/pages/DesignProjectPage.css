@@ -15,6 +15,24 @@
   }
 }
 
+#project-container .description a {
+  color: white;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+}
+
+#project-container .description a:hover {
+  text-decoration: none;
+}
+
+#project-container p {
+  margin-bottom: 0.5rem;
+}
+
+#project-container span {
+  font-style: italic;
+}
+
 .project-nav-open {
   display: none;
   position: absolute;
@@ -181,6 +199,7 @@ div.proj-title > h3:hover > .back-arrow-container {
   min-height: 20rem;
   background-color: var(--colorGrey2);
   border-radius: var(--radiusSmall);
+  cursor: zoom-in;
   opacity: 0;
 
   @media screen and (max-width: 1320px) {
@@ -233,6 +252,13 @@ div.proj-title > h3:hover > .back-arrow-container {
   }
 }
 
+#previous-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
 .image-modal {
   position: fixed;
   top: 0;
@@ -247,6 +273,6 @@ div.proj-title > h3:hover > .back-arrow-container {
   z-index: 9999;
 }
 .image-modal img {
-  cursor: pointer;
+  cursor: zoom-out;
   user-select: none; /* Prevent text selection while dragging */
 }
