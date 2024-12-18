@@ -25,7 +25,6 @@ function Header() {
   const arrowElement = useRef(null);
   const becomeElement = useRef(null);
   const sloganElement = useRef(null);
-  const hoverStartTime = useRef(null);
 
   const arrowElementWidth = arrowElement.current ? arrowElement.current.offsetWidth : 0;
 
@@ -55,22 +54,15 @@ function Header() {
 
   const handleArrowMouseEnter = () => {
     if (!isPageLoaded) return;
-    hoverStartTime.current = performance.now();
     setArrowState({ backgroundPositionX: `calc(100% - ${arrowElementWidth}px + 5vw)` });
   };
 
-  const handleArrowMouseLeave = () => {
-    const hoverEndTime = performance.now();
-    const hoverTime = hoverEndTime - hoverStartTime.current;
-
-    shootTheArrow(hoverTime);
-
-    if (hoverTime > 2000) {
-      bounceTheIconsText(hoverTime);
-    }
+  const handleArrowMouseClick = () => {
+    shootTheArrow();
+    bounceTheIconsText();
   };
 
-  const shootTheArrow = ({ hoverTime }) => {
+  const shootTheArrow = () => {
     setArrowState({ backgroundPositionX: 'right', transition: 'background-position-x 0.1s ease-out' });
 
     setTimeout(
@@ -79,7 +71,7 @@ function Header() {
     );
   };
 
-  const bounceTheIconsText = ({ hoverTime }) => {
+  const bounceTheIconsText = () => {
     setShotCount(shotCount + 1);
 
     setTimeout(
@@ -233,8 +225,7 @@ function Header() {
           className="become-middle"
           style={arrowState}
           onMouseEnter={handleArrowMouseEnter}
-          onMouseLeave={handleArrowMouseLeave}
-          // onClick={handleArrowMouseLeave}
+          onClick={handleArrowMouseClick}
           ref={arrowElement}
         ></span>
         <span className="become-right" style={becomeState} ref={becomeElement}>

@@ -307,7 +307,7 @@ div #armageddon-btn {
   to {
     transform: rotate(90deg);
     transform: translateY(125vh);
-    display: none;
+    visibility: hidden;
   }
 }
 
