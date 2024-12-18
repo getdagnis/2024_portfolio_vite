@@ -259,6 +259,12 @@ div.proj-title > h3:hover > .back-arrow-container {
   margin-top: 2rem;
 }
 
+.next-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .image-modal {
   position: fixed;
   top: 0;

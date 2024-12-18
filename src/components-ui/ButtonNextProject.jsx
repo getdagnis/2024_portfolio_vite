@@ -1,12 +1,12 @@
 import React from 'react';
 import './ButtonNextProject.css';
 
-export default function ButtonNextProject({ children, type = 'right' }) {
+export default function ButtonNextProject({ children, onClick, side = 'right' }) {
   return (
-    <div id="button-next" className={type}>
-      {type === 'left' && <div className="arrow">&lt;</div>}
+    <button id="button-next" className={side} onClick={onClick}>
+      {side === 'left' && <div className="arrow">&lt;</div>}
       {children}
-      {type === 'right' && <div className="arrow">&gt;</div>}
-    </div>
+      {side === 'right' && <div className="arrow">&gt;</div>}
+    </button>
   );
 }

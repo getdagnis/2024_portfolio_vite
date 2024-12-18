@@ -4,16 +4,18 @@
   justify-content: space-between;
   width: fit-content;
   min-width: 6rem;
+  font-family: Poppins, Montserrat, Roboto, sans-serif;
+  font-size: 1rem;
   border: 2px solid black;
   border-radius: var(--radiusSmall);
   text-align: right;
-  padding: 0.5rem 1.25rem 0.2rem;
+  padding: 0.5rem 1.25rem 0.1rem;
   transition: padding 0.3s ease;
   cursor: pointer;
 }
 
 #button-next:hover {
-  padding: 0.5rem 2.5rem 0.2rem;
+  /* padding: 0.5rem 2.5rem 0.1rem; */
 }
 
 #button-next .arrow {
@@ -21,6 +23,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   text-align: left;
+  transition: margin 0.3s ease;
 }
 
 #button-next.right {
@@ -30,4 +33,20 @@
 #button-next.right .arrow {
   text-align: right;
   margin: -0.3rem 0 0 0.5rem;
+}
+
+#button-next:hover > .arrow {
+  margin: -0.3rem 1.5rem 0 0;
+}
+
+#button-next.right:hover > .arrow {
+  margin: -0.3rem 0 0 1.5rem;
+}
+
+#button-next.right:active > .arrow {
+  color: var(--walker);
+}
+
+#button-next.right:active > .arrow {
+  color: var(--walker);
 }

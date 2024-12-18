@@ -28,17 +28,10 @@ function DesignProjectPage() {
   };
 
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    };
+    const handleEscape = (e) => e.key === 'Escape' && closeModal();
     document.addEventListener('keydown', handleEscape);
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, []);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [closeModal]);
 
   useEffect(() => {
     console.log('🍌🥕 modalImage', modalImage);
@@ -57,16 +50,14 @@ function DesignProjectPage() {
     return proj.images.reduce((sum, image) => sum + (Math.pow(image.rowSpan, 2) || 0), 0);
   }, [proj.images]);
 
+  const gridRows = useMemo(() => {
+    if (totalRowSpan === 0) return 0;
+    if (isMobile) return proj.images.length;
+    return totalRowSpan % 2 === 1 ? (totalRowSpan + 1) / 2 : totalRowSpan / 2;
+  }, [totalRowSpan, isMobile]);
+
   const ImageContainer = memo(({ image, projectKey, index, colSpan, rowSpan, onImageClick, disableAnimations }) => {
     useEffect(() => {
-      const gridRows =
-        totalRowSpan === 0
-          ? 0
-          : isMobile
-          ? proj.images.length
-          : totalRowSpan % 2 === 1
-          ? (totalRowSpan + 1) / 2
-          : totalRowSpan / 2;
       document.getElementById('project-grid').style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
     }, []);
 
@@ -100,6 +91,17 @@ function DesignProjectPage() {
       />
     );
   });
+
+  const navigateTo = (direction) => {
+    console.log('🍌🥕 direction', direction);
+    const currentIndex = PROJECTS.findIndex((obj) => obj.key === projectKey);
+    console.log('🍌🥕 currentIndex', currentIndex);
+    const newIndex =
+      direction === 'previous'
+        ? (currentIndex - 1 + PROJECTS.length) % PROJECTS.length
+        : (currentIndex + 1) % PROJECTS.length;
+    return `/design/project/${PROJECTS[newIndex].key}`;
+  };
 
   return (
     <div id="project-container">
@@ -157,8 +159,14 @@ function DesignProjectPage() {
       </div>
       <ScrollRestoration />
       <div id="previous-next">
-        <ButtonNextProject type="left">Previous</ButtonNextProject>
-        <ButtonNextProject type="right">Next</ButtonNextProject>
+        <div id="previous-next">
+          <Link className="previous-button" to={navigateTo('previous')}>
+            <ButtonNextProject side="left">Previous</ButtonNextProject>
+          </Link>
+          <Link className="next-button" to={navigateTo('next')}>
+            <ButtonNextProject side="right">Next</ButtonNextProject>
+          </Link>
+        </div>
       </div>
       <ProjectReactions projectKey={projectKey} />
       <div className="project-divider"></div>
