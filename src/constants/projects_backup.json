@@ -104,7 +104,7 @@
     "title": "Web Portal Startup",
     "work": "Founder, Editor, Designer",
     "year": "2003-2011",
-    "description": "I launched satori.lv web portal for literature and philosophy while still in high school. I was the editor, designer, developer during its first couple of years before beginning a career in advertising. I kept doing most of the design tasks up until 2012 when the website was taken over by new management.",
+    "description": "I started www.satori.lv web portal for literature and philosophy while still in high school, collaborating with various friends. It was the first media on the Latvian internet dedicated to creative &amp; critical thought and quickly gained more attention than we initially expected. Starting around 2005 I stepped down as the editor but remained to be the main graphic designer for the project until 2012 when it was taken over by new management.",
     "mainImage": "main.jpg",
     "images": [
       {
@@ -173,7 +173,7 @@
     "title": "Ice Hockey Club",
     "work": "Logo & Jerseys",
     "year": "2008",
-    "description": "In 2008 designed the logo, jersey designs, website and most other designs during the first Dinamo Rīga (KHL hockey club) season. The usage of letter D from the original Dinamo Riga team was an obligatory requirement by the league's management. The lions that were used from the club's temporary logo and are a heraldic symbol of Riga. The logo remained in use till 2020.",
+    "description": "Dinamo Rīga is an ice hockey club playing for KHL, the second largest hockey league in the world. In spring 2008, when the club was re-established after a 25 year break, I was approached by the club's management and asked to participate in a closed logo design contest. My logo, which incorporated letter D from the original club's logo as well as symbols from the Latvian coat of arms, won among proposals by several of the largest advertising agencies in the country. I continued to work with them for the first half of their first season -- designing player jerseys, fan merchandising etc. When the club's management changed halfway into the season, they took over the design part too.&nbsp;",
     "mainImage": "main.jpg",
     "images": [
       {
@@ -219,7 +219,7 @@
         "rowSpan": 1
       },
       {
-        "src": "11.jpg",
+        "src": "08.jpg",
         "caption": null,
         "size": "medium",
         "colSpan": 1,
@@ -242,116 +242,10 @@
     "title": "Basketball Club",
     "work": "Logo, Identity, Jerseyse",
     "year": "2018",
-    "description": "Logo, jersey designs, identity and other graphic works for the basketboll club of Liepāja, the third largest city in Latvia.",
+    "description": "Logo, identity and other graphic works for the basketboll club of Liepāja, the third largest city in Latvia.",
     "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-9.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-10.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-11.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-13.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-14.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-15.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      }
-    ],
+    "images": ["image-0.jpg"],
+    "allimages": ["image-0.jpg"],
     "show": true,
     "category": ["all", "identity", "sports"]
   },
@@ -363,65 +257,8 @@
     "year": "2021",
     "description": "Logo, identity and other graphic works for the Ukraine based quick loan company.",
     "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      }
-    ],
+    "images": [],
+    "allimages": [],
     "show": true,
     "category": ["all", "identity", "startup"]
   },
@@ -433,93 +270,8 @@
     "year": "2021",
     "description": "Logo, identity and app for the Ukraine based quick loan company.",
     "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-9.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-11.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-10.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      }
-    ],
+    "images": [],
+    "allimages": [],
     "show": true,
     "category": ["all", "identity", "app", "startup"]
   },
@@ -531,100 +283,8 @@
     "year": "2018",
     "description": "basket description",
     "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-5.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-6.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-7.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-8.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-9.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 2,
-        "rowSpan": 2
-      },
-      {
-        "src": "image-10.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-11.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-12.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      }
-    ],
+    "images": [],
+    "allimages": [],
     "show": false,
     "category": ["all", "identity", "sports"]
   },
@@ -636,37 +296,8 @@
     "year": "2013",
     "description": "sponsor description",
     "mainImage": "main.jpg",
-    "grid": 1,
-    "images": [
-      {
-        "src": "image-1.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-2.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-3.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      },
-      {
-        "src": "image-4.jpg",
-        "caption": null,
-        "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
-      }
-    ],
+    "images": [],
+    "allimages": [],
     "show": true,
     "category": ["all", "identity"]
   },

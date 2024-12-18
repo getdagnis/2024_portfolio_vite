@@ -125,7 +125,7 @@ const ProjectReactions = ({ projectKey }) => {
                 onClick={() => handleReactionClick(key)}
               />
               <span className={`reaction-count ${isCountTransitioning === key ? 'reaction-count-updating' : ''}`}>
-                {reaction.alt} {reaction.count > 0 && `(${reaction.count})`}
+                {reaction.alt}&nbsp;{reaction.count > 0 && `(${reaction.count})`}
               </span>
             </li>
           ))}
