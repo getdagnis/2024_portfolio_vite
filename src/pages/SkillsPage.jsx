@@ -60,7 +60,7 @@ function renderSkill(skill, index) {
   return (
     <div
       key={skill.key}
-      className={`skill-item ${skill.class}`}
+      className={`skill-item ${skill.class}  armageddon`}
       style={{
         animationDelay: `${0.3 + index / 20}s`,
         zIndex: index,

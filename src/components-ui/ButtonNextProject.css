@@ -6,6 +6,7 @@
   min-width: 6rem;
   font-family: Poppins, Montserrat, Roboto, sans-serif;
   font-size: 1rem;
+  color: black;
   border: 2px solid black;
   border-radius: var(--radiusSmall);
   text-align: right;

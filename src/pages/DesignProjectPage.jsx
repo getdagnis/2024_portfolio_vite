@@ -34,10 +34,6 @@ function DesignProjectPage() {
   }, [closeModal]);
 
   useEffect(() => {
-    console.log('🍌🥕 modalImage', modalImage);
-  }, [modalImage]);
-
-  useEffect(() => {
     const seenProjects = JSON.parse(sessionStorage.getItem('seenprojects')) || [];
     if (!seenProjects.includes(projectKey)) {
       const updatedProjects = [...seenProjects, projectKey];
@@ -51,16 +47,22 @@ function DesignProjectPage() {
   }, [proj.images]);
 
   const gridRows = useMemo(() => {
+    console.log('🍌🥕 proj.images', proj.images);
     if (totalRowSpan === 0) return 0;
     if (isMobile) return proj.images.length;
     return totalRowSpan % 2 === 1 ? (totalRowSpan + 1) / 2 : totalRowSpan / 2;
   }, [totalRowSpan, isMobile]);
 
-  const ImageContainer = memo(({ image, projectKey, index, colSpan, rowSpan, onImageClick, disableAnimations }) => {
-    useEffect(() => {
-      document.getElementById('project-grid').style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
-    }, []);
+  useEffect(() => {
+    if (proj.images.length > 0) {
+      const gridElement = document.getElementById('project-grid');
+      if (gridElement) {
+        gridElement.style.gridTemplateRows = `repeat(${gridRows}, 1fr)`;
+      }
+    }
+  }, [gridRows]);
 
+  const ImageContainer = memo(({ image, projectKey, index, colSpan, rowSpan, onImageClick, disableAnimations }) => {
     const { ref, inView } = useInView({
       triggerOnce: true,
       threshold: 0.1,
@@ -68,6 +70,7 @@ function DesignProjectPage() {
 
     const handleClick = () => {
       const imageSrc = `../../proj-img/${projectKey}/${image.src}`;
+      setDisableAnimations(true);
       if (onImageClick) {
         onImageClick(imageSrc);
       }

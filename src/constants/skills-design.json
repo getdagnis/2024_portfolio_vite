@@ -20,96 +20,80 @@
       "key": "video",
       "section": "design",
       "title": "Video Editing // Animation",
-      "describe": "Skilled in dynamic video production and effects animation.",
-      "details": "Skilled in dynamic video production and effects animation.",
+      "describe": "Skilled in dynamic video and animation production.",
+      "details": "Skilled in dynamic video and animation production.",
       "class": "regular-size"
     },
     {
       "key": "3d",
       "section": "design",
       "title": "3D Modeling & Animation",
-      "describe": "Advanced 3D modeling, texturing, lighting, and animation.",
-      "details": "Advanced 3D modeling, texturing, lighting, and animation.",
+      "describe": "Advanced skills in 3D design and animation tools.",
+      "details": "Advanced skills in 3D design and animation tools.",
       "class": "regular-size"
     },
     {
       "key": "ux",
       "section": "design",
       "title": "User Experience Design",
-      "describe": "Creating intuitive and effective user interfaces and experiences.",
-      "details": "Creating intuitive and effective user interfaces and experiences.",
+      "describe": "Designing user-centric interfaces and experiences.",
+      "details": "Designing user-centric interfaces and experiences.",
       "class": "regular-size"
     },
     {
       "key": "creative",
       "section": "design",
       "title": "Creative Direction",
-      "describe": "Campaign Strategy // Art Direction // Brand Guidance",
-      "details": "Leading creative initiatives for brand and product strategies.",
+      "describe": "Leading brand strategy, art direction, campaigns.",
+      "details": "Leading brand strategy, art direction, campaigns.",
       "class": "regular-size"
     },
     {
       "key": "anim",
       "section": "design",
       "title": "Animation",
-      "describe": "Crafting engaging animations for web and digital media.",
-      "details": "Crafting engaging animations for web and digital media.",
+      "describe": "Creating animations for web and digital platforms.",
+      "details": "Creating animations for web and digital platforms.",
       "class": "regular-size"
     },
     {
       "key": "lead",
       "section": "design",
       "title": "Design Leadership",
-      "describe": "Team Management // Product Design // Design Budgeting",
-      "details": "Guiding design teams towards innovative and cost-effective solutions.",
+      "describe": "Managing teams, budgets, and product design vision.",
+      "details": "Managing teams, budgets, and product design vision.",
       "class": "regular-size"
     },
     {
       "key": "copy",
       "section": "design",
       "title": "Copywriting",
-      "describe": "Developing compelling narratives for marketing and communications.",
-      "details": "Developing compelling narratives for marketing and communications.",
+      "describe": "Crafting engaging content for marketing purposes.",
+      "details": "Crafting engaging content for marketing purposes.",
       "class": "regular-size"
     },
     {
       "key": "font",
       "section": "design",
       "title": "Font Design",
-      "describe": "Designing custom fonts and typography for various applications.",
-      "details": "Designing custom fonts and typography for various applications.",
+      "describe": "Designing custom fonts for various design needs.",
+      "details": "Designing custom fonts for various design needs.",
       "class": "regular-size"
     },
     {
       "key": "product",
       "section": "design",
       "title": "Product Design",
-      "describe": "Innovating and refining products from concept to market.",
-      "details": "Innovating and refining products from concept to market.",
+      "describe": "From concept to market, enhancing product usability.",
+      "details": "From concept to market, enhancing product usability.",
       "class": "regular-size"
     },
     {
       "key": "web",
       "section": "design",
       "title": "Web Design",
-      "describe": "Building functional and aesthetically pleasing web interfaces.",
-      "details": "Building functional and aesthetically pleasing web interfaces.",
-      "class": "regular-size"
-    },
-    {
-      "key": "copy2",
-      "section": "design",
-      "title": "Copywriting",
-      "describe": "Developing compelling narratives for marketing and communications.",
-      "details": "Developing compelling narratives for marketing and communications.",
-      "class": "regular-size"
-    },
-    {
-      "key": "font2",
-      "section": "design",
-      "title": "Font Design",
-      "describe": "Designing custom fonts and typography for various applications.",
-      "details": "Designing custom fonts and typography for various applications.",
+      "describe": "Creating responsive, visually appealing websites.",
+      "details": "Creating responsive, visually appealing websites.",
       "class": "regular-size"
     }
   ]

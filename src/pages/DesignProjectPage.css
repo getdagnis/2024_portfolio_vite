@@ -233,6 +233,10 @@ div.proj-title > h3:hover > .back-arrow-container {
   opacity: 0;
   transform: translateY(1rem);
   transition: opacity 0.5s ease, transform 0.5s ease;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .img-container.in-view {
@@ -247,8 +251,8 @@ div.proj-title > h3:hover > .back-arrow-container {
   gap: 0.5rem;
   width: 100%;
 
-  @media screen and (max-width: 780px) {
-    grid-template-columns: repeat(1, 1fr);
+  @media screen and (max-width: 768px) {
+    display: block;
   }
 }
 
