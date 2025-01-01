@@ -72,6 +72,14 @@
         "colSpan": 2,
         "rowSpan": 2
       },
+
+      {
+        "src": "image-10.jpg",
+        "caption": null,
+        "size": "medium",
+        "colSpan": 2,
+        "rowSpan": 2
+      },
       {
         "src": "image-11.jpg",
         "caption": null,
@@ -87,7 +95,7 @@
         "rowSpan": 1
       },
       {
-        "src": "image-10.jpg",
+        "src": "image-11.png",
         "caption": null,
         "size": "medium",
         "colSpan": 2,
@@ -242,7 +250,7 @@
     "title": "Basketball Club",
     "work": "Logo, Identity, Jerseyse",
     "year": "2018",
-    "description": "Logo, jersey designs, identity and other graphic works for the basketboll club of Liepāja, the third largest city in Latvia.",
+    "description": "Logo, jersey designs, identity and other graphic works for the basketboll club of Liepāja, the third largest city in Latvia, known locally as the \"windy city\", as it is located between the shore of the Baltic Sea and a lake on the other side. The city is also famous for it's rock anthem — \"In the city where the wind is born\" and features a lion in its coat of arms.",
     "mainImage": "main.jpg",
     "grid": 1,
     "images": [

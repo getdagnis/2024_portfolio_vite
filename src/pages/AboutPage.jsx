@@ -8,7 +8,7 @@ function AboutPage() {
     <div id="about">
       <div className="about-grid">
         <div className="left-about">
-          <img className="armageddon" src="../../public/dag_square.png" alt="Dagnis" />
+          <img className="armageddon" src="/dag_square.png" alt="Dagnis" />
         </div>
         {/* <div className="right-about">list of experiences</div> */}
         <div className="right-about">
