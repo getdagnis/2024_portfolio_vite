@@ -6,7 +6,7 @@ import MobileMenu from '../components/MobileMenu';
 
 import './Header.css';
 
-const ARMAGGEDON_START_COUNT = 1;
+const ARMAGGEDON_START_COUNT = 0;
 const SHOTCOUNT_BEFORE_ARMAGGEDON = 4;
 
 function Header() {
