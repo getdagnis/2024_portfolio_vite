@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { ScrollRestoration } from 'react-router-dom';
 import './AboutPage.css';
 

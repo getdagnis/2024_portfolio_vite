@@ -531,15 +531,15 @@
         "src": "image-1.png",
         "caption": null,
         "size": "medium",
-        "colSpan": 1,
+        "colSpan": 2,
         "rowSpan": 1
       },
       {
         "src": "image-2.png",
         "caption": null,
         "size": "medium",
-        "colSpan": 1,
-        "rowSpan": 1
+        "colSpan": 2,
+        "rowSpan": 2
       }
     ],
     "show": true,

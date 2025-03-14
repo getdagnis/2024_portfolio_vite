@@ -19,16 +19,16 @@
   user-select: none;
 }
 
-.modal-h1 {
+.modal-extra-h1 {
   width: fit-content;
   max-width: 768px;
   text-align: center;
   line-height: 1.2;
   color: black;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.1rem;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: 3rem;
 }
 
 .wip-buttons {

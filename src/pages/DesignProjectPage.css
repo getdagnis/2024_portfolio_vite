@@ -232,7 +232,7 @@ div.proj-title > h3:hover > .back-arrow-container {
 .img-container {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 1s ease;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 0.5rem;
