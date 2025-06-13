@@ -63,7 +63,7 @@ function ContactForm() {
             Thank you!
             <br /> I'll check my email soon.
           </h1>
-          <div className="modal-button" onClick={handleClose}>
+          <div className="modal-button" onClick={() => navigate({ pathname: `/design` })}>
             back to portfolio
           </div>
         </div>
