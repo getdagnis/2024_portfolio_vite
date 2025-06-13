@@ -150,7 +150,7 @@ function AboutPage() {
     <div id="about">
       <div className="about-grid">
         <div className="about-left">
-          <img src="src/assets/dag_square.png" alt="dagnis-skurbe" />
+          <img src="../assets/dag_square.png" alt="dagnis-skurbe" />
         </div>
         <div className="about-middle">
           {!failed && <h1>Who is Dagnis Skurbe?</h1>}
