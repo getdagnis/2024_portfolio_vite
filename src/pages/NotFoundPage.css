@@ -1,0 +1,27 @@
+#NotFoundPage {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  min-height: calc(100vh - 370px);
+  background: url('../assets/travolta.gif') no-repeat center;
+  background-size: 300%;
+  border-radius: var(--radius);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -3rem;
+}
+
+#NotFoundPage h2 {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  backdrop-filter: invert(1);
+  color: white;
+  width: fit-content;
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 3rem;
+  letter-spacing: -0.1px;
+  animation: blurIn 1s ease-in forwards;
+}

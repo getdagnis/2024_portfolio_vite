@@ -12,6 +12,18 @@
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   z-index: 999;
+  transition: all 2s ease;
+}
+
+#contact-modal .subtitle {
+  margin-top: 0.5rem;
+  line-height: 1.2;
+}
+
+#contact-modal .subtitle em {
+  font-size: small;
+  margin-left: 0.5rem;
+  color: var(--colorGrey2);
 }
 
 #contact-form,

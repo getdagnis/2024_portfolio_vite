@@ -1,42 +1,227 @@
+import { useState, useEffect } from 'react';
 import { ScrollRestoration } from 'react-router-dom';
+
+import { ASK_AI_ABSURD_PROMTPS } from '../constants/constants';
+import { askAI } from '../utils/askAI';
 import './AboutPage.css';
 
+function formatAIResponse(rawText) {
+  const segments = rawText
+    .split('&&')
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  const jsxElements = [];
+  let displayIndex = 1;
+
+  segments.forEach((segment) => {
+    // Match ***Title*** or **Title**
+    const match = segment.match(/\*{2,3}(.*?)\*{2,3}/s);
+
+    if (match) {
+      const title = match[1].trim();
+      const rest = segment.replace(match[0], '').trim();
+
+      jsxElements.push(
+        <h2 key={`h2-${displayIndex}`} data-index={displayIndex++}>
+          {title}
+        </h2>
+      );
+
+      if (rest) {
+        jsxElements.push(
+          <p key={`p-${displayIndex}`} data-index={displayIndex++}>
+            {rest}
+          </p>
+        );
+      }
+    } else {
+      jsxElements.push(
+        <p key={`p-${displayIndex}`} data-index={displayIndex++}>
+          {segment}
+        </p>
+      );
+    }
+  });
+
+  return jsxElements;
+}
+
 function AboutPage() {
+  const [response, setResponse] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [loadingStage, setLoadingStage] = useState(1);
+  const [absurdity, setAbsurdity] = useState(1);
+  const [utcCountdown, setUtcCountdown] = useState('00:00:00');
+
+  const failed = response === 'Sorry. Cloudflare Worker request failed.';
+
+  // Open router status screenshot to display in case of fetch failure
+  const openRouterUrl = encodeURIComponent('https://status.openrouter.ai/#active-incidents');
+  const orScreenshotUrl = `https://api.microlink.io/?url=${openRouterUrl}&screenshot=true&meta=false&embed=screenshot.url`;
+
+  const handleAskAI = async () => {
+    setLoading(true);
+    setResponse('');
+
+    const question = 'Describe who is Dagnis Skurbe';
+    const cvText = ``;
+
+    try {
+      const result = await askAI(question, cvText, absurdity);
+      setResponse(result);
+    } catch (err) {
+      setResponse('Error fetching AI response.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const AbsurdityList = () => {
+    return Array.from({ length: 10 }, (_, index) => (
+      <li key={index} className={index + 1 === absurdity ? 'active' : ''} onClick={() => setAbsurdity(index + 1)}>
+        {index + 1}
+      </li>
+    ));
+  };
+
+  const LoadingStatus = () => {
+    if (loadingStage === 1) {
+      setTimeout(() => setLoadingStage(2), 1500);
+      return (
+        <div className="loading">
+          <p className="loading">Contacting the API...</p>
+        </div>
+      );
+    }
+
+    if (loadingStage === 2) {
+      setTimeout(() => {
+        setLoadingStage(3);
+      }, 1500);
+      setTimeout(() => {
+        setLoadingStage(1);
+      }, 5000);
+      return (
+        <div className="loading">
+          <p className="loading">Analyzing the web...</p>
+        </div>
+      );
+    }
+
+    return (
+      <div className="loading">
+        <p className="loading">{ASK_AI_ABSURD_PROMTPS[absurdity - 1].message}</p>
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date();
+      const utcNow = new Date(now.toUTCString());
+
+      const nextMidnight = new Date(
+        Date.UTC(
+          utcNow.getUTCFullYear(),
+          utcNow.getUTCMonth(),
+          utcNow.getUTCDate() + 1, // tomorrow
+          0,
+          0,
+          0
+        )
+      );
+
+      const diff = nextMidnight.getTime() - utcNow.getTime();
+
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+      setUtcCountdown(`${hours}:${minutes}:${seconds}`);
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div id="about">
       <div className="about-grid">
-        <div className="left-about">
-          <img className="armageddon" src="/dag_square.png" alt="Dagnis" />
+        <div className="about-left">
+          <img src="src/assets/dag_square.png" alt="dagnis-skurbe" />
         </div>
-        {/* <div className="right-about">list of experiences</div> */}
-        <div className="right-about">
-          <h1 className="armageddon">About</h1>
-          <p className="armageddon">
-            In early 2000s Dagnis began his career as a PC assambler/technician, then moved to web developement before
-            transitioning his career to design and advertising from 2005. During the latter period, he engaged in
-            graphic design, user experience design, and creative direction, accumulating experience across Adobe
-            Creative Suite, graphic design, animation, web development, art direction, and copywriting.
-          </p>
-          <p className="armageddon">
-            In 2015 Dagnis founded a board game startup for his own game Mission to Mars 2049, that saw a brief
-            international success. In 2018, Dagnis returned to development, focusing on React-based projects.
-          </p>
-          <p className="armageddon">
-            His professional journey in development spans over 12 years, with significant experience in JavaScript
-            (since 2003, professionally since 2012), TypeScript, and a suite of related technologies such as Node.js,
-            React, Redux, and various UI frameworks. Over the past couple of years Dagnis has mostly worked as a
-            full-stack Node.js/React/Next.js developer, but his primary focus and passion has always been on front-end
-            development, where he can apply his design background to enhance user interface and experience.
-          </p>
-          <p className="armageddon">
-            Dagnis has a practical understanding of version control systems like Git, GitHub, Bitbucket, and has
-            developed and integrated RESTful APIs and microservices. His experience also includes cloud services with
-            platforms like Firebase, Heroku, Supabase, alongside testing with tools such as Jest and React Testing
-            Library. Dagnis practices agile methodologies and has utilized Docker for containerization. Currently he is
-            available for both contract and full-time positions where remote working is available.{' '}
-          </p>
+        <div className="about-middle">
+          {!failed && <h1>Who is Dagnis Skurbe?</h1>}
+          <div className="about-response">
+            {!loading && !response && !failed && (
+              <div className="about-intro">
+                <p>
+                  Instead of writing a bio about myself I thought — why not let AI do it based on the stuff that can be
+                  found on the internet — articles, social profiles, LinkedIn etc. So here you go — have fun with it.
+                </p>
+                <>
+                  {' '}
+                  <p>
+                    Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
+                  </p>
+                  <ul>
+                    <AbsurdityList />
+                  </ul>
+                  <div onClick={!loading && handleAskAI} className={`btn btn-animated ${!loading && 'btn-disabled'}`}>
+                    Ask AI about Dagnis...
+                  </div>
+                </>
+              </div>
+            )}
+            {loading && <LoadingStatus />}
+            {response && (
+              <div className="output">
+                {!failed && formatAIResponse(response)}
+                {failed && (
+                  <>
+                    <h3>{formatAIResponse(response)}</h3>
+                    <p className="error">
+                      Call to the API did not succeed.{' '}
+                      <a href="https://status.openrouter.ai/#active-incidents" className="error">
+                        Hover this link <img src={orScreenshotUrl} alt="OpenRouter status preview" />
+                      </a>{' '}
+                      to see if the OpenRouter API status is currently down. <br />
+                      In case it&apos;s not green, you can try again when it&apos;s back up (usually in minutes).
+                    </p>
+                    <p className="error">
+                      Otherwise the daily query limit probably has been exceeded (too high user activity) and that will
+                      be <br /> reset at midnight UTC time in <strong>{utcCountdown}</strong>
+                    </p>
+                    <div className="btns">
+                      <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
+                        Try once again...
+                      </div>{' '}
+                      {/* TODO: implement a static bio */}
+                      {/* <div onClick={!loading && handleAskAI} className={`btn btn-animated btn-grey`}>
+                        Show a static bio
+                      </div> */}
+                    </div>
+                  </>
+                )}
+                {!failed && (
+                  <div className="about-bottom">
+                    Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
+                    <ul>
+                      <AbsurdityList />
+                    </ul>
+                    <div onClick={!loading && handleAskAI} className={`btn btn-animated ${!loading && 'btn-disabled'}`}>
+                      <h3>Regenerate!</h3>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
+
       <ScrollRestoration />
     </div>
   );

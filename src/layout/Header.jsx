@@ -218,6 +218,9 @@ function Header() {
           <ButtonNav>
             <NavLink to="/contact">contact</NavLink>
           </ButtonNav>
+          <ButtonNav>
+            <NavLink to="/404">404</NavLink>
+          </ButtonNav>
         </nav>
       </div>
 

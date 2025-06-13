@@ -6,15 +6,21 @@ import './ContactForm.css';
 
 function ContactForm() {
   const [state, handleSubmit] = useForm('mblrvgbl');
-  const [email, setEmail] = React.useState('');
-  const [message, setMessage] = React.useState('');
+  const [email, setEmail] = React.useState(localStorage.getItem('email') || '');
+  const [message, setMessage] = React.useState(localStorage.getItem('message') || '');
   const navigate = useNavigate();
 
   const handleClose = () => {
     localStorage.setItem('email', email);
-    navigate({
-      pathname: `/design`,
-    });
+    localStorage.setItem('message', message);
+
+    document.getElementById('contact-modal').style.opacity = '0';
+
+    setTimeout(() => {
+      navigate({
+        pathname: `/design`,
+      });
+    }, 100);
   };
 
   useEffect(() => {
@@ -26,11 +32,17 @@ function ContactForm() {
       }
     };
 
+    const handleDoubleClick = () => {
+      handleClose();
+    };
+
     document.addEventListener('keydown', handleEscape);
+    document.addEventListener('dblclick', handleDoubleClick);
 
     return () => {
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('dblclick', handleDoubleClick);
     };
   }, []);
 
@@ -67,7 +79,7 @@ function ContactForm() {
             Reach out to me
           </label>
           <div className="subtitle" style={{ animationDelay: '0.6s' }}>
-            (whatever is on your mind)
+            with whatever is on your mind <em>*list of exceptions to be implemented</em>
           </div>
         </div>
         <input

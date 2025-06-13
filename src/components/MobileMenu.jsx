@@ -36,8 +36,8 @@ function MobileMenu({ onClose }) {
         </li>
       </ul>
       <div id="mobile-menu-bottom">
-        <NavLink to="/contact" className="footer-message" onClick={onClose}></NavLink>
-        <p>© DAGNIS SKURBE, 2024</p>
+        <NavLink to="/contact" className="footer-message mobile-menu-message" onClick={onClose}></NavLink>
+        <p>© DAGNIS SKURBE, 2025</p>
       </div>
     </div>
   );

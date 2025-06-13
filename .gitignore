@@ -23,6 +23,7 @@ firebase.js
 *.njsproj
 *.sln
 *.sw?
+.API_KEYS.js
 
 # React Component Preview
 previewConfig.json

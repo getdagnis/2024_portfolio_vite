@@ -189,6 +189,10 @@
   position: relative;
   max-width: 30rem;
   margin-bottom: 4rem;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+  }
 }
 
 .timeline-content {

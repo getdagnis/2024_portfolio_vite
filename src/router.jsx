@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       { path: '/contact', element: <App children={<ContactForm />} /> },
       { path: '/vote', element: <App children={<VotePage />} /> },
       { path: '/wip', element: <App children={<WipPage />} /> },
+      { path: '/404', element: <App children={<NotFoundPage />} /> },
       { path: '*', element: <App children={<NotFoundPage />} /> },
     ],
   },
