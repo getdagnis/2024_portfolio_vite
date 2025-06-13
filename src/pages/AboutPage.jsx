@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ScrollRestoration } from 'react-router-dom';
+import { useNavigate, ScrollRestoration } from 'react-router-dom';
 
 import { ASK_AI_ABSURD_PROMTPS } from '../constants/constants';
 import { askAI } from '../utils/askAI';
@@ -54,6 +54,7 @@ function AboutPage() {
   const [absurdity, setAbsurdity] = useState(1);
   const [utcCountdown, setUtcCountdown] = useState('00:00:00');
 
+  const navigate = useNavigate();
   const failed = response === 'Sorry. Cloudflare Worker request failed.';
 
   // Open router status screenshot to display in case of fetch failure
@@ -116,6 +117,10 @@ function AboutPage() {
     );
   };
 
+  const handleShare = () => {
+    navigate('/contact', { state: { userMessage: response } });
+  };
+
   useEffect(() => {
     const updateCountdown = () => {
       const now = new Date();
@@ -150,7 +155,7 @@ function AboutPage() {
     <div id="about">
       <div className="about-grid">
         <div className="about-left">
-          <img src="../assets/dag_square.png" alt="dagnis-skurbe" />
+          <div className="dag-img" />
         </div>
         <div className="about-middle">
           {!failed && <h1>Who is Dagnis Skurbe?</h1>}
@@ -169,7 +174,7 @@ function AboutPage() {
                   <ul>
                     <AbsurdityList />
                   </ul>
-                  <div onClick={!loading && handleAskAI} className={`btn btn-animated ${!loading && 'btn-disabled'}`}>
+                  <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
                     Ask AI about Dagnis...
                   </div>
                 </>
@@ -214,6 +219,12 @@ function AboutPage() {
                     <div onClick={!loading && handleAskAI} className={`btn btn-animated ${!loading && 'btn-disabled'}`}>
                       <h3>Regenerate!</h3>
                     </div>
+                    <p>
+                      Is it good?{' '}
+                      <em onClick={() => navigate('/contact', { state: { userMessage: response } })}>
+                        Share with me too!
+                      </em>
+                    </p>
                   </div>
                 )}
               </div>

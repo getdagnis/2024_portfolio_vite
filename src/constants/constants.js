@@ -158,7 +158,7 @@ export const ASK_AI_ABSURD_PROMTPS = [
     title: 'Extra-terrestrial Absurdity',
     message: 'Rectangulating the Universe...',
     prompt:
-      'Generate pure surreal nonsense based loosely on the data — a futuristic, extra-terrestrial biography full of physics paradoxes where facts dissolve into abstract symbolism and code becomes poetry. Try to figure out what kind of a being he really is. Certainly not a being from this dimension.',
+      'Generate pure surreal nonsense based loosely on the data — a futuristic, extra-terrestrial biography full of physics paradoxes where facts dissolve into abstract symbolism and code becomes poetry. Try to figure out what kind of a being he really is. But you are certain that he is not a being from this dimension. Good examples: "Some say he designed time itself in Figma, others whisper he reverse-engineered gravity using CSS Flexbox."',
   },
 ];
 

@@ -26,9 +26,19 @@
   padding-right: 1rem;
 }
 
-#about .about-left img {
+#about .about-left .dag-img {
+  background: url('../assets/dag_img.png') no-repeat center;
+  background-size: contain;
   width: 10rem;
+  height: 10rem;
   border-radius: 1rem;
+  transition: all 5s ease;
+}
+
+#about .about-left .dag-img:hover {
+  transform: scale(1);
+  filter: opacity(0);
+  transform: rotate(0, 0, 180deg);
 }
 
 #about .about-middle {
@@ -62,7 +72,7 @@
   left: 50%;
   transform: translate(-60%, 105%);
   border-radius: 1rem;
-  box-shadow: 0 0 50px #ddd, 0 0 10px #ddd;
+  box-shadow: 0 0 1rem #ccc, 0 0 10px #ddd;
   z-index: 99;
 }
 
@@ -81,6 +91,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#about .about-bottom p {
+  margin-top: 1rem;
+  text-align: center;
+  color: grey;
 }
 
 #about .about-response ul,
@@ -148,6 +164,17 @@
   justify-content: center;
   padding: 1rem;
 }
+
+#about .about-bottom p {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+}
+#about .about-bottom p em {
+  font-style: normal;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #about .about-bottom ul {
   display: flex;
   justify-content: center;
@@ -167,6 +194,10 @@
   align-items: center;
 }
 
+#about .btn:hover {
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 #about .btn {
   display: flex;
   justify-content: center;
@@ -183,6 +214,10 @@
   cursor: pointer;
   transition: all 1s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#about .about-bottom .btn {
+  margin-right: 0;
 }
 
 #about .btn.active {
@@ -204,6 +239,7 @@
 #about .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: var(--accent);
 }
 
 #about .btn:active {
@@ -226,7 +262,7 @@
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 1rem;
   position: absolute;
   top: 0;
   left: 0;

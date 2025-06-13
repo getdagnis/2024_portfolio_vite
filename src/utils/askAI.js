@@ -22,7 +22,8 @@ export async function askAI(question, cvText, absurdity) {
   - Each paragraph MUST begin with a title in the format: ***Title Here***
   - Each paragraph MUST end with: &&
   - Keep total output between **1000 and 1500 characters**
-  - Do not mention age but you can mention the birth date of 7th September, 1984. You can also mention the place of birth (Riga), that he worked in a tech startup in london 2010—2013. Mention his name at least once per paragraph.
+  - Do not mention age but you can mention the birth date of 7th September, 1984. You can also mention the place of birth (Riga), that he worked as an indesign artist for a tech startup in london 2010—2013. Mention his name at least once per paragraph.
+  - Never mention anything about Russia or in Russian language or in any other language than English or perhaps on rare occasion in Latvian.
   - Write based based on these instructions: ${absurdPromptText}
 
   ==== EXAMPLE STRUCTURE ====
