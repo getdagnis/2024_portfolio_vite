@@ -9,8 +9,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: -3rem;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  /* weird bug — this filter only shows up when deployed couldn't find anywhere in the codebase */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
 #NotFoundPage h2 {
