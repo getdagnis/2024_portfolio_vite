@@ -9,16 +9,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: -3rem;
-  /* weird bug — this filter only shows up when deployed couldn't find anywhere in the codebase */
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
 }
 
 #NotFoundPage h2 {
   display: flex;
   align-self: center;
   justify-content: center;
-  backdrop-filter: invert(1);
   color: white;
   width: fit-content;
   text-align: center;
