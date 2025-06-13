@@ -1,7 +1,6 @@
 #NotFoundPage {
   display: flex;
   flex-direction: column;
-  padding: 0;
   width: 100%;
   min-height: calc(100vh - 370px);
   background: url('../assets/travolta.gif') no-repeat center;
