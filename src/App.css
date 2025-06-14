@@ -70,6 +70,12 @@ body {
   width: 100%;
   box-sizing: border-box;
   user-select: none;
+  @media (max-width: 1024px) {
+    font-size: 0.95rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 }
 
 html {
@@ -120,7 +126,7 @@ body {
   max-width: var(--siteMaxWidth);
   padding: 0 1rem;
   @media (max-width: 1024px) {
-    padding: 0 0.5rem;
+    padding: 0;
   }
 }
 

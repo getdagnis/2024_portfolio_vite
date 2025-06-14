@@ -169,9 +169,12 @@ function AboutPage() {
                 </p>
                 <>
                   {' '}
-                  <p>
-                    Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
-                  </p>
+                  <div className="absurdity-level">
+                    <div>Absurdity level:</div>{' '}
+                    <div>
+                      <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
+                    </div>
+                  </div>
                   <ul>
                     <AbsurdityList />
                   </ul>
@@ -213,7 +216,12 @@ function AboutPage() {
                 )}
                 {!failed && (
                   <div className="about-bottom">
-                    Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
+                    <div className="absurdity-level">
+                      <div>Absurdity level:</div>{' '}
+                      <div>
+                        <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
+                      </div>
+                    </div>
                     <ul>
                       <AbsurdityList />
                     </ul>
