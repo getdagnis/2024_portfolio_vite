@@ -37,7 +37,7 @@
   width: fit-content;
   min-height: 2rem;
   margin-top: 1rem;
-  background: url(../assets/message.svg) no-repeat left top;
+  background: url('/src/assets/message.svg') no-repeat left top;
 
   @media (max-width: 800px) {
     width: 135px;
