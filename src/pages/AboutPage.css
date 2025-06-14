@@ -117,22 +117,14 @@
   margin: 1rem 0 2rem;
 }
 
-#about .absurdity-level {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-  width: fit-content;
-
-  @media (min-width: 720px) {
-    display: inline-block;
-  }
-}
-
 #about .about-bottom p {
   margin-top: 1rem;
   text-align: center;
   color: grey;
+}
+
+#about .absurdity-level {
+  margin-bottom: 1rem;
 }
 
 #about .about-response ul,

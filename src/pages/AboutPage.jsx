@@ -170,10 +170,7 @@ function AboutPage() {
                 <>
                   {' '}
                   <div className="absurdity-level">
-                    <div>Absurdity level:</div>{' '}
-                    <div>
-                      <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
-                    </div>
+                    Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
                   </div>
                   <ul>
                     <AbsurdityList />

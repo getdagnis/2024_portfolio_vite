@@ -73,7 +73,7 @@ body {
   @media (max-width: 1024px) {
     font-size: 0.95rem;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 360px) {
     font-size: 0.9rem;
   }
 }
