@@ -66,10 +66,9 @@ function AboutPage() {
     setResponse('');
 
     const question = 'Describe who is Dagnis Skurbe';
-    const cvText = ``;
 
     try {
-      const result = await askAI(question, cvText, absurdity);
+      const result = await askAI(question, absurdity);
       setResponse(result);
     } catch (err) {
       setResponse('Error fetching AI response.');
