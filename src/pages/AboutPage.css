@@ -27,7 +27,7 @@
 }
 
 #about .about-left .dag-img {
-  background: url('/src/assets/dag_img.png') no-repeat center;
+  background: url('../assets/dag_img.png') no-repeat center;
   background-size: contain;
   width: 10rem;
   height: 10rem;
