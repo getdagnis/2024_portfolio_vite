@@ -3,7 +3,7 @@ export async function askAI(question, absurdity) {
     const res = await fetch('https://getdagnis-worker.getdagnis.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: question, absurdity: absurdity }),
+      body: JSON.stringify({ question, absurdity: String(absurdity) }),
     });
 
     const data = await res.json();
