@@ -17,7 +17,7 @@ function Footer() {
                 mail: <span className="footer-mail"></span>
               </li>
               <li>
-                x:{' '}
+                x/bsky:{' '}
                 <a className="footer-link" href="https://x.com/getdagnis" target="_blank">
                   <strong>@getdagnis</strong>
                 </a>

@@ -31,13 +31,12 @@
 }
 
 .footer-message {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
   width: fit-content;
   min-height: 2rem;
   margin-top: 1rem;
-  background: url('/src/assets/message.svg') no-repeat left top;
+  width: 15rem;
+  height: 2.5rem;
+  background: url('../assets/message.svg') no-repeat left top;
 
   @media (max-width: 800px) {
     width: 135px;

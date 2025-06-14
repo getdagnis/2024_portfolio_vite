@@ -156,6 +156,7 @@ function AboutPage() {
       <div className="about-grid">
         <div className="about-left">
           <div className="dag-img" />
+          {!failed && <h1>Who is Dagnis Skurbe?</h1>}
         </div>
         <div className="about-middle">
           {!failed && <h1>Who is Dagnis Skurbe?</h1>}
