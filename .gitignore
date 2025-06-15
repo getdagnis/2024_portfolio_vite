@@ -1,3 +1,7 @@
+# Project scope
+.API_KEYS.js
+.sensitive/*
+
 # Logs
 logs
 *.log
@@ -23,7 +27,6 @@ firebase.js
 *.njsproj
 *.sln
 *.sw?
-.API_KEYS.js
 
 # React Component Preview
 previewConfig.json

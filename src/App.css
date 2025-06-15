@@ -70,6 +70,11 @@ body {
   width: 100%;
   box-sizing: border-box;
   user-select: none;
+}
+
+p {
+  font-size: 1rem;
+
   @media (max-width: 1024px) {
     font-size: 0.95rem;
   }

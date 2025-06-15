@@ -1,7 +1,18 @@
 #footer-container {
-  padding: 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  margin: 1rem 0 0.6rem;
+  border-radius: var(--radius);
   font-size: 0.85rem;
   font-weight: 300;
+
+  @media (max-width: 340px) {
+    margin: 0.5rem 0 0.5rem;
+  }
 }
 
 #footer-container .footer-grid {

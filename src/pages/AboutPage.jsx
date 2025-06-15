@@ -64,6 +64,9 @@ function AboutPage() {
   const handleAskAI = async () => {
     setLoading(true);
     setResponse('');
+    window.scrollTo({
+      top: 0,
+    });
 
     const question = 'Describe who is Dagnis Skurbe';
 
@@ -166,18 +169,19 @@ function AboutPage() {
                   Instead of writing a bio about myself I thought — why not let AI do it based on the stuff that can be
                   found on the internet — articles, social profiles, LinkedIn etc. So here you go — have fun with it.
                 </p>
-                <>
-                  {' '}
+                <div className="intro-btns-absurdity">
                   <div className="absurdity-level">
                     Absurdity level: <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
                   </div>
-                  <ul>
+                  <ul className="intro-absurdity-list">
                     <AbsurdityList />
                   </ul>
+                </div>
+                <div className="intro-btns">
                   <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
                     Ask AI about Dagnis...
                   </div>
-                </>
+                </div>
               </div>
             )}
             {loading && <LoadingStatus />}
@@ -199,20 +203,14 @@ function AboutPage() {
                       Otherwise the daily query limit probably has been exceeded (too high user activity) and that will
                       be <br /> reset at midnight UTC time in <strong>{utcCountdown}</strong>
                     </p>
-                    <div className="btns">
-                      <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
-                        Try once again...
-                      </div>{' '}
-                      {/* TODO: implement a static bio */}
-                      {/* <div onClick={!loading && handleAskAI} className={`btn btn-animated btn-grey`}>
-                        Show a static bio
-                      </div> */}
+                    <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
+                      Try once again...
                     </div>
                   </>
                 )}
                 {!failed && (
                   <div className="about-bottom">
-                    <div className="absurdity-level">
+                    <div className="absurdity-level-bottom">
                       <div>Absurdity level:</div>{' '}
                       <div>
                         <strong>{ASK_AI_ABSURD_PROMTPS[absurdity - 1].title}</strong>
@@ -221,15 +219,22 @@ function AboutPage() {
                     <ul>
                       <AbsurdityList />
                     </ul>
-                    <div onClick={!loading && handleAskAI} className={`btn btn-animated ${!loading && 'btn-disabled'}`}>
-                      <h3>Regenerate!</h3>
+                    <div className="bottom-btns">
+                      <div
+                        onClick={!loading && handleAskAI}
+                        className={`btn btn-animated ${!loading && 'btn-disabled'}`}
+                      >
+                        <h3>Regenerate!</h3>
+                      </div>
                     </div>
-                    <p>
-                      Is it good?{' '}
-                      <em onClick={() => navigate('/contact', { state: { userMessage: response } })}>
-                        Share with me too!
-                      </em>
-                    </p>
+                    <div className="bottom-btns">
+                      <p>
+                        Is it good?{' '}
+                        <em onClick={() => navigate('/contact', { state: { userMessage: response } })}>
+                          Share with me too!
+                        </em>
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>

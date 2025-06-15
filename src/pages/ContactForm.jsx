@@ -34,8 +34,6 @@ function ContactForm() {
     if (emailRef.current) {
       emailRef.current.focus();
     }
-
-    console.log('state', state);
   }, []);
 
   const handleClose = () => {

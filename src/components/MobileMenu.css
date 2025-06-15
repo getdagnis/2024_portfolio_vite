@@ -25,7 +25,7 @@
 
 #mobile-menu-list li {
   margin-top: 0.5rem;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.3px;
   text-transform: uppercase;
@@ -51,7 +51,7 @@
 
 #mobile-menu-bottom > .mobile-menu-message {
   display: flex;
-  width: 20rem;
+  width: 13rem;
   height: 10vh;
   background-size: contain;
   background-position: right;

@@ -180,9 +180,9 @@ function DesignPage() {
             data-grid-row={item.row}
           >
             <div className={getThumbInfoInitialClass(item.col, item.row)}>
-              <h3>{item.name}</h3>
-              <p>{item.title}</p>
-              <p>{item.work}</p>
+              <h3 className="item-title">{item.name}</h3>
+              <p className="item-description">{item.title}</p>
+              <p className="item-description">{item.work}</p>
             </div>
           </Link>
         ))}

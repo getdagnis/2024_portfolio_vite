@@ -76,19 +76,6 @@ export const TIMELINE = [
   },
 ];
 
-export const ASK_AI_CHATGPT_DATA = [
-  "Dagnis Skurbe is a versatile Latvian creative professional born in Riga, Latvia in 1984. He's currently based in Riga, with a multifaceted career spanning design, advertising, and software development. He has served as Art Director at leading agencies like DDB and GREY, co-founded a creative studio, and later worked internationally, including in London for Yearbook Machine. A skilled full-stack developer with a strong focus on React, Node.js, and TypeScript, he combines deep technical knowledge with two decades of experience in branding and UI/UX design.",
-  'Dagnis Skurbe is a full-stack developer and designer from Riga with over 20 years in web development, branding, and UI/UX. His skills span React, TypeScript, Node.js, Docker, and he has led creative teams in top Latvian ad agencies and worked on international platforms like Yearbook Machine and insurance tech at Sapiens.',
-  "Starting as a copywriter in Riga's ad scene, Dagnis Skurbe's career evolved into art direction, brand identity, and full-stack development. Whether rebranding Dinamo Riga or developing React apps for insurance clients, he blends creativity with code, design with detail. He's lived and worked in both Latvia and London, shaping products and visuals that leave a mark.",
-  'Dagnis Skurbe is a multidisciplinary digital professional with expertise in frontend and full-stack development (React, TypeScript, Node.js) and a strong background in visual branding and UX/UI design. Past roles include Art Director at DDB Latvia, Creative Director at Give Us Work Riga, and Full-Stack Developer at Sapiens Software Solutions.',
-  "Dagnis Skurbe is a Latvian developer and designer with 20+ years of experience in design, advertising, and software. He's worked with agencies like DDB, led branding projects, and developed web apps in React/Node. He also created a board game and has taught UI/UX design.",
-  "Dagnis is one of those rare hybrids — he started in ad agencies, jumped into design and branding, then went full dev mode with React and Node. He's done everything from teaching UX to building yearbook platforms in London and launching a board game startup. Pretty wild skillset.",
-  "From the sketchpads of Riga's ad agencies to the command lines of frontend frameworks, Dagnis Skurbe has spent two decades weaving code with creativity. His journey spans typography and TypeScript, branding and board games — a narrative shaped in both pixels and prose.",
-  "From the sketchpads of Riga's ad agencies to the command lines of frontend frameworks, Dagnis Skurbe has spent two decades weaving code with creativity. His journey spans typography and TypeScript, branding and board games — a narrative shaped in both pixels and prose.",
-  'Dagnis Skurbe is a creative technologist with a unique edge — blending 20+ years in design and brand strategy with modern frontend development. From building scalable React platforms to leading rebrands for major events and sports teams, he brings product, code, and visual storytelling together in one powerful stack.',
-  "With a background that bridges creative direction and full-stack development, Dagnis Skurbe has led design teams, built digital platforms, and taught UI/UX. He's fluent in both visual language and JavaScript — contributing to agencies, startups, and education alike. His work is informed by two decades of hands-on experience across Latvia and the UK.",
-];
-
 export const ASK_AI_ABSURD_PROMTPS = [
   {
     absurdityLevel: '1',
@@ -161,15 +148,3 @@ export const ASK_AI_ABSURD_PROMTPS = [
       'Generate pure surreal nonsense based loosely on the data — a futuristic, extra-terrestrial biography full of physics paradoxes where facts dissolve into abstract symbolism and code becomes poetry. Try to figure out what kind of a being he really is. But you are certain that he is not a being from this dimension. Good examples: "Some say he designed time itself in Figma, others whisper he reverse-engineered gravity using CSS Flexbox."',
   },
 ];
-
-export const ADDITIONAL_FACTS = `In early 2000s Dagnis began his career as a PC assambler/technician, then moved to web developement
-before transitioning his career to design and advertising from 2005. During the latter period, he engaged in graphic design, user
-experience design, and creative direction, accumulating experience across Adobe Creative Suite, graphic design, animation, web
-development, art direction, and copywriting.
-In 2015 Dagnis founded a board game startup for his own game Mission to Mars 2049, that saw a brief international success.
-In 2018, Dagnis returned to development, focusing on React-based projects. His professional journey in development spans over
-12 years, with significant experience in JavaScript (since 2003, professionally since 2012), TypeScript, and a suite of related
-technologies such as Node.js, React, Redux, and various UI frameworks. Over the past couple of years Dagnis has mostly worked as
-a full-stack Node.js/React/Next.js developer, but his primary focus and passion has always been on front-end development, where
-he can apply his design background to enhance user interface and experience. Dagnis has a practical understanding of version control
-systems like Git, GitHub, Bitbucket, and has developed and integrated RESTful APIs and microservices. His experience also includes cloud services with platforms like Firebase, Heroku, Supabase, alongside testing with tools such as Jest and React Testing Library. Dagnis practices agile methodologies and has utilized Docker for containerization. Currently he is available for both contract and full-time positions where remote working is available.`;

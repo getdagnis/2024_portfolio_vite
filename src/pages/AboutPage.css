@@ -36,7 +36,7 @@
   color: var(--accent);
   font-weight: 600;
   animation: slideIn 1s ease-in forwards;
-  margin: 0;
+  margin: 0 0.5rem;
 }
 
 #about .about-grid {
@@ -124,7 +124,27 @@
 }
 
 #about .absurdity-level {
+  display: flex;
+  width: 100%;
   margin-bottom: 1rem;
+
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#about .about-bottom .absurdity-level-bottom > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #about .about-response ul,
@@ -134,17 +154,11 @@
   flex-wrap: wrap;
   list-style: none;
   user-select: none;
+  width: 100%;
 
-  @media (max-width: 700px) and (min-width: 600px) {
-    max-width: 15rem;
+  @media (max-width: 700px) {
+    justify-content: center;
   }
-  @media (max-width: 480px) {
-    max-width: 15rem;
-  }
-}
-
-#about .about-bottom ul {
-  justify-content: center;
 }
 
 #about .about-response li,
@@ -159,11 +173,12 @@
   background: #ddd;
   user-select: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 
 #about li:hover {
   background: #aaa;
+  transition: all 0.4s ease;
 }
 
 #about .about-response li.active {
@@ -245,6 +260,19 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+#about .bottom-btns {
+  display: flex;
+  justify-content: center;
+}
+
+#about .intro-btns {
+  display: flex;
+
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
 }
 
 #about .btn:hover {

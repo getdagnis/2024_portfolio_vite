@@ -6,6 +6,7 @@ import './MobileMenu.css';
 function MobileMenu({ onClose }) {
   const [activeRoute, setActiveRoute] = useState(null);
 
+  // used to determine which link is active
   useEffect(() => {
     window.location.pathname.includes('/design') || window.location.pathname === '/'
       ? setActiveRoute('design')
@@ -13,6 +14,8 @@ function MobileMenu({ onClose }) {
       ? setActiveRoute('skills')
       : window.location.pathname === '/about'
       ? setActiveRoute('about')
+      : window.location.pathname === '/404'
+      ? setActiveRoute('404')
       : setActiveRoute(null);
   }, []);
 
@@ -32,6 +35,11 @@ function MobileMenu({ onClose }) {
         <li style={{ animationDelay: '0.35s' }}>
           <NavLink to="/about" className={activeRoute === 'about' ? 'active' : ''} onClick={onClose}>
             about
+          </NavLink>
+        </li>
+        <li style={{ animationDelay: '0.4s' }}>
+          <NavLink to="/404" className={activeRoute === '404' ? 'active' : ''} onClick={onClose}>
+            404
           </NavLink>
         </li>
       </ul>
