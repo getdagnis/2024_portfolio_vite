@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, ScrollRestoration } from 'react-router-dom';
 
 import { ASK_AI_ABSURD_PROMTPS } from '../constants/constants';
-import { askAI } from '../utils/askAI';
+import { askAI, shareContent } from '../utils';
 import './AboutPage.css';
 
 function formatAIResponse(rawText) {
@@ -53,6 +53,7 @@ function AboutPage() {
   const [loadingStage, setLoadingStage] = useState(1);
   const [absurdity, setAbsurdity] = useState(1);
   const [utcCountdown, setUtcCountdown] = useState('00:00:00');
+  const [sharingStatus, setSharingStatus] = useState(false);
 
   const navigate = useNavigate();
   const failed = response === 'Sorry. Cloudflare Worker request failed.';
@@ -62,8 +63,10 @@ function AboutPage() {
   const orScreenshotUrl = `https://api.microlink.io/?url=${openRouterUrl}&screenshot=true&meta=false&embed=screenshot.url`;
 
   const handleAskAI = async () => {
+    setLoadingStage(1);
     setLoading(true);
     setResponse('');
+
     window.scrollTo({
       top: 0,
     });
@@ -89,6 +92,8 @@ function AboutPage() {
   };
 
   const LoadingStatus = () => {
+    const timeoutIds = [];
+
     if (loadingStage === 1) {
       setTimeout(() => setLoadingStage(2), 1500);
       return (
@@ -99,12 +104,7 @@ function AboutPage() {
     }
 
     if (loadingStage === 2) {
-      setTimeout(() => {
-        setLoadingStage(3);
-      }, 1500);
-      setTimeout(() => {
-        setLoadingStage(1);
-      }, 5000);
+      setTimeout(() => setLoadingStage(3), 3000);
       return (
         <div className="loading">
           <p className="loading">Analyzing the web...</p>
@@ -112,17 +112,39 @@ function AboutPage() {
       );
     }
 
-    return (
-      <div className="loading">
-        <p className="loading">{ASK_AI_ABSURD_PROMTPS[absurdity - 1].message}</p>
-      </div>
-    );
+    if (loadingStage === 3) {
+      setTimeout(() => setLoadingStage(4), 5000);
+      return (
+        <div className="loading">
+          <p className="loading">{ASK_AI_ABSURD_PROMTPS[absurdity - 1].message}</p>
+        </div>
+      );
+    }
+
+    if (loadingStage === 4) {
+      return (
+        <div className="loading">
+          <p className="loading">{`Still ${ASK_AI_ABSURD_PROMTPS[absurdity - 1].message.toLowerCase()}`}</p>
+        </div>
+      );
+    }
+
+    return null;
   };
 
-  const handleShare = () => {
-    navigate('/contact', { state: { userMessage: response } });
+  const handleShare = async () => {
+    setSharingStatus(true);
+    const success = await shareContent(response, absurdity);
+
+    if (success) {
+      setSharingStatus('done');
+      setTimeout(() => navigate('/shared', { state: { userMessage: response } }), 2000);
+    } else {
+      setSharingStatus('error');
+    }
   };
 
+  // update countdown for error message
   useEffect(() => {
     const updateCountdown = () => {
       const now = new Date();
@@ -163,7 +185,9 @@ function AboutPage() {
         <div className="about-middle">
           {!failed && <h1>Who is Dagnis Skurbe?</h1>}
           <div className="about-response">
-            {!loading && !response && !failed && (
+            {loading && <LoadingStatus />}
+            {sharingStatus && <p>Sharing status: {sharingStatus}</p>}
+            {!loading && !response && !failed && !sharingStatus && (
               <div className="about-intro">
                 <p>
                   Instead of writing a bio about myself I thought — why not let AI do it based on the stuff that can be
@@ -184,7 +208,6 @@ function AboutPage() {
                 </div>
               </div>
             )}
-            {loading && <LoadingStatus />}
             {response && (
               <div className="output">
                 {!failed && formatAIResponse(response)}
@@ -208,7 +231,7 @@ function AboutPage() {
                     </div>
                   </>
                 )}
-                {!failed && (
+                {!failed && response && (
                   <div className="about-bottom">
                     <div className="absurdity-level-bottom">
                       <div>Absurdity level:</div>{' '}
@@ -220,21 +243,19 @@ function AboutPage() {
                       <AbsurdityList />
                     </ul>
                     <div className="bottom-btns">
-                      <div
-                        onClick={!loading && handleAskAI}
-                        className={`btn btn-animated ${!loading && 'btn-disabled'}`}
-                      >
-                        <h3>Regenerate!</h3>
+                      <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
+                        Regenerate!
                       </div>
                     </div>
-                    <div className="bottom-btns">
-                      <p>
-                        Is it good?{' '}
-                        <em onClick={() => navigate('/contact', { state: { userMessage: response } })}>
-                          Share with me too!
-                        </em>
-                      </p>
-                    </div>
+                    <p style={{ fontSize: '0.75rem' }}>
+                      {sharingStatus ? (
+                        'Sharing...'
+                      ) : (
+                        <>
+                          Is it good? <em onClick={handleShare}>Share with me!</em>
+                        </>
+                      )}
+                    </p>
                   </div>
                 )}
               </div>

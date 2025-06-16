@@ -184,6 +184,10 @@
   transition: all 1s ease;
 }
 
+.about-bottom li:last-child {
+  margin-right: 0;
+}
+
 #about li:hover {
   background: #aaa;
   transition: all 0.4s ease;
@@ -283,11 +287,9 @@
   }
 }
 
-#about .btn:hover {
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-#about .btn {
+#about .btn,
+#about .btn-sharing,
+#about .btn-grey {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -296,8 +298,9 @@
   margin: 2rem 1rem 0 0;
   height: 100%;
   width: fit-content;
-  min-width: 10rem;
-  background: var(--accent);
+  min-width: 16rem;
+  background-color: var(--accent);
+  border: 1px solid rgb(185, 12, 47);
   border-radius: 0.5rem;
   color: white;
   cursor: pointer;
@@ -305,13 +308,35 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+#about .btn:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: var(--accent);
+}
+
+#about .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 #about .about-bottom .btn {
   margin-right: 0;
 }
 
-#about .btn.active {
-  display: inline-block;
-  size: 0.9;
+#about .btn-sharing {
+  background-color: transparent;
+  color: grey;
+  border: 1px solid grey;
+  transition: all 1s ease;
+}
+
+#about .btn-sharing:hover {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
 }
 
 #about .btn:link,
@@ -325,25 +350,32 @@
   position: absolute;
 }
 
-#about .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  background: var(--accent);
+#about .btn-white,
+#about .btn-sharing:hover {
+  margin-left: 1rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
-#about .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-#about .btn-white {
-  background-color: crimson;
+#about .btn-white:hover {
+  margin-left: 1rem;
   color: white;
+  border-color: rgb(185, 12, 47);
 }
 
 #about .btn-grey {
-  background-color: grey;
-  color: white;
+  margin-left: 1rem;
+  background-color: transparent;
+  color: grey;
+  border: 1px solid grey;
+}
+
+#about .btn-grey:hover {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  text-shadow: none;
 }
 
 #about .btn::after {
@@ -361,10 +393,6 @@
 
 #about .btn:hover::after {
   background-color: crimson;
-}
-
-#about .btn-grey:hover::after {
-  background-color: grey;
 }
 
 #about .btn:hover::after {
