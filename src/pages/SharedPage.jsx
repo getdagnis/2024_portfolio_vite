@@ -36,8 +36,8 @@ function SharedPage() {
               <div>
                 <img
                   className="avatar"
-                  src={`https://avatar.iran.liara.run/public/boy?username=${entry.ip.slice(0, 9)}.***`}
-                  alt={`${entry.ip.slice(0, 9)}.***`}
+                  src={`https://avatar.iran.liara.run/public/boy?username=${entry.ip}`}
+                  alt={`${entry.ip}`}
                 />
               </div>
               <hr />

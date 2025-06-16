@@ -139,7 +139,7 @@ function AboutPage() {
     if (success) {
       setSharingStatus('done');
       alert('Shared successfully!');
-      // function when alert is closed
+      setTimeout(() => navigate('/shared'), 3000);
       setTimeout(() => setSharingStatus(false), 3000);
     } else {
       setSharingStatus('error');
