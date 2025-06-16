@@ -138,9 +138,12 @@ function AboutPage() {
 
     if (success) {
       setSharingStatus('done');
-      setTimeout(() => navigate('/shared', { state: { userMessage: response } }), 2000);
+      alert('Shared successfully!');
+      // function when alert is closed
+      setTimeout(() => setSharingStatus(false), 3000);
     } else {
       setSharingStatus('error');
+      alert('Failed to share. Please try again.');
     }
   };
 
@@ -247,7 +250,7 @@ function AboutPage() {
                         Regenerate!
                       </div>
                     </div>
-                    <p style={{ fontSize: '0.5rem' }}>
+                    <p style={{ fontSize: '0.95rem', fontWeight: '400' }}>
                       {sharingStatus ? (
                         'Sharing...'
                       ) : (

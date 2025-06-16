@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import './SharedPage.css';
+
 function SharedPage() {
   const [entries, setEntries] = useState([]);
 
@@ -11,28 +13,36 @@ function SharedPage() {
   }, []);
 
   return (
-    <div className="shared-page">
+    <div id="shared-page">
       <h1>Shared AI Responses</h1>
       <ul>
         {entries.length === 0 && <p>No shared entries found.</p>}
-        {entries.map((entry) => (
-          <li key={entry.id}>
-            <div>
-              <strong>Absurdity:</strong> {entry.absurdity_level}
-            </div>
-            <div>
-              <strong>Date:</strong> {new Date(entry.created_at).toLocaleString()}
-            </div>
-            <div>
-              <strong>Type:</strong> {entry.type}
-            </div>
-            <p>{entry.content}</p>
-            <div>
-              <strong>IP:</strong> {entry.ip}
-            </div>
-            <hr />
-          </li>
-        ))}
+        {entries.length > 0 &&
+          entries.map((entry) => (
+            <li key={entry.id}>
+              <div>
+                <strong>Absurdity:</strong> {entry.absurdity_level}
+              </div>
+              <div>
+                <strong>Date:</strong> {new Date(entry.created_at).toLocaleString()}
+              </div>
+              <div>
+                <strong>Type:</strong> {entry.type}
+              </div>
+              <p>{entry.content}</p>
+              <div>
+                <strong>IP:</strong> {entry.ip}
+              </div>
+              <div>
+                <img
+                  className="avatar"
+                  src={`https://avatar.iran.liara.run/public/boy?username=${entry.ip.slice(0, 9)}.***`}
+                  alt={`${entry.ip.slice(0, 9)}.***`}
+                />
+              </div>
+              <hr />
+            </li>
+          ))}
       </ul>
     </div>
   );
