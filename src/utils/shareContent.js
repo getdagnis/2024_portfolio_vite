@@ -1,4 +1,4 @@
-const shareContent = async (request, env) => {
+export const shareContent = async (request, env) => {
   try {
     const { content, absurdity } = await request.json();
     const ip = request.headers.get('cf-connecting-ip') || 'unknown';

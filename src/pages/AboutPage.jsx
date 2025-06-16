@@ -247,7 +247,7 @@ function AboutPage() {
                         Regenerate!
                       </div>
                     </div>
-                    <p style={{ fontSize: '0.75rem' }}>
+                    <p style={{ fontSize: '0.5rem' }}>
                       {sharingStatus ? (
                         'Sharing...'
                       ) : (

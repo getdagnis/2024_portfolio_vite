@@ -14,6 +14,7 @@ function SharedPage() {
     <div className="shared-page">
       <h1>Shared AI Responses</h1>
       <ul>
+        {entries.length === 0 && <p>No shared entries found.</p>}
         {entries.map((entry) => (
           <li key={entry.id}>
             <div>
@@ -26,6 +27,9 @@ function SharedPage() {
               <strong>Type:</strong> {entry.type}
             </div>
             <p>{entry.content}</p>
+            <div>
+              <strong>IP:</strong> {entry.ip}
+            </div>
             <hr />
           </li>
         ))}
