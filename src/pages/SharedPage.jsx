@@ -31,14 +31,14 @@ function SharedPage() {
               </div>
               <p>{entry.content}</p>
               <div>
-                <strong>IP:</strong> {entry.ip}
-              </div>
-              <div>
                 <img
                   className="avatar"
-                  src={`https://avatar.iran.liara.run/public/boy?username=${entry.ip}`}
-                  alt={`${entry.ip}`}
+                  src={`https://dodo.ac/np/images/thumb/4/4e/${entry.alias}_NH_Character_Icon.png/100px-${entry.alias}_NH_Character_Icon.png`}
+                  alt={entry.alias}
                 />
+                <div>
+                  <strong>Alias:</strong> {entry.alias}
+                </div>
               </div>
               <hr />
             </li>

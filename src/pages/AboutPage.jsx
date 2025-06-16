@@ -140,10 +140,12 @@ function AboutPage() {
       setSharingStatus('done');
       alert('Shared successfully!');
       setTimeout(() => navigate('/shared'), 3000);
+      // TODO: remove this when a modal confirmation for sharing is added and put it there with no timer
       setTimeout(() => setSharingStatus(false), 3000);
     } else {
       setSharingStatus('error');
       alert('Failed to share. Please try again.');
+      setSharingStatus(false);
     }
   };
 
