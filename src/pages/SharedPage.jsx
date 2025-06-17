@@ -24,8 +24,8 @@ function SharedPage() {
         {!loading && entries.length === 0 && <p>Sorry, no shared entries found this time...</p>}
         {!loading && entries.length > 0 && (
           <p>
-            Below are the AI generated bios that the site visitors liked and decided to share with others. Vote for your
-            favorite ones!
+            Below are the AI generated absurd biographies that the site visitors liked and decided to share with others.
+            Vote for your favorite ones!
           </p>
         )}
         {!loading &&
@@ -38,31 +38,36 @@ function SharedPage() {
             >
               <div className="shared-item-top">
                 <div>
-                  <strong>Absurdity: {entry.absurdity_level}</strong>
+                  Absurdity: <strong>{entry.absurdity_level}</strong>
                 </div>
                 <div className="date">Date: {new Date(entry.created_at).toLocaleString()}</div>
               </div>
-              <div className="shared-item-bottom">
+              <div className={`shared-item-bottom ${itemExpanded === entry.id ? '' : 'shared-item-bottom-preview'}`}>
                 {!entry.summary || entry.summary === 'No summary available' ? (
-                  <p className={itemExpanded === entry.id ? 'shared-item-content' : ''}>
+                  <div className={itemExpanded === entry.id ? 'shared-item-content-expanded' : 'shared-item-content'}>
                     {itemExpanded !== entry.id
                       ? formatAIResponse(entry.content.slice(0, 120) + '... ')
                       : formatAIResponse(entry.content)}
-                  </p>
+                  </div>
                 ) : (
-                  <p>{entry.summary}</p>
+                  <div className={itemExpanded === entry.id ? 'shared-item-content-expanded' : 'shared-item-content'}>
+                    {itemExpanded !== entry.id ? formatAIResponse(entry.summary) : formatAIResponse(entry.content)}
+                  </div>
                 )}
                 <p className="published-by" style={{ color: entry.color, filter: 'brightness(0.7)' }}>
                   Published by:{' '}
-                  <strong>
+                  <strong className="no-text-wrap">
                     {entry.color ? entry.color : 'Anonymous'} {entry.alias}
                   </strong>
                 </p>
                 <div className="avatar-container" style={{ backgroundColor: entry.color }}>
                   <img className="avatar" src={entry.img_url} alt={entry.alias} />
                 </div>
-                <div id="expand-button" style={{ rotate: itemExpanded === entry.id ? '180deg' : '0deg' }}>
-                  <div className="expand-arrow"></div>
+                <div id="expand-button">
+                  <div
+                    className="expand-arrow"
+                    style={{ rotate: itemExpanded === entry.id ? '225deg' : '45deg' }}
+                  ></div>
                 </div>
               </div>
             </li>

@@ -121,6 +121,16 @@ body {
   border: var(--siteBorder) solid black;
 }
 
+.no-text-wrap {
+  white-space: nowrap;
+  text-wrap-mode: nowrap;
+
+  @media (min-width: 720px) {
+    white-space: normal;
+    text-wrap-mode: wrap;
+  }
+}
+
 #site-container {
   display: flex;
   margin: 0 auto;

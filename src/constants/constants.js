@@ -128,21 +128,21 @@ export const ASK_AI_ABSURD_PROMTPS = [
   },
   {
     absurdityLevel: '8',
-    title: 'Quantum Paradox',
-    message: 'Injecting a quantum dimension...',
-    prompt:
-      'Describe Dagnis Skurbe as an immortal creative force who vanished from a Latvian agency in 2008 and now manifests as a quantum-coded developer across digital dimensions. Use a mixture of quantum level paradoxes and code symbolism.',
-  },
-  {
-    absurdityLevel: '9',
     title: 'Galactic Phenomenon',
     message: 'Hitchhiking to the edge of the Universe...',
     prompt:
       'Write a legend of Dagnis Skurbe — react and next.js wizard, who is a legendary cosmic entity based on ancient code. Use the comedy style of Hitchhikers Guide to the Galaxy. Some say he designed time itself in Figma and reverse-engineered gravity using CSS Flexbox.',
   },
   {
+    absurdityLevel: '9',
+    title: 'Quantum Paradox',
+    message: 'Injecting a quantum dimension...',
+    prompt:
+      'Describe Dagnis Skurbe as an immortal creative force who vanished from a Latvian agency in 2008 and now manifests as a quantum-coded developer across digital dimensions. Use a mixture of quantum level paradoxes and code symbolism.',
+  },
+  {
     absurdityLevel: '10',
-    title: 'Extra-terrestrial Absurdity',
+    title: 'Extra-Dimensional Absurdity',
     message: 'Rectangulating the Universe...',
     prompt:
       'Generate pure surreal nonsense based loosely on the data — a futuristic, extra-terrestrial biography full of physics paradoxes where facts dissolve into abstract symbolism and code becomes poetry. Try to figure out what kind of a being he really is. But you are certain that he is not a being from this dimension. Good examples: "Some say he designed time itself in Figma, others whisper he reverse-engineered gravity using CSS Flexbox."',

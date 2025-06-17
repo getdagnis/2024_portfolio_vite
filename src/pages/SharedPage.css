@@ -10,13 +10,16 @@
 #shared-page h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 #shared-page h2 {
   font-size: 1.25rem;
 }
 
+#shared-page .shared-item-content-expanded p,
 #shared-page .shared-item-content p {
+  font-size: 0.9rem;
   margin: 0.25rem 0 1rem;
 }
 
@@ -25,6 +28,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.shared-list p:first-child {
+  margin-bottom: 0.5rem;
 }
 
 .shared-item {
@@ -38,14 +45,18 @@
   padding: 1rem;
   margin-top: 1rem;
   background: linear-gradient(165deg, #e5e7ec, #fff, #e6e9f1);
-  box-shadow: 7px 7px 14px #dadde2, -7px -7px 14px #e8e8ed;
+  box-shadow: 7px 7px 14px #bfc5ce99, -7px -7px 14px #f4f4f7;
   transition: all 0.6s ease;
   cursor: pointer;
 }
 
 .shared-item:hover {
-  transition: all 0.2s ease;
-  box-shadow: 7px 7px 14px #bfc5ce, -7px -7px 14px #f4f4f7;
+  transition: all 0.3s ease;
+  box-shadow: 7px 7px 14px #b7bdc7, -7px -7px 14px #f4f4f7;
+
+  @media (max-width: 1180px) {
+    scale: 1.015;
+  }
 }
 
 .shared-item-top,
@@ -56,6 +67,13 @@
   width: 100%;
 }
 
+.shared-item-bottom-preview {
+  @media (min-width: 720px) {
+    height: 6rem;
+    min-height: 7rem;
+  }
+}
+
 #shared-page .shared-item-top > div,
 #shared-page .shared-item-top strong {
   display: flex;
@@ -64,9 +82,17 @@
   text-align: left;
   font-weight: 400;
   margin-bottom: 0.25rem;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--blueishGrey);
   filter: brightness(0.9);
+}
+
+#shared-page .shared-item-top strong {
+  font-weight: 600;
+  font-size: 0.85rem;
+  filter: brightness(0.9);
+  margin-left: 0.5rem;
+  margin-top: -0.1rem;
 }
 
 #shared-page .shared-item-top .date {
@@ -77,7 +103,7 @@
 #shared-page p.published-by {
   width: max-content;
   margin-right: 1rem;
-  margin: 0.6rem 0.75rem;
+  margin: 1.85rem 0.75rem;
   text-align: right;
   font-weight: 400;
   font-size: 0.75rem;
@@ -94,9 +120,9 @@
 #shared-page .avatar-container {
   align-self: flex-start;
   align-items: flex-start;
-  margin: 0.25rem 0;
   width: 3rem;
   height: 3rem;
+  margin: 1.5rem 0;
   width: fit-content;
   border-radius: 50%;
 }
@@ -111,9 +137,10 @@
 #expand-button {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
   width: 4rem;
+  height: 100%;
   transform: translateY(-0.25rem);
   transform-origin: center;
   padding: 0 1rem 0.5rem;
@@ -135,7 +162,7 @@
   border-color: var(--blueishGrey);
   filter: brightness(0.8);
   transition: all 0.2s ease;
-  animation: downAndUp 1s ease-out forwards;
+  animation: downAndUp 1s ease-out 0.5s infinite forwards;
 }
 
 @keyframes downAndUp {

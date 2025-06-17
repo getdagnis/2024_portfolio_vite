@@ -52,6 +52,7 @@
 }
 
 #about strong {
+  text-align: center;
   color: var(--accent);
   font-weight: 600;
   margin: 0 0.5rem;
