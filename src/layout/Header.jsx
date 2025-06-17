@@ -187,7 +187,7 @@ function Header() {
   const designActive = location.pathname.includes('/design');
 
   return (
-    <div id="header-container">
+    <div id="header">
       {armageddon && <div className="overlay-block"></div>}
       <div className="header-top">
         <div className="header-left">

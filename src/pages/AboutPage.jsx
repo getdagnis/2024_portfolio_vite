@@ -5,7 +5,7 @@ import { ASK_AI_ABSURD_PROMTPS } from '../constants/constants';
 import { askAI, shareContent } from '../utils';
 import './AboutPage.css';
 
-function formatAIResponse(rawText) {
+export function formatAIResponse(rawText) {
   const segments = rawText
     .split('&&')
     .map((block) => block.trim())
@@ -210,6 +210,13 @@ function AboutPage() {
                   <div onClick={!loading && handleAskAI} className={`btn btn-animated`}>
                     Ask AI about Dagnis...
                   </div>
+                  {sharingStatus ? (
+                    'Sharing...'
+                  ) : (
+                    <div className="shared-link" onClick={() => navigate('/shared')}>
+                      <p>View bios shared by others!</p>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -252,7 +259,7 @@ function AboutPage() {
                         Regenerate!
                       </div>
                     </div>
-                    <p style={{ fontSize: '0.95rem', fontWeight: '400' }}>
+                    <p className="shared-bottom-link">
                       {sharingStatus ? (
                         'Sharing...'
                       ) : (
