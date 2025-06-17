@@ -54,20 +54,29 @@ function SharedPage() {
                     {itemExpanded !== entry.id ? formatAIResponse(entry.summary) : formatAIResponse(entry.content)}
                   </div>
                 )}
-                <p className="published-by" style={{ color: entry.color, filter: 'brightness(0.7)' }}>
-                  Published by:{' '}
-                  <strong className="no-text-wrap">
-                    {entry.color ? entry.color : 'Anonymous'} {entry.alias}
-                  </strong>
-                </p>
-                <div className="avatar-container" style={{ backgroundColor: entry.color }}>
-                  <img className="avatar" src={entry.img_url} alt={entry.alias} />
-                </div>
-                <div id="expand-button">
-                  <div
-                    className="expand-arrow"
-                    style={{ rotate: itemExpanded === entry.id ? '225deg' : '45deg' }}
-                  ></div>
+                <div className="shared-item-bottom-right">
+                  <div className="published-by-container">
+                    <p className="published-by" style={{ color: entry.color, filter: 'brightness(0.8)' }}>
+                      Published by:
+                      <br />
+                      <strong className={`${window.innerWidth > 620 && 'no-text-wrap'}`}>
+                        {entry.color ? entry.color : 'Anonymous'} {entry.alias}
+                      </strong>
+                      {entry.country && ` from ${entry.country}`}
+                      {/* {entry.country && entry.country !== 'RU' && (
+                          <img className="country-flag" src={`https://flagsapi.com/${entry.country}/flat/64.png`} alt="" />
+                      )} */}
+                    </p>
+                    <div className="avatar-container" style={{ backgroundColor: entry.color }}>
+                      <img className="avatar" src={entry.img_url} alt={entry.alias} />
+                    </div>
+                  </div>
+                  <div id={`expand-button ${itemExpanded === entry.id ? 'expanded' : ''}`}>
+                    <div
+                      className="expand-arrow"
+                      style={{ rotate: itemExpanded === entry.id ? '225deg' : '45deg' }}
+                    ></div>
+                  </div>
                 </div>
               </div>
             </li>

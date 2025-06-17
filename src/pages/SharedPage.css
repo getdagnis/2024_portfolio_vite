@@ -63,8 +63,10 @@
 .shared-item-bottom {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  height: 1px;
+  min-height: fit-content;
 }
 
 .shared-item-bottom-preview {
@@ -100,6 +102,36 @@
   margin-right: 0.25rem;
 }
 
+#shared-page .shared-item-bottom-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: space-between;
+  width: fit-content;
+  height: 100%;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+  }
+}
+
+#shared-page .published-by-container {
+  display: flex;
+
+  @media (max-width: 620px) {
+    padding: 0;
+    order: 2;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: fit-content;
+    margin: 0.25rem 0.1rem 0 0;
+  }
+}
+
 #shared-page p.published-by {
   width: max-content;
   margin-right: 1rem;
@@ -109,26 +141,47 @@
   font-size: 0.75rem;
   align-self: flex-start;
   color: var(--blueishGrey);
+
+  @media (max-width: 620px) {
+    display: flex;
+    flex-direction: column;
+    word-wrap: normal;
+    max-width: 8rem;
+    margin: 0;
+    margin-left: 1rem;
+  }
 }
 
 #shared-page p.published-by strong {
   font-weight: 600;
   font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+#shared-page .country-flag {
+  width: 1rem;
+  height: auto;
+  margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
 #shared-page .avatar-container {
-  align-self: flex-start;
-  align-items: flex-start;
+  display: flex;
+  order: 1;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   height: 3rem;
   margin: 1.5rem 0;
   width: fit-content;
   border-radius: 50%;
+  @media (max-width: 620px) {
+    flex-shrink: 0;
+    margin: 0.25rem 0 2rem;
+  }
 }
 
 #shared-page .avatar {
-  align-self: flex-start;
   transform: translateY(-0.1rem);
   width: 50px;
   height: 50px;
@@ -137,14 +190,23 @@
 #expand-button {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  width: 4rem;
-  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  width: 3rem;
+  margin-top: 2.75rem;
+  height: auto;
   transform: translateY(-0.25rem);
+  padding-left: 0.5rem;
   transform-origin: center;
-  padding: 0 1rem 0.5rem;
   transition: all 0.6s ease;
+
+  @media (max-width: 620px) {
+    justify-content: flex-end;
+  }
+}
+
+#expand-button.expanded {
+  justify-content: flex-end;
 }
 
 #expand-button .expand-arrow {

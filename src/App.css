@@ -142,7 +142,7 @@ body {
   width: var(--siteWidth);
   max-width: var(--siteMaxWidth);
   padding: 0 1rem;
-  @media (max-width: 1024px) {
+  @media (max-width: 720px) {
     padding: 0 0.25rem;
   }
 }
