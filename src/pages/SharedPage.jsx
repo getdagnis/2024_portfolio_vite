@@ -30,15 +30,8 @@ function SharedPage() {
                 <strong>Type:</strong> {entry.type}
               </div>
               <p>{entry.content}</p>
-              <div>
-                <img
-                  className="avatar"
-                  src={`https://dodo.ac/np/images/thumb/4/4e/${entry.alias}_NH_Character_Icon.png/100px-${entry.alias}_NH_Character_Icon.png`}
-                  alt={entry.alias}
-                />
-                <div>
-                  <strong>Alias:</strong> {entry.alias}
-                </div>
+              <div className="avatar-container" style={{ backgroundColor: entry.color }}>
+                <img className="avatar" src={entry.img_url} alt={entry.alias} />
               </div>
               <hr />
             </li>

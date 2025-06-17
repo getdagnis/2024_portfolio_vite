@@ -134,7 +134,7 @@ function AboutPage() {
 
   const handleShare = async () => {
     setSharingStatus(true);
-    const success = await shareContent(response, absurdity);
+    const { success, alias, color, img_url } = await shareContent(content, absurdity);
 
     if (success) {
       setSharingStatus('done');

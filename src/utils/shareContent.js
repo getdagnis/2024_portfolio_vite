@@ -12,9 +12,9 @@ export const shareContent = async (content, absurdity) => {
     });
 
     const json = await res.json();
-    return json.success;
+    return json;
   } catch (err) {
     console.error('Share failed:', err);
-    return false;
+    return { success: false };
   }
 };
