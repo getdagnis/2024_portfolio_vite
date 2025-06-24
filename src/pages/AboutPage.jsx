@@ -138,14 +138,13 @@ function AboutPage() {
 
     if (success) {
       setSharingStatus('done');
-      alert('Shared successfully!');
+      alert('Shared successfully! Redirecting to shared page...');
       setTimeout(() => navigate('/shared'), 3000);
       // TODO: remove this when a modal confirmation for sharing is added and put it there with no timer
       setTimeout(() => setSharingStatus(false), 3000);
     } else {
       setSharingStatus('error');
-      alert('Failed to share. Please try again.');
-      setSharingStatus(false);
+      setTimeout(() => setSharingStatus(false), 3000);
     }
   };
 
@@ -191,7 +190,15 @@ function AboutPage() {
           {!failed && <h1>Who is Dagnis Skurbe?</h1>}
           <div className="about-response">
             {loading && <LoadingStatus />}
-            {sharingStatus && <p>Sharing status: {sharingStatus}</p>}
+            {sharingStatus && (
+              <p>
+                {sharingStatus === 'done'
+                  ? 'Shared successfully!'
+                  : `Failed to share. Please ${(
+                      <span onClick={() => window.location.reload()}>reload</span>
+                    )} the page.`}
+              </p>
+            )}
             {!loading && !response && !failed && !sharingStatus && (
               <div className="about-intro">
                 <p>
@@ -220,7 +227,7 @@ function AboutPage() {
                 </div>
               </div>
             )}
-            {response && (
+            {response && !sharingStatus && (
               <div className="output">
                 {!failed && formatAIResponse(response)}
                 {failed && (

@@ -36,7 +36,7 @@
   }
 }
 
-#header nav#header-nav {
+nav#header-nav {
   width: 100%;
   display: flex;
   justify-content: end;
@@ -105,7 +105,7 @@
   font-weight: 500;
 }
 
-#header .hamburger {
+.hamburger {
   display: none;
   text-align: right;
   padding: 3px 0;

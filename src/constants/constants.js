@@ -80,7 +80,7 @@ export const ASK_AI_ABSURD_PROMTPS = [
   {
     absurdityLevel: '1',
     title: 'Professional Sounding Bio',
-    message: 'Learning how to tie a tie...',
+    message: 'Teaching Dagnis how to tie a tie...',
     prompt:
       'Write a strictly factual, concise and professional sounding biography of Dagnis Skurbe based only on the information provided. Avoid adjectives, opinions, or embellishments.',
   },

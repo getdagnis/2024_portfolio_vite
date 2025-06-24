@@ -23,7 +23,7 @@ function SharedPage() {
         {loading && <p>Loading user shared AI bios...</p>}
         {!loading && entries.length === 0 && <p>Sorry, no shared entries found this time...</p>}
         {!loading && entries.length > 0 && (
-          <p>
+          <p className="shared-list-intro">
             Below are the AI generated absurd biographies that the site visitors liked and decided to share with others.
             Vote for your favorite ones!
           </p>

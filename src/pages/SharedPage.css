@@ -15,12 +15,23 @@
 
 #shared-page h2 {
   font-size: 1.25rem;
+
+  @media (max-width: 620px) {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
 }
 
 #shared-page .shared-item-content-expanded p,
-#shared-page .shared-item-content p {
+#shared-page .shared-item-content p,
+#shared-page .shared-list-intro p {
   font-size: 0.9rem;
   margin: 0.25rem 0 1rem;
+
+  @media (max-width: 620px) {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
 }
 
 .shared-list {
@@ -122,13 +133,15 @@
 
   @media (max-width: 620px) {
     padding: 0;
-    order: 2;
     flex-shrink: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
     width: fit-content;
     margin: 0.25rem 0.1rem 0 0;
+  }
+  @media (max-width: 450px) {
+    zoom: 0.9;
   }
 }
 
@@ -143,12 +156,13 @@
   color: var(--blueishGrey);
 
   @media (max-width: 620px) {
+    order: 2;
     display: flex;
     flex-direction: column;
     word-wrap: normal;
     max-width: 8rem;
     margin: 0;
-    margin-left: 1rem;
+    margin-left: 0.65rem;
   }
 }
 
@@ -167,7 +181,6 @@
 
 #shared-page .avatar-container {
   display: flex;
-  order: 1;
   justify-content: center;
   align-items: center;
   width: 3rem;
@@ -175,9 +188,11 @@
   margin: 1.5rem 0;
   width: fit-content;
   border-radius: 50%;
+
   @media (max-width: 620px) {
+    order: 1;
     flex-shrink: 0;
-    margin: 0.25rem 0 2rem;
+    margin: 0.25rem 0;
   }
 }
 
@@ -212,7 +227,6 @@
 #expand-button .expand-arrow {
   width: 0.75rem;
   height: 0.75rem;
-  border: 0.175rem solid var(--blueishGrey);
   border-radius: 0 0 0.25rem 0;
   border-left: transparent;
   border-top: transparent;
